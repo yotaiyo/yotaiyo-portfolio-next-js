@@ -88,6 +88,7 @@ const LinksWrapper = styled.div`
 const LinkBody = styled.a`
     margin-top: 5px;
     font-size: 18px;
+    width: 70px;
 `
 
 const HistoryCard = ({ age, body1, body2, body3 }) => (
@@ -112,8 +113,8 @@ export default () => (
                     <Title>Profile</Title>
                     <ProfileBody>
                         はじめまして。私は穴繁 陽太と申します。<br />
-                        大学院で音×機械学習をメインに研究を行なっている学生です。<br />
-                        web系の技術にも興味を持っています。<br />
+                        大学院で 音×機械学習 をメインに研究をしている学生です。<br />
+                        web系の技術に興味があります。<br />
                         最近は、フロントエンドよりのコードを書いていることが多いです。<br />
                     </ProfileBody>
 
