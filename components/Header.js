@@ -1,17 +1,18 @@
 import Link from 'next/link'
+import styled from 'styled-components'
+import homeIcon from '../images/home.png'
 
-const linkStyle = {
-  marginRight: 15
-}
+const HomeIcon = styled.img``
 
 const Header = () => (
     <div>
         <Link href="/">
-          <a style={linkStyle}>Home</a>
+          <a>Home</a>
         </Link>
         <Link href="/about">
-          <a style={linkStyle}>About</a>
+          <a>About</a>
         </Link>
+        <HomeIcon src={homeIcon} />
     </div>
 )
 
