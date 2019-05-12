@@ -7,6 +7,7 @@ const ProfileCardWrapper = styled.div`
     flex-direction: row;
     justify-content: center;
     margin-top: 100px;
+    margin-bottom: 50px;
 `
 
 const ProfileCard = styled.div`
@@ -66,6 +67,7 @@ const HistoryBody1 = styled.div`
 const HistoryBody2 = styled.div`
     font-size: 15px;
     margin-left: 5px;
+    margin-top: 6px;
 `
 const HistoryBody3 = styled.div`
     font-size: 15px;
@@ -79,10 +81,12 @@ const Links = styled.div`
 const LinksWrapper = styled.div`
     display: flex;
     flex-direction: column;
+    margin-top: 10px;
     margin-left: 20px;
 `
 
 const LinkBody = styled.a`
+    margin-top: 5px;
     font-size: 18px;
 `
 
