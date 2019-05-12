@@ -10,7 +10,7 @@ const Wrapper = styled.div`
 const MyIcon = styled.img`
     height: 250px;
     width: 250px;
-    border-radius: 200px;
+    border-radius: 250px;
 `
 
 const MyIconWrapper = styled.div`
