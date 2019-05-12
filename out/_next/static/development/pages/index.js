@@ -113,7 +113,7 @@ var Header = function Header() {
     src: _images_skills_png__WEBPACK_IMPORTED_MODULE_5___default.a,
     alt: "skills",
     body: "Skills",
-    href: "/about",
+    href: "/skills",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 50
@@ -123,7 +123,7 @@ var Header = function Header() {
     src: _images_github_png__WEBPACK_IMPORTED_MODULE_6___default.a,
     alt: "repos",
     body: "Repos",
-    href: "/about",
+    href: "/repos",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 51

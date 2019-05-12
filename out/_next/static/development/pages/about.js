@@ -113,7 +113,7 @@ var Header = function Header() {
     src: _images_skills_png__WEBPACK_IMPORTED_MODULE_5___default.a,
     alt: "skills",
     body: "Skills",
-    href: "/about",
+    href: "/skills",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 50
@@ -123,7 +123,7 @@ var Header = function Header() {
     src: _images_github_png__WEBPACK_IMPORTED_MODULE_6___default.a,
     alt: "repos",
     body: "Repos",
-    href: "/about",
+    href: "/repos",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 51
@@ -12898,7 +12898,7 @@ var _jsxFileName = "/Users/anashige/project/yotaiyo-portfolio-next-js/pages/abou
 var ProfileCardWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "about__ProfileCardWrapper",
   componentId: "sc-1gg4sau-0"
-})(["display:flex;flex-direction:row;justify-content:center;margin-top:100px;"]);
+})(["display:flex;flex-direction:row;justify-content:center;margin-top:100px;margin-bottom:50px;"]);
 var ProfileCard = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "about__ProfileCard",
   componentId: "sc-1gg4sau-1"
@@ -12930,7 +12930,7 @@ var HistoryCardWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default
 var Age = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "about__Age",
   componentId: "sc-1gg4sau-8"
-})(["width:90px;font-size:18px;"]);
+})(["width:120px;font-size:18px;"]);
 var HistoryBodyWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "about__HistoryBodyWrapper",
   componentId: "sc-1gg4sau-9"
@@ -12938,15 +12938,27 @@ var HistoryBodyWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default
 var HistoryBody1 = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "about__HistoryBody1",
   componentId: "sc-1gg4sau-10"
-})(["font-size:18px;"]);
+})(["font-size:18px;font-weight:bold;"]);
 var HistoryBody2 = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "about__HistoryBody2",
   componentId: "sc-1gg4sau-11"
-})(["font-size:15px;margin-left:5px;"]);
+})(["font-size:15px;margin-left:5px;margin-top:6px;"]);
 var HistoryBody3 = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "about__HistoryBody3",
   componentId: "sc-1gg4sau-12"
 })(["font-size:15px;margin-left:5px;"]);
+var Links = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
+  displayName: "about__Links",
+  componentId: "sc-1gg4sau-13"
+})(["margin-top:50px;"]);
+var LinksWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
+  displayName: "about__LinksWrapper",
+  componentId: "sc-1gg4sau-14"
+})(["display:flex;flex-direction:column;margin-top:10px;margin-left:20px;"]);
+var LinkBody = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].a.withConfig({
+  displayName: "about__LinkBody",
+  componentId: "sc-1gg4sau-15"
+})(["margin-top:5px;font-size:18px;width:70px;"]);
 
 var HistoryCard = function HistoryCard(_ref) {
   var age = _ref.age,
@@ -12956,37 +12968,37 @@ var HistoryCard = function HistoryCard(_ref) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HistoryCardWrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75
+      lineNumber: 95
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Age, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 96
     },
     __self: this
   }, age), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HistoryBodyWrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 97
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HistoryBody1, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 98
     },
     __self: this
   }, body1), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HistoryBody2, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 99
     },
     __self: this
   }, body2), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HistoryBody3, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80
+      lineNumber: 100
     },
     __self: this
   }, body3)));
@@ -12996,114 +13008,114 @@ var HistoryCard = function HistoryCard(_ref) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_MyLayout_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 107
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ProfileCardWrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 108
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ProfileCard, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 109
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(MyIcon, {
     src: _images_my_icon_jpg__WEBPACK_IMPORTED_MODULE_3___default.a,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 110
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CardRight, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92
+      lineNumber: 112
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Title, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
+      lineNumber: 113
     },
     __self: this
   }, "Profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ProfileBody, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 114
     },
     __self: this
   }, "\u306F\u3058\u3081\u307E\u3057\u3066\u3002\u79C1\u306F\u7A74\u7E41 \u967D\u592A\u3068\u7533\u3057\u307E\u3059\u3002", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 115
     },
     __self: this
-  }), "\u5927\u5B66\u9662\u3067\u97F3\xD7\u6A5F\u68B0\u5B66\u7FD2\u3092\u30E1\u30A4\u30F3\u306B\u7814\u7A76\u3092\u884C\u306A\u3063\u3066\u3044\u308B\u5B66\u751F\u3067\u3059\u3002", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+  }), "\u5927\u5B66\u9662\u3067 \u97F3\xD7\u6A5F\u68B0\u5B66\u7FD2 \u3092\u30E1\u30A4\u30F3\u306B\u7814\u7A76\u3092\u3057\u3066\u3044\u308B\u5B66\u751F\u3067\u3059\u3002", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 116
     },
     __self: this
-  }), "web\u7CFB\u306E\u6280\u8853\u306B\u3082\u8208\u5473\u3092\u6301\u3063\u3066\u3044\u307E\u3059\u3002", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+  }), "web\u7CFB\u306E\u6280\u8853\u306B\u8208\u5473\u304C\u3042\u308A\u307E\u3059\u3002", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97
+      lineNumber: 117
     },
     __self: this
   }), "\u6700\u8FD1\u306F\u3001\u30D5\u30ED\u30F3\u30C8\u30A8\u30F3\u30C9\u3088\u308A\u306E\u30B3\u30FC\u30C9\u3092\u66F8\u3044\u3066\u3044\u308B\u3053\u3068\u304C\u591A\u3044\u3067\u3059\u3002", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98
+      lineNumber: 118
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(History, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 121
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Title, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 122
     },
     __self: this
   }, "History"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HistoryCard, {
-    age: "2014.04~",
+    age: "2014.04 ~",
     body1: "\u96FB\u6C17\u901A\u4FE1\u5927\u5B66",
     body2: "\u30E2\u30C0\u30F3\u30B8\u30E3\u30BA\u7814\u7A76\u4F1A\u306B\u5165\u90E8\u3002",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
+      lineNumber: 123
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HistoryCard, {
-    age: "2017.04~",
+    age: "2017.04 ~",
     body1: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
       href: "http://www.di.mi.uec.ac.jp/",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 104
+        lineNumber: 124
       },
       __self: this
     }, "\u5343\u8449\u7814\u7A76\u5BA4"),
     body2: "\u597D\u304D\u3060\u3063\u305F\u97F3\u697D\u306B\u95A2\u3059\u308B\u7814\u7A76\u30C6\u30FC\u30DE\u3092\u9078\u629E\u3002",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 124
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HistoryCard, {
-    age: "2018.12~01",
+    age: "2018.12 ~ 01",
     body1: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
       href: "https://apollo-project.jp/",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 105
+        lineNumber: 125
       },
       __self: this
     }, "Apollo"),
@@ -13111,26 +13123,65 @@ var HistoryCard = function HistoryCard(_ref) {
     body3: "\u305D\u306E\u5F8C\u3001\u30A2\u30D7\u30EA\u958B\u767A\u306B\u53C2\u52A0\u3002",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 125
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HistoryCard, {
-    age: "2019.01~",
+    age: "2019.01 ~",
     body1: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
       href: "https://firebug.jp/",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 106
+        lineNumber: 126
       },
       __self: this
     }, "FIREBUG"),
-    body2: "React Native\u3092\u4F7F\u7528\u3057\u305F\u30A2\u30D7\u30EA\u958B\u767A\u306B\u53C2\u52A0\u3057\u3066\u3044\u307E\u3059\u3002",
+    body2: "React Native\u3092\u4F7F\u7528\u3057\u305F\u30A2\u30D7\u30EA\u958B\u767A\u306B\u53C2\u52A0\u3002",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 126
     },
     __self: this
-  }))))));
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Links, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 129
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Title, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 130
+    },
+    __self: this
+  }, "Links"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LinksWrapper, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 131
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LinkBody, {
+    href: "https://github.com/yotaiyo",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 132
+    },
+    __self: this
+  }, "Github"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LinkBody, {
+    href: "https://atcoder.jp/users/yotaiyo",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 133
+    },
+    __self: this
+  }, "Atcoder"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LinkBody, {
+    href: "https://twitter.com/yotaiyo_1218",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 134
+    },
+    __self: this
+  }, "Twitter")))))));
 });
 
 /***/ }),
