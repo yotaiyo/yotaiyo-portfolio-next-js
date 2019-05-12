@@ -8,14 +8,15 @@ const Wrapper = styled.div`
   justify-content: center;
   padding-top: 30px;
   padding-bottom: 30px;
-  box-shadow: 0px 5px 10px -3px rgba(0,0,0,0.1);
+  box-shadow: 0px 5px 10px -3px rgba(0,0,0,0.5);
+  background-color: white;
 `
 
 const SectionWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-left: 70px;
+  margin-right: 70px;
 `
 
 const Icon = styled.img`
@@ -27,6 +28,7 @@ const Icon = styled.img`
 const Body = styled.div`
   font-size: 20px;
   margin-left: 8px;
+  font-family: 'Vollkorn', serif;
 `
 
 const Section = ({ src, alt, body, href }) => (

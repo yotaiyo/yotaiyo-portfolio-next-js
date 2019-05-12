@@ -8,8 +8,8 @@ const Wrapper = styled.div`
 `
 
 const MyIcon = styled.img`
-    height: 200px;
-    width: 200px;
+    height: 250px;
+    width: 250px;
     border-radius: 200px;
 `
 
@@ -21,12 +21,13 @@ const MyIconWrapper = styled.div`
 
 const Title = styled.div`
     text-align: center;
-    font-size: 50px;
+    font-size: 70px;
     margin-top: 30px;
+    color: white;
 `
 
 export default () => (
-    <Layout style={{ backgroundColor: 'blue' }}>
+    <Layout>
         <Wrapper>
             <MyIconWrapper>
                 <MyIcon src={MyImage} alt='my-icon' />

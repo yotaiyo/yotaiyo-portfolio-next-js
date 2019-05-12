@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const Wrapper = styled.div``
 
 const Layout = (props) => (
-  <Wrapper>
+  <Wrapper style={{ flex: 1 }}>
     <Header />
     {props.children}
   </Wrapper>

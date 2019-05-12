@@ -12,10 +12,13 @@ export default class MyApp extends App {
           styles={css`
             body {
               margin: 0;
+              flex: 1;
+              background: linear-gradient(90deg, #FA709A, #FBAB7E, #F7CE68);
+              font-family: 'Vollkorn', serif;
             }
           `}
         />
-        <Component {...pageProps} />
+        <Component {...pageProps}/>
       </Container>
     );
   }
