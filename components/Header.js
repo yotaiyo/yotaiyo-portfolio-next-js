@@ -47,8 +47,8 @@ const Header = () => (
     <Wrapper>
       <Section src={homeImage} alt='home' body='Home' href='/' />
       <Section src={aboutImage} alt='about' body='About' href='/about' />
-      <Section src={skillsImage} alt='skills' body='Skills' href='/about' />
-      <Section src={reposImage} alt='repos' body='Repos' href='/about' />
+      <Section src={skillsImage} alt='skills' body='Skills' href='/skills' />
+      <Section src={reposImage} alt='repos' body='Repos' href='/repos' />
     </Wrapper>
 )
 
