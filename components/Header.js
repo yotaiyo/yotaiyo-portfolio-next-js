@@ -1,6 +1,9 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 import homeImage from '../images/home.png'
+import aboutImage from '../images/about.png'
+import skillsImage from '../images/skills.png'
+import reposImage from '../images/github.png'
 
 const Wrapper = styled.div`
   display: flex;
@@ -22,7 +25,7 @@ const SectionWrapper = styled.div`
 const Icon = styled.img`
   width: 20px;
   height: 20px;
-  margin-top: 4px;
+  margin-top: 5px;
 `
 
 const Body = styled.div`
@@ -43,9 +46,9 @@ const Section = ({ src, alt, body, href }) => (
 const Header = () => (
     <Wrapper>
       <Section src={homeImage} alt='home' body='Home' href='/' />
-      <Section src={homeImage} alt='about' body='About' href='/about' />
-      <Section src={homeImage} alt='skills' body='Skills' href='/about' />
-      <Section src={homeImage} alt='repos' body='Repos' href='/about' />
+      <Section src={aboutImage} alt='about' body='About' href='/about' />
+      <Section src={skillsImage} alt='skills' body='Skills' href='/about' />
+      <Section src={reposImage} alt='repos' body='Repos' href='/about' />
     </Wrapper>
 )
 
