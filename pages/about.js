@@ -103,7 +103,7 @@ export default () => (
                         <HistoryCard age='2014.04~' body1='電気通信大学' body2='モダンジャズ研究会に入部。'/>
                         <HistoryCard age='2017.04~' body1={<a href='http://www.di.mi.uec.ac.jp/'>千葉研究室</a>} body2='好きだった音楽に関する研究テーマを選択。'/>
                         <HistoryCard age='2018.12~01' body1={<a href='https://apollo-project.jp/'>Apollo</a>} body2='webエンジニアリングに関する課題をこなす。' body3='その後、アプリ開発に参加。'/>
-                        <HistoryCard age='2019.01~' body1={<a href='https://firebug.jp/'>FIREBUG</a>} body2='React Nativeを使用したアプリ開発に参加しています。' />
+                        <HistoryCard age='2019.01~' body1={<a href='https://firebug.jp/'>FIREBUG</a>} body2='React Nativeを使用したアプリ開発に参加。' />
                     </History>
                 </CardRight>
             </ProfileCard>
