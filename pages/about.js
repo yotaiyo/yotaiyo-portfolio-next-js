@@ -50,7 +50,7 @@ const HistoryCardWrapper = styled.div`
 `
 
 const Age = styled.div`
-    width: 90px;
+    width: 120px;
     font-size: 18px;
 `
 
@@ -60,6 +60,7 @@ const HistoryBodyWrapper = styled.div`
 
 const HistoryBody1 = styled.div`
     font-size: 18px;
+    font-weight: bold;
 `
 
 const HistoryBody2 = styled.div`
@@ -69,6 +70,20 @@ const HistoryBody2 = styled.div`
 const HistoryBody3 = styled.div`
     font-size: 15px;
     margin-left: 5px;
+`
+
+const Links = styled.div`
+    margin-top: 50px;
+`
+
+const LinksWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+`
+
+const LinkBody = styled.a`
+    font-size: 18px;
 `
 
 const HistoryCard = ({ age, body1, body2, body3 }) => (
@@ -100,11 +115,20 @@ export default () => (
 
                     <History>
                         <Title>History</Title>
-                        <HistoryCard age='2014.04~' body1='電気通信大学' body2='モダンジャズ研究会に入部。'/>
-                        <HistoryCard age='2017.04~' body1={<a href='http://www.di.mi.uec.ac.jp/'>千葉研究室</a>} body2='好きだった音楽に関する研究テーマを選択。'/>
-                        <HistoryCard age='2018.12~01' body1={<a href='https://apollo-project.jp/'>Apollo</a>} body2='webエンジニアリングに関する課題をこなす。' body3='その後、アプリ開発に参加。'/>
-                        <HistoryCard age='2019.01~' body1={<a href='https://firebug.jp/'>FIREBUG</a>} body2='React Nativeを使用したアプリ開発に参加。' />
+                        <HistoryCard age='2014.04 ~' body1='電気通信大学' body2='モダンジャズ研究会に入部。'/>
+                        <HistoryCard age='2017.04 ~' body1={<a href='http://www.di.mi.uec.ac.jp/'>千葉研究室</a>} body2='好きだった音楽に関する研究テーマを選択。'/>
+                        <HistoryCard age='2018.12 ~ 01' body1={<a href='https://apollo-project.jp/'>Apollo</a>} body2='webエンジニアリングに関する課題をこなす。' body3='その後、アプリ開発に参加。'/>
+                        <HistoryCard age='2019.01 ~' body1={<a href='https://firebug.jp/'>FIREBUG</a>} body2='React Nativeを使用したアプリ開発に参加。' />
                     </History>
+
+                    <Links>
+                        <Title>Links</Title>
+                        <LinksWrapper>
+                            <LinkBody href='https://github.com/yotaiyo'>Github</LinkBody>
+                            <LinkBody href='https://atcoder.jp/users/yotaiyo'>Atcoder</LinkBody>
+                            <LinkBody href='https://twitter.com/yotaiyo_1218'>Twitter</LinkBody>
+                        </LinksWrapper>
+                    </Links>
                 </CardRight>
             </ProfileCard>
         </ProfileCardWrapper>
