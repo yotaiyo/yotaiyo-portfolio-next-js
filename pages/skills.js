@@ -110,15 +110,16 @@ class Skills extends Component {
                         <SkillsCard body='TensorFlow' width='40%' />
                         <SkillsCard body='Scikit-learn' width='60%' />
                     <SkillsTitle src={arrowImage} alt='arrow-image' title='Others' />
-                        <SkillsCard body='React Native' width='80%' />
-                        <SkillsCard body='React' width='60%' />
-                        <SkillsCard body='Next.js' width='40%' />
-                        <SkillsCard body='jQuery' width='40%' />
-                        <SkillsCard body='Bootstrap' width='60%' />
-                        <SkillsCard body='Ruby on Rails' width='20%' />
-                        <SkillsCard body='Keras' width='80%' />
-                        <SkillsCard body='TensorFlow' width='40%' />
-                        <SkillsCard body='Scikit-learn' width='60%' />
+                        <SkillsCard body='Mac OS' width='80%' />
+                        <SkillsCard body='Ubuntu' width='80%' />
+                        <SkillsCard body='Windows' width='60%' />
+                        <SkillsCard body='VS code' width='60%' />
+                        <SkillsCard body='Git' width='60%' />
+                        <SkillsCard body='GPU' width='60%' />
+                        <SkillsCard body='Circle CI' width='20%' />
+                        <SkillsCard body='Heroku' width='20%' />
+                        <SkillsCard body='AWS' width='20%' />
+                        <SkillsCard body='Firebase' width='20%' />
                 </SkillsWrapper>
             </Wrapper>
         </Layout>
