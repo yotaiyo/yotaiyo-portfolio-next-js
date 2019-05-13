@@ -1,6 +1,7 @@
 import Layout from '../components/MyLayout.js'
 import styled from 'styled-components'
 import MyImage from '../images/my-icon.jpg'
+import LinkImage from '../images/link.png'
 
 const ProfileCardWrapper = styled.div`
     display: flex;
@@ -59,7 +60,12 @@ const HistoryBodyWrapper = styled.div`
     margin-left: 30px;
 `
 
-const HistoryBody1 = styled.div`
+const HistoryBodyTitle = styled.div`
+    display: flex;
+    flex-direction: row;
+`
+
+const HistoryTitle = styled.div`
     font-size: 18px;
     font-weight: bold;
 `
@@ -85,22 +91,48 @@ const LinksWrapper = styled.div`
     margin-left: 20px;
 `
 
-const LinkBody = styled.a`
+const LinkWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
     margin-top: 5px;
-    font-size: 18px;
-    width: 70px;
 `
 
-const HistoryCard = ({ age, body1, body2, body3 }) => (
+const LinkBody = styled.div`
+    font-size: 18px;
+    width: 80px;
+`
+
+const LinkIcon = styled.img`
+    width: 12px;
+    height: 12px;
+    margin-top: 8px;
+`
+
+const HistoryCard = ({ age, title, body2, body3, url }) => (
     <HistoryCardWrapper>
         <Age>{age}</Age>
-        <HistoryBodyWrapper> 
-            <HistoryBody1>{body1}</HistoryBody1>
+        <HistoryBodyWrapper>
+            <HistoryBodyTitle> 
+                <HistoryTitle>{title}</HistoryTitle>
+                { url ?
+                <a href={url}>
+                    <LinkIcon src={LinkImage} alt='link-image' style={{ marginLeft: 8 }} />
+                </a> : <div></div>
+                }
+            </HistoryBodyTitle>
             <HistoryBody2>{body2}</HistoryBody2>
             <HistoryBody3>{body3}</HistoryBody3>
         </HistoryBodyWrapper>
     </HistoryCardWrapper>
+)
 
+const Link = ({ body, url }) => (
+    <LinkWrapper>
+        <LinkBody>{body}</LinkBody>
+        <a href={url}>
+            <LinkIcon src={LinkImage} alt='link-image' />
+        </a>
+    </LinkWrapper>
 )
 
 export default () => (
@@ -120,18 +152,18 @@ export default () => (
 
                     <History>
                         <Title>History</Title>
-                        <HistoryCard age='2014.04 ~' body1='電気通信大学' body2='モダンジャズ研究会に入部。'/>
-                        <HistoryCard age='2017.04 ~' body1={<a href='http://www.di.mi.uec.ac.jp/'>千葉研究室</a>} body2='好きだった音楽に関する研究テーマを選択。'/>
-                        <HistoryCard age='2018.12 ~ 01' body1={<a href='https://apollo-project.jp/'>Apollo</a>} body2='webエンジニアリングに関する課題をこなす。' body3='その後、アプリ開発に参加。'/>
-                        <HistoryCard age='2019.01 ~' body1={<a href='https://firebug.jp/'>FIREBUG</a>} body2='React Nativeを使用したアプリ開発に参加。' />
+                        <HistoryCard age='2014.04 ~' title='電気通信大学' body2='モダンジャズ研究会に入部。'/>
+                        <HistoryCard age='2017.04 ~' title='千葉研究室' body2='好きだった音楽に関する研究テーマを選択。' url='http://www.di.mi.uec.ac.jp/' />
+                        <HistoryCard age='2018.12 ~ 01' title='Apollo' body2='webエンジニアリングに関する課題をこなす。' body3='その後、アプリ開発に参加。' url='https://apollo-project.jp/' />
+                        <HistoryCard age='2019.01 ~' title='FIREBUG' body2='React Nativeを使用したアプリ開発に参加。' url='https://firebug.jp/' />
                     </History>
 
                     <Links>
                         <Title>Links</Title>
                         <LinksWrapper>
-                            <LinkBody href='https://github.com/yotaiyo'>Github</LinkBody>
-                            <LinkBody href='https://atcoder.jp/users/yotaiyo'>Atcoder</LinkBody>
-                            <LinkBody href='https://twitter.com/yotaiyo_1218'>Twitter</LinkBody>
+                            <Link body='Github' url='https://github.com/yotaiyo' />
+                            <Link body='AtCoder' url='https://atcoder.jp/users/yotaiyo' />
+                            <Link body='Twitter' url='https://twitter.com/yotaiyo_1218'/>
                         </LinksWrapper>
                     </Links>
                 </CardRight>
