@@ -17,14 +17,17 @@ const ReposWrapper = styled.div`
 `
 
 const ReposCardWrapper = styled.div`
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     box-shadow:0px 0px 6px 0.05px #000000;
     margin-top: 30px;
     border-radius: 30px;
-    height: 150px;
+    height: 200px;
 `
 const ReposTitleWrapper = styled.div`
     display: flex;
