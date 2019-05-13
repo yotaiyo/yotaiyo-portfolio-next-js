@@ -8,12 +8,19 @@ const Wrapper = styled.div`
     justify-content: center;
     margin-top: 50px;
     margin-bottom: 50px;
+    @media (max-width: 768px) {
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
 `
 
 const ReposWrapper = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
+    @media (max-width:  1200px) {
+        flex-direction: column;
+    }
 `
 
 const ReposCardWrapper = styled.div`
@@ -28,6 +35,15 @@ const ReposCardWrapper = styled.div`
     margin-top: 30px;
     border-radius: 30px;
     height: 200px;
+    @media (max-width: 768px) {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 25px;
+        padding-right: 25px;
+        margin-top: 15px;
+        border-radius: 15px;
+        height: 100px;
+    }
 `
 const ReposTitleWrapper = styled.div`
     display: flex;
@@ -38,23 +54,45 @@ const ReposTitleWrapper = styled.div`
 const ReposTitle = styled.div`
     font-size: 25px;
     font-weight: bold;
+    @media (max-width: 768px) {
+        font-size: 15px;
+    }
 `
 
 const LinkIcon = styled.img`
     width: 15px;
     height: 15px;
     margin-top: 12px;
+    @media (max-width: 768px) {
+        width: 8px;
+        height: 8px;
+        margin-top: 0px;
+        padding-bottom: 1px;
+    }
 `
 
 const ReposBody = styled.div`
     text-align: center;
     margin-top: 20px;
     height: 60px;
+    @media (max-width: 1200px) {
+        margin-top: 10px;
+        height: 30px;
+    }
+    @media (max-width: 768px) {
+        font-size: 10px;   
+    }
 `
 
 const ReposKeywords = styled.div`
     text-align: center;
     margin-top: 20px;
+    @media (max-width: 1200px) {
+        mqrgin-top: 10px;
+    }
+    @media (max-width: 768px) {
+        font-size: 10px;   
+    }
 `
 
 const ReposCard = ({ title, body, keywords, url }) => (
@@ -73,11 +111,19 @@ const ReposCard = ({ title, body, keywords, url }) => (
 const ReposLeft = styled.div`
     flex: 0.4;
     margin-right: 30px;
+    @media (max-width: 1200px) {
+        margin-left: 10px;    
+        margin-right: 10px;    
+    }
 `
 
 const ReposRight = styled.div`
     flex: 0.4;
     margin-left: 30px;
+    @media (max-width: 1200px) {
+        margin-left: 10px;
+        margin-right: 10px;    
+    }
 `
 
 
