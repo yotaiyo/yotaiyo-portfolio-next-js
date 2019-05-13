@@ -8,12 +8,16 @@ const Wrapper = styled.div`
     justify-content: center;   
     margin-top: 50px;
     margin-bottom: 50px;
+    @media (max-width: 768px) {
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
 `
 
 const SkillsWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    border-radius: 10px; 
 `
 
 const SkillsTitleWrapper = styled.div`
@@ -21,17 +25,28 @@ const SkillsTitleWrapper = styled.div`
     flex-direction: row;
     padding-top: 10px;
     padding-bottom: 5px;
+    @media (max-width: 768px) {
+        padding-top: 5px;
+        padding-bottom: 2px;
+    }
 `
 
 const Title = styled.div`
     font-size: 30px;
     margin-left: 15px;
+    @media (max-width: 768px) {
+        font-size: 15px;
+        margin-left: 8px;
+    }
 `
 
 const SkillsCardWrapper = styled.div`
     margin-left: 70px;
     display: flex;
     flex-direction: row;
+    @media (max-width: 768px) {
+        margin-left: 30px;
+    }
 `
 
 const SkillsBody = styled.div`
@@ -39,6 +54,12 @@ const SkillsBody = styled.div`
     padding-top: 5px;
     padding-bottom: 5px;
     width: 200px;
+    @media (max-width: 768px) {
+        font-size: 12px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        width: 120px;
+    }
 `
 
 const Star = styled.div`
@@ -46,6 +67,11 @@ const Star = styled.div`
     width: 5em;
     height: 1em;
     font-size: 25px;
+    @media (max-width: 768px) {
+        width: 5em;
+        height: 0.5em;
+        font-size: 15px;    
+    }
 `
 
 const StarFront = styled.div`
