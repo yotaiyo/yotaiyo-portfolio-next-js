@@ -1,3 +1,4 @@
+import React, { Component } from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
 import homeImage from '../images/home.png'
@@ -9,8 +10,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding-top: 30px;
-  padding-bottom: 30px;
   box-shadow: 0px 5px 10px -3px rgba(0,0,0,0.5);
   background-color: white;
 `
@@ -18,8 +17,10 @@ const Wrapper = styled.div`
 const SectionWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  margin-left: 70px;
-  margin-right: 70px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
 `
 
 const Icon = styled.img`
@@ -34,22 +35,68 @@ const Body = styled.div`
   font-family: 'Vollkorn', serif;
 `
 
-const Section = ({ src, alt, body, href }) => (
+const Section = ({ src, alt, body, href, onMouseOver, onMouseOut, onMouse }) => {
+  console.log(onMouse)
+  return (
   <Link href={href}>
-    <SectionWrapper>
+    <SectionWrapper onMouseOver={onMouseOver} onMouseOut={onMouseOut} style={onMouse ? {backgroundColor: 'rgb(238,238,238)'} : {}}>
       <Icon src={src} alt={alt} />
       <Body>{body}</Body>
     </SectionWrapper>
   </Link>
-)
+)}
+export class Header extends Component {
+  constructor(props){
+    super(props);
 
-const Header = () => (
+  this.state = {  onMouseHome: false,
+                  onMouseAbout: false,
+                  onMouseSkills: false,
+                  onMouseRepos: false }
+  }
+
+  render() {
+  return (
     <Wrapper>
-      <Section src={homeImage} alt='home' body='Home' href='/' />
-      <Section src={aboutImage} alt='about' body='About' href='/about' />
-      <Section src={skillsImage} alt='skills' body='Skills' href='/skills' />
-      <Section src={reposImage} alt='repos' body='Repos' href='/repos' />
+      <Section 
+        src={homeImage} 
+        alt='home' 
+        body='Home' 
+        href='/'
+        onMouseOver={() => this.setState({ onMouseHome: true  })}
+        onMouseOut={() => this.setState({ onMouseHome: false })}
+        onMouse={this.state.onMouseHome}
+      />
+      <Section 
+        src={aboutImage} 
+        alt='about' 
+        body='About' 
+        href='/about' 
+        onMouseOver={() => this.setState({ onMouseAbout: true  })}  
+        onMouseOut={() => this.setState({ onMouseAbout: false })}
+        onMouse={this.state.onMouseAbout}
+      />
+      <Section 
+        src={skillsImage} 
+        alt='skills' 
+        body='Skills' 
+        href='/skills' 
+        onMouseOver={() => this.setState({ onMouseSkills: true  })}
+        onMouseOut={() => this.setState({ onMouseSkills: false })}
+        onMouse={this.state.onMouseSkills}
+      />
+      <Section 
+        src={reposImage} 
+        alt='repos' 
+        body='Repos' 
+        href='/repos'
+        onMouseOver={() => this.setState({ onMouseRepos: true  })}  
+        onMouseOut={() => this.setState({ onMouseRepos: false })}
+        onMouse={this.state.onMouseRepos}
+      />
     </Wrapper>
-)
+
+  )
+}}
 
 export default Header
