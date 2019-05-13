@@ -9,6 +9,10 @@ const ProfileCardWrapper = styled.div`
     justify-content: center;
     margin-top: 100px;
     margin-bottom: 50px;
+    @media (max-width: 768px) {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
 `
 
 const ProfileCard = styled.div`
@@ -20,6 +24,12 @@ const MyIcon = styled.img`
     height: 180px;
     width: 180px;
     border-radius: 180px;
+    @media (max-width: 768px) {
+        height: 25px;
+        width: 25px;
+        border-radius: 25px;
+        margin-left: 10px;
+    }
 `
 
 const CardRight = styled.div`
@@ -27,20 +37,35 @@ const CardRight = styled.div`
     flex-direction: column;
     justify-content: center;
     margin-left: 30px;
+    @media (max-width: 768px) {
+        margin-left: 10px;
+    }
 `
 
 const Title = styled.div`
     font-size: 35px;
+    @media (max-width: 768px) {
+        font-size: 15px;
+    }
 `
 
 const ProfileBody = styled.div`
     margin-top: 10px;
     margin-left: 5px;
     font-size: 18px;
+    @media (max-width: 768px) {
+        margin-top: 0px;
+        margin-left: 5px;
+        margin-right: 5px;
+        font-size: 10px;
+    }
 `
 
 const History = styled.div`
     margin-top: 50px;
+    @media (max-width: 768px) {
+        margin-top: 25px;
+    }
 `
 
 const HistoryCardWrapper = styled.div`
@@ -49,35 +74,57 @@ const HistoryCardWrapper = styled.div`
     width: 500px;
     margin-top: 10px;
     margin-left: 5px;
+    @media (max-width: 768px) {
+        width: 300px;
+    }
 `
 
 const Age = styled.div`
     width: 120px;
     font-size: 18px;
+    @media (max-width: 768px) {
+        width: 80px;
+        font-size: 10px;
+    }
 `
 
 const HistoryBodyWrapper = styled.div`
     margin-left: 30px;
+    @media (max-width: 768px) {
+        margin-left: 0px;
+    }
 `
 
 const HistoryBodyTitle = styled.div`
     display: flex;
     flex-direction: row;
+    @media (max-width: 768px) {
+        height: 15px;
+    }
 `
 
 const HistoryTitle = styled.div`
     font-size: 18px;
     font-weight: bold;
+    @media (max-width: 768px) {
+        font-size: 10px;
+    }
 `
 
 const HistoryBody2 = styled.div`
     font-size: 15px;
     margin-left: 5px;
     margin-top: 6px;
+    @media (max-width: 768px) {
+        font-size: 10px;
+    }
 `
 const HistoryBody3 = styled.div`
     font-size: 15px;
     margin-left: 5px;
+    @media (max-width: 768px) {
+        font-size: 10px;
+    }
 `
 
 const Links = styled.div`
@@ -100,12 +147,24 @@ const LinkWrapper = styled.div`
 const LinkBody = styled.div`
     font-size: 18px;
     width: 80px;
+    @media (max-width: 768px) {
+        font-size: 10px;
+        width: 48px;
+        height: 10px;
+
+    }
 `
 
 const LinkIcon = styled.img`
     width: 12px;
     height: 12px;
     margin-top: 8px;
+    @media (max-width: 768px) {
+        width: 8px;
+        height: 8px;
+        margin-top: 0px;
+        padding-bottom: 6px;
+    }
 `
 
 const HistoryCard = ({ age, title, body2, body3, url }) => (
@@ -116,7 +175,7 @@ const HistoryCard = ({ age, title, body2, body3, url }) => (
                 <HistoryTitle>{title}</HistoryTitle>
                 { url ?
                 <a href={url}>
-                    <LinkIcon src={LinkImage} alt='link-image' style={{ marginLeft: 8 }} />
+                    <LinkIcon src={LinkImage} alt='link-image' style={{ marginLeft: 4 }} />
                 </a> : <div></div>
                 }
             </HistoryBodyTitle>
