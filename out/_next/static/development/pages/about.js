@@ -13186,7 +13186,7 @@ var HistoryCard = function HistoryCard(_ref) {
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!**************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fabout&absolutePagePath=%2FUsers%2Fanashige%2Fproject%2Fyotaiyo-portfolio-next-js%2Fpages%2Fabout.js ***!
   \**************************************************************************************************************************************************/
@@ -13209,5 +13209,5 @@ module.exports = dll_6dc2816e14fab51b8269;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=about.js.map
