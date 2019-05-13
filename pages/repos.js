@@ -6,10 +6,11 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
 `
 
 const ReposWrapper = styled.div`
-    margin-top: 50px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -33,6 +34,7 @@ const ReposTitleWrapper = styled.div`
 
 const ReposTitle = styled.div`
     font-size: 25px;
+    font-weight: bold;
 `
 
 const LinkIcon = styled.img`
