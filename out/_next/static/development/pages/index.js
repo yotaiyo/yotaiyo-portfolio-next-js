@@ -48,15 +48,15 @@ var Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_7__["default"].div.with
 var SectionWrapper = styled_components__WEBPACK_IMPORTED_MODULE_7__["default"].div.withConfig({
   displayName: "Header__SectionWrapper",
   componentId: "sc-7axcti-1"
-})(["display:flex;flex-direction:row;padding-top:20px;padding-bottom:20px;padding-left:50px;padding-right:50px;"]);
+})(["display:flex;flex-direction:row;padding-top:20px;padding-bottom:20px;padding-left:50px;padding-right:50px;@media (max-width:768px){padding-top:10px;padding-bottom:10px;padding-left:20px;padding-right:20px;}"]);
 var Icon = styled_components__WEBPACK_IMPORTED_MODULE_7__["default"].img.withConfig({
   displayName: "Header__Icon",
   componentId: "sc-7axcti-2"
-})(["width:20px;height:20px;margin-top:5px;"]);
+})(["width:20px;height:20px;margin-top:5px;@media (max-width:768px){width:10px;height:10px;margin-top:4px;}"]);
 var Body = styled_components__WEBPACK_IMPORTED_MODULE_7__["default"].div.withConfig({
   displayName: "Header__Body",
   componentId: "sc-7axcti-3"
-})(["font-size:20px;margin-left:8px;font-family:'Vollkorn',serif;"]);
+})(["font-size:20px;margin-left:8px;font-family:'Vollkorn',serif;@media (max-width:768px){font-size:12px;}"]);
 
 var Section = function Section(_ref) {
   var src = _ref.src,
@@ -71,7 +71,7 @@ var Section = function Section(_ref) {
     href: href,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 55
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(SectionWrapper, {
@@ -82,7 +82,7 @@ var Section = function Section(_ref) {
     } : {},
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 56
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Icon, {
@@ -90,13 +90,13 @@ var Section = function Section(_ref) {
     alt: alt,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 57
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Body, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 58
     },
     __self: this
   }, body)));
@@ -130,7 +130,7 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Wrapper, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60
+          lineNumber: 74
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Section, {
@@ -151,7 +151,7 @@ function (_Component) {
         onMouse: this.state.onMouseHome,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61
+          lineNumber: 75
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Section, {
@@ -172,7 +172,7 @@ function (_Component) {
         onMouse: this.state.onMouseAbout,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 70
+          lineNumber: 84
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Section, {
@@ -193,7 +193,7 @@ function (_Component) {
         onMouse: this.state.onMouseSkills,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 79
+          lineNumber: 93
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(Section, {
@@ -214,7 +214,7 @@ function (_Component) {
         onMouse: this.state.onMouseRepos,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88
+          lineNumber: 102
         },
         __self: this
       }));
@@ -13149,11 +13149,11 @@ var _jsxFileName = "/Users/anashige/project/yotaiyo-portfolio-next-js/pages/inde
 var Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "pages__Wrapper",
   componentId: "sc-1pni9zn-0"
-})(["padding-top:200px;padding-bottom:200px;"]);
+})(["padding-top:200px;padding-bottom:200px;@media (max-width:768px){padding-top:150px;padding-bottom:150px;}"]);
 var MyIcon = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].img.withConfig({
   displayName: "pages__MyIcon",
   componentId: "sc-1pni9zn-1"
-})(["height:250px;width:250px;border-radius:250px;"]);
+})(["height:250px;width:250px;border-radius:250px;@media (max-width:768px){height:150px;width:150px;border-radius:150px;}"]);
 var MyIconWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "pages__MyIconWrapper",
   componentId: "sc-1pni9zn-2"
@@ -13161,24 +13161,24 @@ var MyIconWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].di
 var Title = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "pages__Title",
   componentId: "sc-1pni9zn-3"
-})(["text-align:center;font-size:70px;margin-top:30px;color:white;"]);
+})(["text-align:center;font-size:70px;margin-top:30px;color:white;@media (max-width:768px){font-size:35px;}"]);
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_MyLayout_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 42
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Wrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 43
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(MyIconWrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 44
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(MyIcon, {
@@ -13186,13 +13186,13 @@ var Title = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withCo
     alt: "my-icon",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 45
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Title, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 47
     },
     __self: this
   }, "Welcome to Yotaiyo's Portfolio")));
