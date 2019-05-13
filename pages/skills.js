@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Layout from '../components/MyLayout.js'
 import styled from 'styled-components'
-import arrowImage from '../images/arrow.png'
 
 const Wrapper = styled.div`
     display: flex;
@@ -22,12 +21,6 @@ const SkillsTitleWrapper = styled.div`
     flex-direction: row;
     padding-top: 10px;
     padding-bottom: 5px;
-`
-
-const Arrow = styled.img`
-    width: 30px;
-    height: 30px;
-    margin-top: 7px;
 `
 
 const Title = styled.div`
@@ -67,9 +60,8 @@ const StarBack = styled.div`
     color: #ccc;
 `
 
-const SkillsTitle = ({ src, alt, title }) => (
+const SkillsTitle = ({ title }) => (
     <SkillsTitleWrapper>
-        <Arrow src={src} alt={alt} />
         <Title>{title}</Title>
     </SkillsTitleWrapper>
 ) 
@@ -93,13 +85,13 @@ class Skills extends Component {
         <Layout>
             <Wrapper>
                 <SkillsWrapper>
-                    <SkillsTitle src={arrowImage} alt='arrow-image' title='Languages' />
+                    <SkillsTitle title='Languages' />
                         <SkillsCard body='Python3' width='80%' />
                         <SkillsCard body='TypeScript' width='60%' />
                         <SkillsCard body='JavaScript' width='60%' />
                         <SkillsCard body='HTML / CSS' width='60%' />
                         <SkillsCard body='Ruby' width='20%' />
-                    <SkillsTitle src={arrowImage} alt='arrow-image' title='Frameworks & Libraries' />
+                    <SkillsTitle title='Frameworks & Libraries' />
                         <SkillsCard body='React Native' width='80%' />
                         <SkillsCard body='React' width='60%' />
                         <SkillsCard body='Next.js' width='40%' />
@@ -109,7 +101,7 @@ class Skills extends Component {
                         <SkillsCard body='Keras' width='80%' />
                         <SkillsCard body='TensorFlow' width='40%' />
                         <SkillsCard body='Scikit-learn' width='60%' />
-                    <SkillsTitle src={arrowImage} alt='arrow-image' title='Others' />
+                    <SkillsTitle title='Others' />
                         <SkillsCard body='Mac OS' width='80%' />
                         <SkillsCard body='Ubuntu' width='80%' />
                         <SkillsCard body='Windows' width='60%' />
