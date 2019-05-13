@@ -21,18 +21,32 @@ const SectionWrapper = styled.div`
   padding-bottom: 20px;
   padding-left: 50px;
   padding-right: 50px;
+  @media (max-width: 768px) {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 `
 
 const Icon = styled.img`
   width: 20px;
   height: 20px;
   margin-top: 5px;
+  @media (max-width: 768px) {
+    width: 10px;
+    height: 10px;
+    margin-top: 4px;
+  }
 `
 
 const Body = styled.div`
   font-size: 20px;
   margin-left: 8px;
   font-family: 'Vollkorn', serif;
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `
 
 const Section = ({ src, alt, body, href, onMouseOver, onMouseOut, onMouse }) => {
