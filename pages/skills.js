@@ -21,7 +21,7 @@ const SkillsTitleWrapper = styled.div`
     display: flex;
     flex-direction: row;
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
 `
 
 const Arrow = styled.img`
@@ -60,7 +60,7 @@ const StarFront = styled.div`
     top: 0;
     left: 0;
     overflow: hidden;
-    color: #ffcc33;
+    color: #FFFF00;
 `
 
 const StarBack = styled.div`
