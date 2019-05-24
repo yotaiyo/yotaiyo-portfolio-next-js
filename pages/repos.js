@@ -159,6 +159,12 @@ export default () => (
                 </ReposLeft>
                 <ReposRight>
                     <ReposCard 
+                        title='yotaiyo-to-do-app-react' 
+                        body='reactで作ったTo-Do App。募集期限の設定やソートができる。ログイン機能とか付けてバックエンドも書こうかと思っている。' 
+                        keywords='JavaScript, React, Firebase'
+                        url='https://github.com/yotaiyo/yotaiyo-to-do-app-react'
+                    />
+                    <ReposCard 
                         title='weather-app-react' 
                         body='お天気APIを叩いて、向こう3日間の情報を表示する。' 
                         keywords='JavaScript, React, Github.io'
