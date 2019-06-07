@@ -139,6 +139,12 @@ export default () => (
                         url='https://github.com/yotaiyo/yotaiyo-portfolio-next-js'
                     />
                     <ReposCard 
+                        title='yotaiyo-to-do-app-react-rails' 
+                        body='under construction。フロント: React、バックエンド: RailsでTo-Do App。' 
+                        keywords='TypeScript, Next.js, Rails'
+                        url='https://github.com/yotaiyo/yotaiyo-to-do-app-react-rails'
+                    />
+                    <ReposCard 
                         title='yotaiyo-portfolio-react' 
                         body='ポートフォリオ第1弾。' 
                         keywords='JavaScript, React, Github.io'
