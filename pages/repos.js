@@ -140,7 +140,7 @@ export default () => (
                     />
                     <ReposCard 
                         title='yotaiyo-to-do-app-react-rails' 
-                        body='under construction。フロント: React、バックエンド: RailsでTo-Do App。' 
+                        body='under construction。フロントエンド: React、バックエンド: RailsでTo-Do App。' 
                         keywords='TypeScript, Next.js, Rails'
                         url='https://github.com/yotaiyo/yotaiyo-to-do-app-react-rails'
                     />
