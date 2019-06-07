@@ -50,7 +50,6 @@ const Body = styled.div`
 `
 
 const Section = ({ src, alt, body, href, onMouseOver, onMouseOut, onMouse }) => {
-  console.log(onMouse)
   return (
   <Link href={href}>
     <SectionWrapper onMouseOver={onMouseOver} onMouseOut={onMouseOut} style={onMouse ? {backgroundColor: 'rgb(238,238,238)'} : {}}>
