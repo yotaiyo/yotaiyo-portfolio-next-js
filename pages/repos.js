@@ -145,24 +145,30 @@ export default () => (
                         url='https://github.com/yotaiyo/yotaiyo-portfolio-react'
                     />
                     <ReposCard 
-                        title='music-auto-tagging' 
-                        body='楽曲波形から、そのジャンルや楽器、ムードといったタグを予測するレポジトリ。MagnaTagATuneと呼ばれる大規模データセットを用いる。' 
-                        keywords='Python3, Keras, TensorFlow, Scikit-learn, GPU'
-                        url='https://github.com/yotaiyo/music-auto-tagging'
-                    />
-                    <ReposCard 
                         title='music-genre-classification' 
                         body='楽曲波形から、そのジャンルを予測するレポジトリ。GTZANと呼ばれるデータセットを用いる。' 
                         keywords='Python3, Keras, TensorFlow, Scikit-learn, GPU'
                         url='https://github.com/yotaiyo/music-genre-classification'
                     />
+                    <ReposCard 
+                        title='jazz-genre-classification-cnn' 
+                        body='ジャズ好きが高じて作成したレポジトリ2。音源波形からBopなどのサブジャンルを予測する。' 
+                        keywords='Python3, TensorFlow, Scikit-learn'
+                        url='https://github.com/yotaiyo/jazz-genre-classification-cnn'
+                    />
                 </ReposLeft>
                 <ReposRight>
                     <ReposCard 
                         title='yotaiyo-to-do-app-react' 
-                        body='reactで作ったTo-Do App。募集期限の設定やソートができる。ログイン機能とか付けてバックエンドも書こうかと思っている。' 
+                        body='To-Do App。To-Doのフィルタリングや締切の設定、ソートができる。React Hooksを使用' 
                         keywords='JavaScript, React, Firebase'
                         url='https://github.com/yotaiyo/yotaiyo-to-do-app-react'
+                    />
+                    <ReposCard 
+                        title='music-auto-tagging' 
+                        body='楽曲波形から、そのジャンルや楽器、ムードといったタグを予測するレポジトリ。MagnaTagATuneと呼ばれる大規模データセットを用いる。' 
+                        keywords='Python3, Keras, TensorFlow, Scikit-learn, GPU'
+                        url='https://github.com/yotaiyo/music-auto-tagging'
                     />
                     <ReposCard 
                         title='weather-app-react' 
@@ -175,12 +181,6 @@ export default () => (
                         body='ジャズ好きが高じて作成したレポジトリ。音源波形からBopなどのサブジャンルを予測する。' 
                         keywords='Python3, Scikit-learn'
                         url='https://github.com/yotaiyo/jazz-genre-classification-svm'
-                    />
-                    <ReposCard 
-                        title='jazz-genre-classification-cnn' 
-                        body='ジャズ好きが高じて作成したレポジトリ2。音源波形からBopなどのサブジャンルを予測する。' 
-                        keywords='Python3, TensorFlow, Scikit-learn'
-                        url='https://github.com/yotaiyo/jazz-genre-classification-cnn'
                     />
                 </ReposRight>
             </ReposWrapper>
