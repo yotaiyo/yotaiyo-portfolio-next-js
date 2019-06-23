@@ -102,8 +102,6 @@ const SkillsCard = ({ body, width }) => (
     </SkillsCardWrapper>
 )
 
-
-
 class Skills extends Component {
     render() {
 
@@ -119,11 +117,11 @@ class Skills extends Component {
                         <SkillsCard body='Ruby' width='20%' />
                     <SkillsTitle title='Frameworks & Libraries' />
                         <SkillsCard body='React Native' width='80%' />
-                        <SkillsCard body='React' width='60%' />
-                        <SkillsCard body='Next.js' width='40%' />
+                        <SkillsCard body='React' width='80%' />
+                        <SkillsCard body='Next.js' width='60%' />
                         <SkillsCard body='jQuery' width='40%' />
                         <SkillsCard body='Bootstrap' width='60%' />
-                        <SkillsCard body='Ruby on Rails' width='20%' />
+                        <SkillsCard body='Ruby on Rails' width='40%' />
                         <SkillsCard body='Keras' width='80%' />
                         <SkillsCard body='TensorFlow' width='40%' />
                         <SkillsCard body='Scikit-learn' width='60%' />
