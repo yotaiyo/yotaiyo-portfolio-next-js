@@ -133,22 +133,22 @@ export default () => (
             <ReposWrapper>
                 <ReposLeft>
                     <ReposCard 
-                        title='yotaiyo-portfolio-next-js' 
-                        body='このポートフォリオです。' 
-                        keywords='JavaScript, Next.js, Firebase'
-                        url='https://github.com/yotaiyo/yotaiyo-portfolio-next-js'
-                    />
-                    <ReposCard 
                         title='yotaiyo-to-do-app-react-rails' 
-                        body='under construction。フロントエンド: React、バックエンド: RailsでTo-Do App。' 
+                        body='フロントエンドからバックエンドまでを通して、個人で簡単なウェブアプリケーションを作成できるようになることを目的に作成ToDoアプリ。' 
                         keywords='TypeScript, Next.js, Rails'
                         url='https://github.com/yotaiyo/yotaiyo-to-do-app-react-rails'
                     />
                     <ReposCard 
-                        title='yotaiyo-portfolio-react' 
-                        body='ポートフォリオ第1弾。' 
+                        title='yotaiyo-to-do-app-react-hooks' 
+                        body='To-Do App。To-Doのフィルタリングや締切の設定、ソートができる。React Hooksを使用' 
+                        keywords='JavaScript, React, Firebase'
+                        url='https://github.com/yotaiyo/yotaiyo-to-do-app-react-hooks'
+                    />
+                    <ReposCard 
+                        title='weather-app-react' 
+                        body='お天気APIを叩いて、向こう3日間の情報を表示する。' 
                         keywords='JavaScript, React, Github.io'
-                        url='https://github.com/yotaiyo/yotaiyo-portfolio-react'
+                        url='https://github.com/yotaiyo/weather-app-react'
                     />
                     <ReposCard 
                         title='music-genre-classification' 
@@ -165,22 +165,22 @@ export default () => (
                 </ReposLeft>
                 <ReposRight>
                     <ReposCard 
-                        title='yotaiyo-to-do-app-react' 
-                        body='To-Do App。To-Doのフィルタリングや締切の設定、ソートができる。React Hooksを使用' 
-                        keywords='JavaScript, React, Firebase'
-                        url='https://github.com/yotaiyo/yotaiyo-to-do-app-react'
+                        title='yotaiyo-portfolio-next-js' 
+                        body='このポートフォリオです。' 
+                        keywords='JavaScript, Next.js, Firebase'
+                        url='https://github.com/yotaiyo/yotaiyo-portfolio-next-js'
+                    />
+                    <ReposCard 
+                        title='yotaiyo-portfolio-react' 
+                        body='ポートフォリオ第1弾。' 
+                        keywords='JavaScript, React, Github.io'
+                        url='https://github.com/yotaiyo/yotaiyo-portfolio-react'
                     />
                     <ReposCard 
                         title='music-auto-tagging' 
                         body='楽曲波形から、そのジャンルや楽器、ムードといったタグを予測するレポジトリ。MagnaTagATuneと呼ばれる大規模データセットを用いる。' 
                         keywords='Python3, Keras, TensorFlow, Scikit-learn, GPU'
                         url='https://github.com/yotaiyo/music-auto-tagging'
-                    />
-                    <ReposCard 
-                        title='weather-app-react' 
-                        body='お天気APIを叩いて、向こう3日間の情報を表示する。' 
-                        keywords='JavaScript, React, Github.io'
-                        url='https://github.com/yotaiyo/weather-app-react'
                     />
                     <ReposCard 
                         title='jazz-genre-classification-svm' 
