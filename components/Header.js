@@ -12,6 +12,10 @@ const Wrapper = styled.div`
   justify-content: center;
   box-shadow: 0px 5px 10px -3px rgba(0,0,0,0.5);
   background-color: white;
+  position: fixed; 
+  top: 0px;                     
+  width: 100%;
+  z-index: 1;
 `
 
 const SectionWrapper = styled.div`

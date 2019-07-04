@@ -6,10 +6,10 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 100px;
     margin-bottom: 50px;
     @media (max-width: 768px) {
-        margin-top: 25px;
+        margin-top: 50px;
         margin-bottom: 25px;
     }
 `

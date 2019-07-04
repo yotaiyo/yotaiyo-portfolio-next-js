@@ -7,10 +7,10 @@ const ProfileCardWrapper = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 150px;
     margin-bottom: 50px;
     @media (max-width: 768px) {
-        margin-top: 50px;
+        margin-top: 70px;
         margin-bottom: 50px;
     }
 `
