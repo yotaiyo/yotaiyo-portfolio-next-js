@@ -6,10 +6,10 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;   
-    margin-top: 50px;
+    margin-top: 100px;
     margin-bottom: 50px;
     @media (max-width: 768px) {
-        margin-top: 25px;
+        margin-top: 50px;
         margin-bottom: 25px;
     }
 
@@ -67,6 +67,7 @@ const Star = styled.div`
     width: 5em;
     height: 1em;
     font-size: 25px;
+    z-index: 0;
     @media (max-width: 768px) {
         width: 5em;
         height: 0.5em;
@@ -80,6 +81,7 @@ const StarFront = styled.div`
     left: 0;
     overflow: hidden;
     color: #FFFF00;
+    z-index: 0;
 `
 
 const StarBack = styled.div`
