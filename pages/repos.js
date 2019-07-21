@@ -133,10 +133,10 @@ export default () => (
             <ReposWrapper>
                 <ReposLeft>
                     <ReposCard 
-                        title='yotaiyo-to-do-app-react-rails' 
-                        body='フロントエンドからバックエンドまでを通して、個人でウェブアプリケーションを作成できるようになることを目的に作成したToDoアプリ。' 
-                        keywords='TypeScript, Next.js, Ruby on Rails'
-                        url='https://github.com/yotaiyo/yotaiyo-to-do-app-react-rails'
+                        title='yotaiyo-tinder-card' 
+                        body='TinderのカードUIの再現。' 
+                        keywords='TypeScript, React'
+                        url='https://github.com/yotaiyo/yotaiyo-tinder-card'
                     />
                     <ReposCard 
                         title='yotaiyo-to-do-app-react-hooks' 
@@ -164,6 +164,12 @@ export default () => (
                     />
                 </ReposLeft>
                 <ReposRight>
+                    <ReposCard 
+                        title='yotaiyo-to-do-app-react-rails' 
+                        body='フロントエンドからバックエンドまでを通して、個人でウェブアプリケーションを作成できるようになることを目的に作成したToDoアプリ。' 
+                        keywords='TypeScript, Next.js, Ruby on Rails'
+                        url='https://github.com/yotaiyo/yotaiyo-to-do-app-react-rails'
+                    />
                     <ReposCard 
                         title='yotaiyo-portfolio-next-js' 
                         body='このポートフォリオです。' 
