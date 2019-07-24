@@ -133,16 +133,16 @@ export default () => (
             <ReposWrapper>
                 <ReposLeft>
                     <ReposCard 
-                        title='yotaiyo-tinder-card' 
+                        title='tinder-card' 
                         body='TinderのカードUIの再現。' 
                         keywords='TypeScript, React'
-                        url='https://github.com/yotaiyo/yotaiyo-tinder-card'
+                        url='https://github.com/yotaiyo/tinder-card'
                     />
                     <ReposCard 
-                        title='yotaiyo-to-do-app-react-hooks' 
-                        body='To-Do App。To-Doのフィルタリングや締切の設定、ソートができる。React Hooksを使用' 
+                        title='to-do-app-front-end' 
+                        body='タスク管理アプリのフロントエンド部。タスクのフィルタリングや締切の設定、ソートができる。React Hooksを使用' 
                         keywords='JavaScript, React, Firebase'
-                        url='https://github.com/yotaiyo/yotaiyo-to-do-app-react-hooks'
+                        url='https://github.com/yotaiyo/to-do-app-front-end'
                     />
                     <ReposCard 
                         title='weather-app-react' 
@@ -165,22 +165,22 @@ export default () => (
                 </ReposLeft>
                 <ReposRight>
                     <ReposCard 
-                        title='yotaiyo-to-do-app-react-rails' 
-                        body='フロントエンドからバックエンドまでを通して、個人でウェブアプリケーションを作成できるようになることを目的に作成したToDoアプリ。' 
+                        title='to-do-app' 
+                        body='タスクの追加、完了、フィルタリング、期限の設定や認証といった機能が実装されているタスク管理アプリケーション。' 
                         keywords='TypeScript, Next.js, Ruby on Rails'
-                        url='https://github.com/yotaiyo/yotaiyo-to-do-app-react-rails'
+                        url='https://github.com/yotaiyo/to-do-app'
                     />
                     <ReposCard 
-                        title='yotaiyo-portfolio-next-js' 
+                        title='portfolio' 
                         body='このポートフォリオです。' 
                         keywords='JavaScript, Next.js, Firebase'
-                        url='https://github.com/yotaiyo/yotaiyo-portfolio-next-js'
+                        url='https://github.com/yotaiyo/portfolio'
                     />
                     <ReposCard 
-                        title='yotaiyo-portfolio-react' 
+                        title='portfolio-prototype' 
                         body='ポートフォリオ第1弾。' 
                         keywords='JavaScript, React, Github.io'
-                        url='https://github.com/yotaiyo/yotaiyo-portfolio-react'
+                        url='https://github.com/yotaiyo/portfolio-prototype'
                     />
                     <ReposCard 
                         title='music-auto-tagging' 
