@@ -1,8 +1,9 @@
-# yotaiyo-portfolio-next-js
+# portfolio
 
 ## OverView
 私のポートフォリオサイトです。  
-シンプルなデザインを心がけました。
+シンプルなデザインを心がけました。  
+レスポンシブ対応済。
 
 ## 使用した技術
 - JavaScript
@@ -11,8 +12,8 @@
 
 ## Setup
 ```
-git clone git@github.com:yotaiyo/yotaiyo-portfolio-next-js.git
-cd yotaiyo-portfolio-next-js
+git clone git@github.com:yotaiyo/portfolio.git
+cd portfolio
 yarn
 yarn run dev
 ```
