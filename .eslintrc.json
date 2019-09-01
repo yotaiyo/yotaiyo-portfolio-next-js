@@ -1,0 +1,23 @@
+{
+    "extends": ["standard", "prettier"],
+    "env": {
+      "browser": true
+    },
+    "plugins": ["prettier", "react"],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "singleQuote": true,
+          "semi": false
+        }
+      ],
+      "yoda": 0,
+      "no-unused-vars": 1,
+      "react/jsx-uses-react": "error",
+      "react/jsx-uses-vars": "error"
+    },
+    "globals": {
+      "$": false
+    }
+}
