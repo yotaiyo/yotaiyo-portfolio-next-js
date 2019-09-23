@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   position: fixed;
   width: 100%;
   z-index: 1;
-  padding: 24px 0 24px 0;
+  padding: 20px 0 20px 0;
   font-weight: 250;
   letter-spacing: 1px;
   color: #fff;
@@ -19,7 +19,7 @@ const Wrapper = styled.div`
 `
 
 const HeaderTitle = styled.div`
-  font-size: 28px;
+  font-size: 24px;
   margin-left: 40px;
 `
 
@@ -28,7 +28,7 @@ const SectionWrapper = styled.div`
 `
 
 const Section = styled.span`
-  font-size: 28px;
+  font-size: 24px;
   margin-left: 60px;
 `
 
