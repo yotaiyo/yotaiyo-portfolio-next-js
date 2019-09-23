@@ -13,8 +13,8 @@ export default class MyApp extends App {
             body {
               margin: 0;
               flex: 1;
-              background: linear-gradient(90deg, #fa709a, #fbab7e, #f7ce68);
-              font-family: 'Vollkorn', serif;
+              font-family: -apple-system, BlinkMacSystemFont, Roboto,
+                Hiragino Sans, sans-serif;
             }
           `}
         />
