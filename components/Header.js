@@ -12,8 +12,6 @@ const Wrapper = styled.div`
   width: 100%;
   z-index: 1;
   padding: 20px 0 20px 0;
-  font-weight: 250;
-  letter-spacing: 1px;
   color: #fff;
   font-size: 28px;
 `

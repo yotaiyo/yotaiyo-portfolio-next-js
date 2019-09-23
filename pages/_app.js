@@ -15,6 +15,8 @@ export default class MyApp extends App {
               flex: 1;
               font-family: -apple-system, BlinkMacSystemFont, Roboto,
                 Hiragino Sans, sans-serif;
+              font-weight: 250;
+              letter-spacing: 1px;
             }
           `}
         />
