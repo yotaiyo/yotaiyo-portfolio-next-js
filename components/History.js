@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  padding-top: 100px;
+  margin-top: 100px;
+  padding: 30px;
 `
 
 const Title = styled.h1`
@@ -13,35 +14,31 @@ const Title = styled.h1`
   width: 170px;
 `
 
-const ItemsWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 60px;
+const CirclAndCardWrapper = styled.div``
+
+const Circle = styled.div`
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #00c4cc;
+  position: relative;
+  top: 150px;
+  left: -55px;
 `
 
-const Period = styled.div`
-  font-size: 24px;
-  font-weight: bold;
-  padding-top: 100px;
-  padding-right: 50px;
-  margin-left: 60px;
-  margin-right: 60px;
-  color: #54595d;
-  border-right: 2px solid #cbced0;
-  white-space: nowrap;
-  &::after {
-    content: '●';
-    color: #00c4cc;
-    position: absolute;
-    margin-left: 41px;
-  }
+const CardsWrapper = styled.div`
+  border-left: 2px solid #cbced0;
+  padding-left: 30px;
+  padding-bottom: 50px;
+  margin: 0 auto;
+  max-width: 1000px;
 `
 
 const CardWrapper = styled.div`
   border-radius: 30px;
   box-shadow: 0 0 8px rgb(0, 0, 0, 0.5);
-  padding: 30px 120px 30px 120px;
-  margin-right: 60px;
+  padding: 30px;
+  margin-left: 30px;
 `
 
 const CardTitle = styled.div`
@@ -106,7 +103,7 @@ export const History = () => {
     },
     {
       period: '2019.12 ~ 01',
-      title: 'Apollo インターン',
+      title: 'Apollo 短期インターン',
       body:
         'webエンジニアリングに関する基礎を学ぶ、その後、業務委託のアプリ開発案件に参加。',
       tags: [
@@ -122,19 +119,16 @@ export const History = () => {
   return (
     <Wrapper>
       <Title>History</Title>
-      {Items.map((item, index) => {
-        return (
-          <ItemsWrapper>
-            <Period>{item.period}</Period>
-            <Card
-              title={item.title}
-              body={item.body}
-              tags={item.tags}
-              key={index}
-            />
-          </ItemsWrapper>
-        )
-      })}
+      <CardsWrapper>
+        {Items.map((item, index) => {
+          return (
+            <CirclAndCardWrapper>
+              <Circle />
+              <Card title={item.title} body={item.body} tags={item.tags} />
+            </CirclAndCardWrapper>
+          )
+        })}
+      </CardsWrapper>
     </Wrapper>
   )
 }
