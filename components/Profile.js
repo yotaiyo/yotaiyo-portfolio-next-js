@@ -2,7 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import IconImage from '../images/icon.png'
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+  padding-top: 150px;
+`
 
 const Title = styled.h1`
   font-size: 48px;
@@ -23,11 +25,12 @@ const Icon = styled.img`
   width: 300px;
   border-radius: 30px;
   margin-right: 40px;
+  box-shadow: 0 0 8px rgb(0, 0, 0, 0.5);
 `
 
 const ItemsWrapper = styled.div`
   margin-left: 60px;
-  margin-top: 12px;
+  margin-top: 8px;
 `
 
 const ItemTitle = styled.div`
