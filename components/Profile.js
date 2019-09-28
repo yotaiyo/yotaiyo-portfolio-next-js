@@ -69,7 +69,7 @@ export const Profile = () => {
         <Icon src={IconImage} />
         <ItemsWrapper>
           {items.map((item, index) => {
-            return <ItemTitle key={index}>{item.title}</ItemTitle>
+            return <ItemTitle key={index}>{item.title + ':'}</ItemTitle>
           })}
         </ItemsWrapper>
         <ItemsWrapper>

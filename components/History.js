@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 const Wrapper = styled.div`
   margin-top: 100px;
-  padding: 30px;
 `
 
 const Title = styled.h1`
@@ -12,49 +11,48 @@ const Title = styled.h1`
   margin: 0 auto;
   border-bottom: 2px solid #3e4448;
   width: 170px;
-`
-
-const CirclAndCardWrapper = styled.div``
-
-const Circle = styled.div`
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #00c4cc;
-  position: relative;
-  top: 150px;
-  left: -55px;
+  margin-bottom: 40px;
 `
 
 const CardsWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  flex: 1;
+`
+
+const Cards = styled.div`
   border-left: 2px solid #cbced0;
-  padding-left: 30px;
-  padding-bottom: 50px;
-  margin: 0 auto;
-  max-width: 1000px;
+  flex: 0.5;
 `
 
 const CardWrapper = styled.div`
   border-radius: 30px;
   box-shadow: 0 0 8px rgb(0, 0, 0, 0.5);
-  padding: 30px;
   margin-left: 30px;
+  height: 200px;
+  width: 800px;
+  flex: 1;
 `
 
 const CardTitle = styled.div`
   font-size: 28px;
   font-weight: bold;
   color: #3e4448;
+  margin-top: 20px;
+  height: 30px;
 `
 
-const CardBody = styled.p`
+const CardBodyWrapper = styled.div`
+  margin-top: 20px;
+  height: 80px;
+`
+
+const CardBody = styled.div`
   font-size: 20px;
   color: #54595d;
 `
 
-const CardTagsWrapper = styled.div`
-  margin-top: 40px;
-`
+const CardTagsWrapper = styled.div``
 
 const CardTag = styled.span`
   font-size: 20px;
@@ -70,15 +68,42 @@ const Card = ({ title, body, tags }) => {
   return (
     <CardWrapper>
       <CardTitle>{title}</CardTitle>
-      {body.split('\n').map((line, index) => {
-        return <CardBody key={index}>{line}</CardBody>
-      })}
+      <CardBodyWrapper>
+        {body.split('\n').map((line, index) => {
+          return <CardBody key={index}>{line}</CardBody>
+        })}
+      </CardBodyWrapper>
       <CardTagsWrapper>
         {tags.map((tag, index) => {
           return <CardTag key={index}>{tag}</CardTag>
         })}
       </CardTagsWrapper>
     </CardWrapper>
+  )
+}
+
+const CircleAndCardWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+`
+
+const Circle = styled.div`
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #00c4cc;
+  position: relative;
+  right: 25px;
+  top: 75px;
+`
+
+const CircleAndCard = ({ title, body, tags, index }) => {
+  return (
+    <CircleAndCardWrapper style={{ marginTop: index === 0 ? 0 : null }}>
+      <Circle />
+      <Card title={title} body={body} tags={tags} />
+    </CircleAndCardWrapper>
   )
 }
 
@@ -122,14 +147,19 @@ export const History = () => {
     <Wrapper>
       <Title>History</Title>
       <CardsWrapper>
-        {Items.map((item, index) => {
-          return (
-            <CirclAndCardWrapper>
-              <Circle />
-              <Card title={item.title} body={item.body} tags={item.tags} />
-            </CirclAndCardWrapper>
-          )
-        })}
+        <Cards>
+          {Items.map((item, index) => {
+            return (
+              <CircleAndCard
+                title={item.title}
+                body={item.body}
+                tags={item.tags}
+                index={index}
+                key={index}
+              />
+            )
+          })}
+        </Cards>
       </CardsWrapper>
     </Wrapper>
   )
