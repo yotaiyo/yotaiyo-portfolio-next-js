@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
+import { Layout } from '../public/Layout'
 
 const Wrapper = styled.div`
   display: flex;
@@ -13,11 +14,11 @@ const Wrapper = styled.div`
   z-index: 1;
   padding: 20px 0 20px 0;
   color: #fff;
-  font-size: 28px;
+  font-size: ${Layout.Text.Normal}px;
 `
 
 const HeaderTitle = styled.div`
-  font-size: 24px;
+  font-size: ${Layout.Text.Normal}px;
   margin-left: 40px;
 `
 
@@ -26,7 +27,7 @@ const SectionWrapper = styled.div`
 `
 
 const Section = styled.span`
-  font-size: 24px;
+  font-size: ${Layout.Text.Normal}px;
   margin-left: 60px;
 `
 

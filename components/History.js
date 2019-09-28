@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Layout } from '../public/Layout'
 
 const Wrapper = styled.div`
   margin-top: 100px;
 `
 
 const Title = styled.h1`
-  font-size: 48px;
+  font-size: ${Layout.Text.Largest}px;
   color: #3e4448;
   margin: 0 auto;
   border-bottom: 2px solid #3e4448;
@@ -35,8 +36,7 @@ const CardWrapper = styled.div`
 `
 
 const CardTitle = styled.div`
-  font-size: 28px;
-  font-weight: bold;
+  font-size: ${Layout.Text.Large}px;
   color: #3e4448;
   margin-top: 20px;
   height: 30px;
@@ -48,14 +48,14 @@ const CardBodyWrapper = styled.div`
 `
 
 const CardBody = styled.div`
-  font-size: 20px;
+  font-size: ${Layout.Text.Small}px;
   color: #54595d;
 `
 
 const CardTagsWrapper = styled.div``
 
 const CardTag = styled.span`
-  font-size: 20px;
+  font-size: ${Layout.Text.Small}px;
   color: #54595d;
   margin-left: 10px;
   padding: 5px;

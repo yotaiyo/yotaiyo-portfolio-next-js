@@ -1,13 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import IconImage from '../public/images/icon.png'
+import { Layout } from '../public/Layout'
 
 const Wrapper = styled.div`
-  padding-top: 150px;
+  padding-top: 120px;
 `
 
 const Title = styled.h1`
-  font-size: 48px;
+  font-size: ${Layout.Text.Largest}px;
   color: #3e4448;
   margin: 0 auto;
   border-bottom: 2px solid #3e4448;
@@ -21,8 +22,8 @@ const IconAndItemsWrapper = styled.div`
 `
 
 const Icon = styled.img`
-  height: 300px;
-  width: 300px;
+  height: 280px;
+  width: 280px;
   border-radius: 30px;
   margin-right: 40px;
   box-shadow: 0 0 8px rgb(0, 0, 0, 0.5);
@@ -34,15 +35,14 @@ const ItemsWrapper = styled.div`
 `
 
 const ItemTitle = styled.div`
-  font-size: 24px;
+  font-size: ${Layout.Text.Normal}px;
   color: #54595d;
   text-align: left;
   margin-top: 12px;
-  font-weight: bold;
 `
 
 const ItemBody = styled.div`
-  font-size: 24px;
+  font-size: ${Layout.Text.Normal}px;
   color: #54595d;
   text-align: left;
   margin-top: 12px;
