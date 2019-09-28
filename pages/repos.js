@@ -1,6 +1,6 @@
 import Layout from '../components/MyLayout.js'
 import styled from 'styled-components'
-import LinkImage from '../images/link.png'
+import LinkImage from '../public/images/link.png'
 
 const Wrapper = styled.div`
   display: flex;

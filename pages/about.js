@@ -1,7 +1,7 @@
 import Layout from '../components/MyLayout.js'
 import styled from 'styled-components'
-import MyImage from '../images/my-icon.jpg'
-import LinkImage from '../images/link.png'
+import MyImage from '../public/images/my-icon.jpg'
+import LinkImage from '../public/images/link.png'
 
 const ProfileCardWrapper = styled.div`
   display: flex;
