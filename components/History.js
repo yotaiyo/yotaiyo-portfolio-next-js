@@ -47,10 +47,9 @@ const CardTitle = styled.div`
   color: #3e4448;
 `
 
-const CardBody = styled.div`
+const CardBody = styled.p`
   font-size: 20px;
   color: #54595d;
-  margin-top: 40px;
 `
 
 const CardTagsWrapper = styled.div`
@@ -64,13 +63,16 @@ const CardTag = styled.span`
   padding: 5px;
   border: 1px solid #54595d;
   border-radius: 5px;
+  white-space: nowrap;
 `
 
 const Card = ({ title, body, tags }) => {
   return (
     <CardWrapper>
       <CardTitle>{title}</CardTitle>
-      <CardBody>{body}</CardBody>
+      {body.split('\n').map((line, index) => {
+        return <CardBody key={index}>{line}</CardBody>
+      })}
       <CardTagsWrapper>
         {tags.map((tag, index) => {
           return <CardTag key={index}>{tag}</CardTag>
@@ -92,7 +94,7 @@ export const History = () => {
       period: '2019.09',
       title: 'DMM.com 短期インターン',
       body:
-        'クエスト型インターン、DMM GUILDに参加。DMMが実際に抱えている技術的な課題に挑戦。',
+        'クエスト型インターン、DMM GUILDに参加。\nDMMが実際に抱えている技術的な課題に挑戦。',
       tags: ['Vue', 'React', 'Redux', 'Vanilla JS']
     },
     {
@@ -105,7 +107,7 @@ export const History = () => {
       period: '2019.12 ~ 01',
       title: 'Apollo 短期インターン',
       body:
-        'webエンジニアリングに関する基礎を学ぶ、その後、業務委託のアプリ開発案件に参加。',
+        'webエンジニアリングに関する基礎を学ぶ。\nその後、業務委託のアプリ開発案件に参加。',
       tags: [
         'HTML/CSS',
         'JavaScript',

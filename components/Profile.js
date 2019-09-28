@@ -46,6 +46,7 @@ const ItemBody = styled.div`
   color: #54595d;
   text-align: left;
   margin-top: 12px;
+  white-space: nowrap;
 `
 
 export const Profile = () => {
