@@ -26,7 +26,7 @@ const Icon = styled.img`
   width: 280px;
   border-radius: 30px;
   margin-right: 40px;
-  box-shadow: 0 0 5px rgb(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.5);
 `
 
 const ItemsWrapper = styled.div`

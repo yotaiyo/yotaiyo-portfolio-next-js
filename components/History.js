@@ -38,8 +38,7 @@ const MyHistories = styled.div`
 
 const CardWrapper = styled.div`
   border-radius: 30px;
-  box-shadow: 0 0 5px rgb(0, 0, 0, 0.3);
-  margin-left: 30px;
+  box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.5);
   height: 200px;
   width: 680px;
   flex: 1;
@@ -108,10 +107,23 @@ const Circle = styled.div`
   top: 80px;
 `
 
+const TriangleWrapper = styled.div``
+
+const Triangle = styled.div`
+  margin-top: 85px;
+  border-style: solid;
+  border-width: 10px 10px 10px 10px;
+  border-color: transparent #fff transparent transparent;
+  filter: drop-shadow(0 2px 0 rgb(0, 0, 0, 0.1));
+`
+
 const CircleAndCard = ({ title, body, tags, index }) => {
   return (
     <CircleAndCardWrapper style={{ marginTop: index === 0 ? 0 : null }}>
       <Circle />
+      <TriangleWrapper>
+        <Triangle />
+      </TriangleWrapper>
       <Card title={title} body={body} tags={tags} />
     </CircleAndCardWrapper>
   )
