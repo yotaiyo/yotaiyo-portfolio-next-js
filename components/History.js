@@ -15,13 +15,23 @@ const Title = styled.h1`
   margin-bottom: 40px;
 `
 
-const CardsWrapper = styled.div`
+const PeriodWrapper = styled.div`
+  margin-top: 20px;
+  margin-right: 40px;
+`
+
+const Period = styled.div`
+  font-size: ${Layout.Text.Small}px;
+  color: #54595d;
+`
+
+const MyHistoriesWrapper = styled.div`
   display: flex;
   justify-content: center;
   flex: 1;
 `
 
-const Cards = styled.div`
+const MyHistories = styled.div`
   border-left: 2px solid #cbced0;
   flex: 0.5;
 `
@@ -31,7 +41,7 @@ const CardWrapper = styled.div`
   box-shadow: 0 0 8px rgb(0, 0, 0, 0.5);
   margin-left: 30px;
   height: 200px;
-  width: 800px;
+  width: 680px;
   flex: 1;
 `
 
@@ -89,13 +99,13 @@ const CircleAndCardWrapper = styled.div`
 `
 
 const Circle = styled.div`
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background-color: #00c4cc;
   position: relative;
-  right: 25px;
-  top: 75px;
+  right: 16px;
+  top: 80px;
 `
 
 const CircleAndCard = ({ title, body, tags, index }) => {
@@ -146,8 +156,23 @@ export const History = () => {
   return (
     <Wrapper>
       <Title>History</Title>
-      <CardsWrapper>
-        <Cards>
+      <MyHistoriesWrapper>
+        <PeriodWrapper>
+          {Items.map((item, index) => {
+            return (
+              <Period
+                style={{
+                  marginTop: index === 0 ? 68 : 30,
+                  height: index === Items.length - 1 ? 100 : 200
+                }}
+                key={index}
+              >
+                {item.period}
+              </Period>
+            )
+          })}
+        </PeriodWrapper>
+        <MyHistories>
           {Items.map((item, index) => {
             return (
               <CircleAndCard
@@ -159,8 +184,8 @@ export const History = () => {
               />
             )
           })}
-        </Cards>
-      </CardsWrapper>
+        </MyHistories>
+      </MyHistoriesWrapper>
     </Wrapper>
   )
 }
