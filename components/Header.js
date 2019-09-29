@@ -19,6 +19,10 @@ const Wrapper = styled.div`
 const HeaderTitle = styled.div`
   font-size: ${Layout.Text.Normal}px;
   margin-left: 40px;
+  transition: all 0.5s ease;
+  &:hover {
+    color: #cc0066;
+  }
 `
 
 const SectionWrapper = styled.div`
