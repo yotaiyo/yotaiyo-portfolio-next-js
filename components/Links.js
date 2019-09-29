@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Layout } from '../public/Layout'
-import githubIcon from '../public/images/github.png'
-import twitterIcon from '../public/images/twitter.png'
-import atcoderIcon from '../public/images/atcoder.png'
+import { Layout } from '../consts/Layout'
+import githubIcon from '../assets/images/github.png'
+import twitterIcon from '../assets/images/twitter.png'
+import atcoderIcon from '../assets/images/atcoder.png'
 
 const Wrapper = styled.div`
   margin-top: 100px;

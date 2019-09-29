@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import IconImage from '../public/images/icon.png'
-import { Layout } from '../public/Layout'
+import IconImage from '../assets/images/icon.png'
+import { Layout } from '../consts/Layout'
 
 const Wrapper = styled.div`
   padding-top: 120px;
