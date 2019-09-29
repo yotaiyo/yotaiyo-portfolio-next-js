@@ -12,7 +12,7 @@ const Title = styled.h1`
   color: #3e4448;
   margin: 0 auto;
   border-bottom: 2px solid #3e4448;
-  width: 150px;
+  width: 130px;
 `
 
 const IconAndItemsWrapper = styled.div`

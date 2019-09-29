@@ -11,7 +11,7 @@ const Title = styled.h1`
   color: #3e4448;
   margin: 0 auto;
   border-bottom: 2px solid #3e4448;
-  width: 170px;
+  width: 140px;
   margin-bottom: 40px;
 `
 
@@ -42,6 +42,7 @@ const CardWrapper = styled.div`
   height: 200px;
   width: 680px;
   flex: 1;
+  text-align: center;
 `
 
 const CardTitle = styled.div`
