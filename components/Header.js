@@ -29,42 +29,22 @@ const SectionWrapper = styled.div`
 const Section = styled.span`
   font-size: ${Layout.Text.Normal}px;
   margin-left: 60px;
+  transition: all 0.5s ease;
+  &:hover {
+    color: #cc0066;
+  }
 `
 
-export class Header extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      onMouseTop: false,
-      onMouseWorks: false
-    }
-  }
-
-  render() {
-    const { onMouseTop, onMouseWorks } = this.state
-    return (
-      <Wrapper>
-        <HeaderTitle>yotaiyo`s portfolio</HeaderTitle>
-        <SectionWrapper>
-          <Section
-            onMouseOver={() => this.setState({ onMouseTop: true })}
-            onMouseOut={() => this.setState({ onMouseTop: false })}
-            style={{ color: onMouseTop ? '#FF4F02' : null }}
-          >
-            Top
-          </Section>
-          <Section
-            onMouseOver={() => this.setState({ onMouseWorks: true })}
-            onMouseOut={() => this.setState({ onMouseWorks: false })}
-            style={{ color: onMouseWorks ? '#FF4F02' : null }}
-          >
-            Works
-          </Section>
-        </SectionWrapper>
-      </Wrapper>
-    )
-  }
+export const Header = () => {
+  return (
+    <Wrapper>
+      <HeaderTitle>yotaiyo`s portfolio</HeaderTitle>
+      <SectionWrapper>
+        <Section>Top</Section>
+        <Section>Works</Section>
+      </SectionWrapper>
+    </Wrapper>
+  )
 }
 
 export default Header
