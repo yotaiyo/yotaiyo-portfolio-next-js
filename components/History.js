@@ -38,7 +38,7 @@ const MyHistories = styled.div`
 
 const CardWrapper = styled.div`
   border-radius: 30px;
-  box-shadow: 0 0 8px rgb(0, 0, 0, 0.5);
+  box-shadow: 0 0 5px rgb(0, 0, 0, 0.3);
   margin-left: 30px;
   height: 200px;
   width: 680px;
