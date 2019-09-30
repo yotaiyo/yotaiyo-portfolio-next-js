@@ -1,53 +1,51 @@
 import React from 'react'
-import Layout from '../components/MyLayout'
+import MyLayout from '../components/MyLayout'
 import styled from 'styled-components'
-import Octokit from '@octokit/rest'
+import { Layout } from '../consts/Layout'
+import ReactLoading from 'react-loading'
 
-const Wrapper = styled.div``
+const LoadingWrapper = styled.div`
+  padding-top: 120px;
+  display: flex;
+  justify-content: center;
+`
 
-const getReposFromAPI = async userName => {
-  const octokit = new Octokit()
-  let res
-  try {
-    res = await octokit.search.repos({ q: `user:${userName}` })
-    return {
-      success: {
-        repos: res.data.items
-      },
-      hasError: false
-    }
-  } catch (e) {
-    return {
-      success: null,
-      hasError: true
-    }
-  }
-}
+const Wrapper = styled.div`
+  padding-top: 120px;
+`
 
-const getReposActions = async () => {
-  const repos = await getReposFromAPI('yotaiyo')
-  if (repos.hasError) {
-    return 'error'
-  } else {
-    return repos.success.repos
-  }
-}
+const Title = styled.h1`
+  font-size: ${Layout.Text.Largest}px;
+  color: #3e4448;
+  margin: 0 auto;
+  border-bottom: 2px solid #3e4448;
+  width: 125px;
+  margin-bottom: 40px;
+`
 
 export default class Works extends React.Component {
-  static async getInitialProps() {
-    const repos = await getReposActions()
-    return {
-      repos
-    }
-  }
-
   render() {
-    const { repos } = this.props
-    console.log(repos)
+    const { getReposResponse } = this.props
+    const success = getReposResponse.success
+    const repos = success ? success.repos : []
+    const hasError = getReposResponse.hasError
     return (
-      <Layout>
-        <Wrapper>test</Wrapper>
-      </Layout>
+      <MyLayout>
+        {hasError ? (
+          <LoadingWrapper>
+            <ReactLoading
+              type={'spinningBubbles'}
+              color={'#00c4cc'}
+              height={'10%'}
+              width={'10%'}
+            />
+          </LoadingWrapper>
+        ) : (
+          <Wrapper>
+            <Title>Works</Title>
+          </Wrapper>
+        )}
+      </MyLayout>
     )
   }
 }
