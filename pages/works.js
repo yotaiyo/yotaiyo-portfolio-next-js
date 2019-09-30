@@ -5,18 +5,37 @@ import Octokit from '@octokit/rest'
 
 const Wrapper = styled.div``
 
-export async function getRepos(userName) {
+const getReposFromAPI = async userName => {
   const octokit = new Octokit()
+  let res
+  try {
+    res = await octokit.search.repos({ q: `user:${userName}` })
+    return {
+      success: {
+        repos: res.data.items
+      },
+      hasError: false
+    }
+  } catch (e) {
+    return {
+      success: null,
+      hasError: true
+    }
+  }
+}
 
-  const res = await octokit.search.repos({ q: `user:${userName}` })
-  const repos = res.data.items
-
-  return repos
+const getReposActions = async () => {
+  const repos = await getReposFromAPI('yotaiyo')
+  if (repos.hasError) {
+    return 'error'
+  } else {
+    return repos.success.repos
+  }
 }
 
 export default class Works extends React.Component {
   static async getInitialProps() {
-    const repos = await getRepos('yotaiyo')
+    const repos = await getReposActions()
     return {
       repos
     }
