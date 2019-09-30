@@ -29,6 +29,7 @@ export default class Works extends React.Component {
     const success = getReposResponse.success
     const repos = success ? success.repos : []
     const hasError = getReposResponse.hasError
+    console.log(repos)
     return (
       <MyLayout>
         {hasError ? (

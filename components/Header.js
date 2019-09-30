@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Layout } from '../consts/Layout'
+import Link from 'next/link'
 
 const Wrapper = styled.div`
   display: flex;
@@ -16,7 +17,7 @@ const Wrapper = styled.div`
   font-size: ${Layout.Text.Normal}px;
 `
 
-const HeaderTitle = styled.div`
+const HeaderTitle = styled.a`
   font-size: ${Layout.Text.Normal}px;
   margin-left: 40px;
   transition: all 0.5s ease;
@@ -29,7 +30,7 @@ const SectionWrapper = styled.div`
   margin-right: 60px;
 `
 
-const Section = styled.span`
+const Section = styled.a`
   font-size: ${Layout.Text.Normal}px;
   margin-left: 60px;
   transition: all 0.5s ease;
@@ -41,10 +42,16 @@ const Section = styled.span`
 export const Header = () => {
   return (
     <Wrapper>
-      <HeaderTitle>yotaiyo`s portfolio</HeaderTitle>
+      <Link href="/">
+        <HeaderTitle>yotaiyo`s portfolio</HeaderTitle>
+      </Link>
       <SectionWrapper>
-        <Section>Top</Section>
-        <Section>Works</Section>
+        <Link href="/">
+          <Section>Top</Section>
+        </Link>
+        <Link href="/works">
+          <Section>Works</Section>
+        </Link>
       </SectionWrapper>
     </Wrapper>
   )
