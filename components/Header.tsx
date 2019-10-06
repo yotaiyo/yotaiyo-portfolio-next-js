@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
-import Link from 'next/link'
-import styled from 'styled-components'
-import homeImage from '../images/home.png'
-import aboutImage from '../images/about.png'
-import skillsImage from '../images/skills.png'
-import reposImage from '../images/github.png'
+import React, { Component } from 'react';
+import Link from 'next/link';
+import styled from 'styled-components';
+import homeImage from '../images/home.png';
+import aboutImage from '../images/about.png';
+import skillsImage from '../images/skills.png';
+import reposImage from '../images/github.png';
 
 const Wrapper = styled.div`
   display: flex;
@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   top: 0px;
   width: 100%;
   z-index: 1;
-`
+`;
 
 const SectionWrapper = styled.div`
   display: flex;
@@ -31,7 +31,7 @@ const SectionWrapper = styled.div`
     padding-left: 20px;
     padding-right: 20px;
   }
-`
+`;
 
 const Icon = styled.img`
   width: 20px;
@@ -42,7 +42,7 @@ const Icon = styled.img`
     height: 10px;
     margin-top: 4px;
   }
-`
+`;
 
 const Body = styled.div`
   font-size: 20px;
@@ -51,7 +51,7 @@ const Body = styled.div`
   @media (max-width: 768px) {
     font-size: 12px;
   }
-`
+`;
 
 const Section = ({
   src,
@@ -73,18 +73,18 @@ const Section = ({
         <Body>{body}</Body>
       </SectionWrapper>
     </Link>
-  )
-}
+  );
+};
 export class Header extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       onMouseHome: false,
       onMouseAbout: false,
       onMouseSkills: false,
       onMouseRepos: false
-    }
+    };
   }
 
   render() {
@@ -127,8 +127,8 @@ export class Header extends Component {
           onMouse={this.state.onMouseRepos}
         />
       </Wrapper>
-    )
+    );
   }
 }
 
-export default Header
+export default Header;

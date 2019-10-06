@@ -1,13 +1,14 @@
-import Header from './Header'
-import styled from 'styled-components'
+import React from 'react';
+import Header from './Header';
+import styled from 'styled-components';
 
-const Wrapper = styled.div``
+const Wrapper = styled.div``;
 
 const Layout = props => (
   <Wrapper style={{ flex: 1 }}>
     <Header />
     {props.children}
   </Wrapper>
-)
+);
 
-export default Layout
+export default Layout;

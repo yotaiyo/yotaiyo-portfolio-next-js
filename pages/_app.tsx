@@ -1,10 +1,10 @@
-import React from 'react'
-import App, { Container } from 'next/app'
-import { css, Global } from '@emotion/core'
+import React from 'react';
+import App, { Container } from 'next/app';
+import { css, Global } from '@emotion/core';
 
 export default class MyApp extends App {
   render() {
-    const { Component, pageProps } = this.props
+    const { Component, pageProps } = this.props;
 
     return (
       <Container>
@@ -20,6 +20,6 @@ export default class MyApp extends App {
         />
         <Component {...pageProps} />
       </Container>
-    )
+    );
   }
 }
