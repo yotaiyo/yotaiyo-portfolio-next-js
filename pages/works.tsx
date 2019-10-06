@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Layout } from '../src/consts/Layout';
 import ReactLoading from 'react-loading';
 import { connect } from 'react-redux';
+import { getRepos } from '../src/store/makeStore';
 
 const LoadingWrapper = styled.div`
   padding-top: 120px;
@@ -24,9 +25,12 @@ const Title = styled.h1`
   margin-bottom: 40px;
 `;
 
-class Works extends React.Component {
+class Works extends React.Component<any> {
+  static getInitialProps(props) {
+    props.store.dispatch(getRepos());
+  }
   render() {
-    const hasError = false;
+    const { repos, hasError } = this.props;
     return (
       <MyLayout>
         {hasError ? (
@@ -41,6 +45,9 @@ class Works extends React.Component {
         ) : (
           <Wrapper>
             <Title>Works</Title>
+            {repos.map((repo, index) => {
+              return <div key={index}>{repo.title}</div>;
+            })}
           </Wrapper>
         )}
       </MyLayout>

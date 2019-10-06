@@ -6,11 +6,21 @@ import withRedux from 'next-redux-wrapper';
 import { makeStore } from '../src/store/makeStore';
 
 class MyApp extends App<any> {
+  static async getInitialProps({ Component, ctx }) {
+    let pageProps = {};
+
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps(ctx);
+    }
+
+    return { pageProps };
+  }
+
   render() {
-    const { Component, store } = this.props;
+    const { Component, pageProps, store } = this.props;
     return (
       <Provider store={store}>
-        <Component />
+        <Component {...pageProps} />
         <Global
           styles={css`
             body {
