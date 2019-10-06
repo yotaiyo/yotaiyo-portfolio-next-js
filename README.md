@@ -1,7 +1,7 @@
 # portfolio
 
 ## OverView
-私のポートフォリオサイトです。  
+私のポートフォリオサイトです。
 レスポンシブ対応。
 
 ## 使用した技術
@@ -15,5 +15,10 @@ git clone git@github.com:yotaiyo/portfolio.git
 cd portfolio
 yarn
 yarn run dev
+```
+
+## lint
+```
+yarn run lint-fix
 ```
 
