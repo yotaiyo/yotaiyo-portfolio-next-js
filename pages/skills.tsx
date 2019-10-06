@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import Layout from '../components/MyLayout.js'
-import styled from 'styled-components'
+import React, { Component } from 'react';
+import Layout from '../components/MyLayout';
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   display: flex;
@@ -12,12 +12,12 @@ const Wrapper = styled.div`
     margin-top: 50px;
     margin-bottom: 25px;
   }
-`
+`;
 
 const SkillsWrapper = styled.div`
   display: flex;
   flex-direction: column;
-`
+`;
 
 const SkillsTitleWrapper = styled.div`
   display: flex;
@@ -28,7 +28,7 @@ const SkillsTitleWrapper = styled.div`
     padding-top: 5px;
     padding-bottom: 2px;
   }
-`
+`;
 
 const Title = styled.div`
   font-size: 30px;
@@ -37,7 +37,7 @@ const Title = styled.div`
     font-size: 15px;
     margin-left: 8px;
   }
-`
+`;
 
 const SkillsCardWrapper = styled.div`
   margin-left: 70px;
@@ -46,7 +46,7 @@ const SkillsCardWrapper = styled.div`
   @media (max-width: 768px) {
     margin-left: 30px;
   }
-`
+`;
 
 const SkillsBody = styled.div`
   font-size: 20px;
@@ -59,7 +59,7 @@ const SkillsBody = styled.div`
     padding-bottom: 3px;
     width: 120px;
   }
-`
+`;
 
 const Star = styled.div`
   position: relative;
@@ -72,7 +72,7 @@ const Star = styled.div`
     height: 0.5em;
     font-size: 15px;
   }
-`
+`;
 
 const StarFront = styled.div`
   position: absolute;
@@ -81,17 +81,17 @@ const StarFront = styled.div`
   overflow: hidden;
   color: #ffff00;
   z-index: 0;
-`
+`;
 
 const StarBack = styled.div`
   color: #ccc;
-`
+`;
 
 const SkillsTitle = ({ title }) => (
   <SkillsTitleWrapper>
     <Title>{title}</Title>
   </SkillsTitleWrapper>
-)
+);
 
 const SkillsCard = ({ body, width }) => (
   <SkillsCardWrapper>
@@ -101,7 +101,7 @@ const SkillsCard = ({ body, width }) => (
       <StarBack>★★★★★</StarBack>
     </Star>
   </SkillsCardWrapper>
-)
+);
 
 class Skills extends Component {
   render() {
@@ -139,8 +139,8 @@ class Skills extends Component {
           </SkillsWrapper>
         </Wrapper>
       </Layout>
-    )
+    );
   }
 }
 
-export default Skills
+export default Skills;

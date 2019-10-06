@@ -1,6 +1,7 @@
-import Layout from '../components/MyLayout.js'
-import styled from 'styled-components'
-import LinkImage from '../images/link.png'
+import React from 'react';
+import Layout from '../components/MyLayout';
+import styled from 'styled-components';
+import LinkImage from '../images/link.png';
 
 const Wrapper = styled.div`
   display: flex;
@@ -12,7 +13,7 @@ const Wrapper = styled.div`
     margin-top: 50px;
     margin-bottom: 25px;
   }
-`
+`;
 
 const ReposWrapper = styled.div`
   display: flex;
@@ -21,7 +22,7 @@ const ReposWrapper = styled.div`
   @media (max-width: 1200px) {
     flex-direction: column;
   }
-`
+`;
 
 const ReposCardWrapper = styled.div`
   padding-top: 20px;
@@ -44,12 +45,12 @@ const ReposCardWrapper = styled.div`
     border-radius: 15px;
     height: 100px;
   }
-`
+`;
 const ReposTitleWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-`
+`;
 
 const ReposTitle = styled.div`
   font-size: 25px;
@@ -57,7 +58,7 @@ const ReposTitle = styled.div`
   @media (max-width: 768px) {
     font-size: 15px;
   }
-`
+`;
 
 const LinkIcon = styled.img`
   width: 15px;
@@ -69,7 +70,7 @@ const LinkIcon = styled.img`
     margin-top: 0px;
     padding-bottom: 1px;
   }
-`
+`;
 
 const ReposBody = styled.div`
   text-align: center;
@@ -82,7 +83,7 @@ const ReposBody = styled.div`
   @media (max-width: 768px) {
     font-size: 10px;
   }
-`
+`;
 
 const ReposKeywords = styled.div`
   text-align: center;
@@ -93,7 +94,7 @@ const ReposKeywords = styled.div`
   @media (max-width: 768px) {
     font-size: 10px;
   }
-`
+`;
 
 const ReposCard = ({ title, body, keywords, url }) => (
   <ReposCardWrapper>
@@ -106,7 +107,7 @@ const ReposCard = ({ title, body, keywords, url }) => (
     <ReposBody>{body}</ReposBody>
     <ReposKeywords>{'keywords: ' + keywords}</ReposKeywords>
   </ReposCardWrapper>
-)
+);
 
 const ReposLeft = styled.div`
   flex: 0.4;
@@ -115,7 +116,7 @@ const ReposLeft = styled.div`
     margin-left: 10px;
     margin-right: 10px;
   }
-`
+`;
 
 const ReposRight = styled.div`
   flex: 0.4;
@@ -124,7 +125,7 @@ const ReposRight = styled.div`
     margin-left: 10px;
     margin-right: 10px;
   }
-`
+`;
 
 export default () => (
   <Layout>
@@ -197,4 +198,4 @@ export default () => (
       </ReposWrapper>
     </Wrapper>
   </Layout>
-)
+);

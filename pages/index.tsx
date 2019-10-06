@@ -1,6 +1,7 @@
-import Layout from '../components/MyLayout.js'
-import styled from 'styled-components'
-import MyImage from '../images/my-icon.jpg'
+import React from 'react';
+import Layout from '../components/MyLayout';
+import styled from 'styled-components';
+import MyImage from '../images/my-icon.jpg';
 
 const Wrapper = styled.div`
   padding-top: 200px;
@@ -9,7 +10,7 @@ const Wrapper = styled.div`
     padding-top: 150px;
     padding-bottom: 150px;
   }
-`
+`;
 
 const MyIcon = styled.img`
   height: 250px;
@@ -20,13 +21,13 @@ const MyIcon = styled.img`
     width: 150px;
     border-radius: 150px;
   }
-`
+`;
 
 const MyIconWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-`
+`;
 
 const Title = styled.div`
   text-align: center;
@@ -36,7 +37,7 @@ const Title = styled.div`
   @media (max-width: 768px) {
     font-size: 35px;
   }
-`
+`;
 
 export default () => (
   <Layout>
@@ -47,4 +48,4 @@ export default () => (
       <Title>Welcome to Yotaiyo's Portfolio</Title>
     </Wrapper>
   </Layout>
-)
+);
