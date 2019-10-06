@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   margin-bottom: 100px;
 `;
 
-export default () => (
+const Top = () => (
   <MyLayout>
     <Wrapper>
       <Profile />
@@ -18,3 +18,5 @@ export default () => (
     </Wrapper>
   </MyLayout>
 );
+
+export default Top;
