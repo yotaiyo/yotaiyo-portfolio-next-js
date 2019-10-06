@@ -16,9 +16,3 @@ cd portfolio
 yarn
 yarn run dev
 ```
-
-## lint
-```
-yarn run lint-fix
-```
-
