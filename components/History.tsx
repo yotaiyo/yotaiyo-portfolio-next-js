@@ -23,6 +23,7 @@ const PeriodWrapper = styled.div`
 const Period = styled.div`
   font-size: ${Layout.Text.Small}px;
   color: #54595d;
+  text-align: center;
 `;
 
 const MyHistoriesWrapper = styled.div`
