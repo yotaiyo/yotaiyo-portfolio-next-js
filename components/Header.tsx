@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   padding: 20px 0 20px 0;
   color: #fff;
   font-size: ${Layout.Text.Normal}px;
-`
+`;
 
 const HeaderTitle = styled.a`
   font-size: ${Layout.Text.Normal}px;
@@ -24,11 +24,22 @@ const HeaderTitle = styled.a`
   &:hover {
     color: #cc0066;
   }
-`
+`;
 
 const SectionWrapper = styled.div`
   margin-right: 60px;
 `
+
+const Icon = styled.img`
+  width: 20px;
+  height: 20px;
+  margin-top: 5px;
+  @media (max-width: 768px) {
+    width: 10px;
+    height: 10px;
+    margin-top: 4px;
+  }
+`;
 
 const Section = styled.a`
   font-size: ${Layout.Text.Normal}px;
@@ -37,7 +48,7 @@ const Section = styled.a`
   &:hover {
     color: #cc0066;
   }
-`
+`;
 
 export const Header = () => {
   return (
@@ -57,4 +68,4 @@ export const Header = () => {
   )
 }
 
-export default Header
+export default Header;

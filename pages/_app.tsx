@@ -13,7 +13,6 @@ export default class MyApp extends App {
 
   render() {
     const { Component, getReposResponse } = this.props
-
     return (
       <Container>
         <Global
@@ -30,6 +29,6 @@ export default class MyApp extends App {
         />
         <Component getReposResponse={getReposResponse} />
       </Container>
-    )
+    );
   }
 }
