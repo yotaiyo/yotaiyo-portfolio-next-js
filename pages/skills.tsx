@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Layout from '../components/MyLayout.js'
+import Layout from '../components/MyLayout'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`

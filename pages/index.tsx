@@ -1,4 +1,4 @@
-import Layout from '../components/MyLayout.js'
+import Layout from '../components/MyLayout'
 import styled from 'styled-components'
 import MyImage from '../images/my-icon.jpg'
 
