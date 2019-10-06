@@ -1,12 +1,16 @@
 import React from 'react';
-import App, { Container } from 'next/app';
+import App from 'next/app';
 import { css, Global } from '@emotion/core';
+import { Provider } from 'react-redux';
+import withRedux from 'next-redux-wrapper';
+import { makeStore } from '../src/store/makeStore';
 
-export default class MyApp extends App {
+class MyApp extends App<any> {
   render() {
-    const { Component } = this.props;
+    const { Component, store } = this.props;
     return (
-      <Container>
+      <Provider store={store}>
+        <Component />
         <Global
           styles={css`
             body {
@@ -19,8 +23,9 @@ export default class MyApp extends App {
             }
           `}
         />
-        <Component />
-      </Container>
+      </Provider>
     );
   }
 }
+
+export default withRedux(makeStore)(MyApp);

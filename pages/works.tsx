@@ -1,8 +1,9 @@
 import React from 'react';
-import MyLayout from '../components/MyLayout';
+import MyLayout from '../src/components/MyLayout';
 import styled from 'styled-components';
-import { Layout } from '../consts/Layout';
+import { Layout } from '../src/consts/Layout';
 import ReactLoading from 'react-loading';
+import { connect } from 'react-redux';
 
 const LoadingWrapper = styled.div`
   padding-top: 120px;
@@ -23,10 +24,9 @@ const Title = styled.h1`
   margin-bottom: 40px;
 `;
 
-export default class Works extends React.Component {
+class Works extends React.Component {
   render() {
     const hasError = false;
-
     return (
       <MyLayout>
         {hasError ? (
@@ -47,3 +47,5 @@ export default class Works extends React.Component {
     );
   }
 }
+
+export default connect(state => state)(Works);

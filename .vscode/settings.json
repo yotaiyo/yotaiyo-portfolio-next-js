@@ -9,10 +9,6 @@
         {
             "language": "typescriptreact",
             "autoFix": true
-        },
-        {
-            "language": "typescriptnext",
-            "autoFix": true
         }
     ]
 }
