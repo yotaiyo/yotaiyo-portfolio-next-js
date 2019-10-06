@@ -6,4 +6,4 @@ export const Layout = {
     Normal: 20,
     Small: 16
   }
-}
+};
