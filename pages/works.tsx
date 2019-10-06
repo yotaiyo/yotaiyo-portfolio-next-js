@@ -25,11 +25,8 @@ const Title = styled.h1`
 
 export default class Works extends React.Component {
   render() {
-    const { getReposResponse } = this.props
-    const success = getReposResponse.success
-    const repos = success ? success.repos : []
-    const hasError = getReposResponse.hasError
-    console.log(repos)
+    const hasError = false
+
     return (
       <MyLayout>
         {hasError ? (
@@ -42,10 +39,10 @@ export default class Works extends React.Component {
             />
           </LoadingWrapper>
         ) : (
-          <Wrapper>
-            <Title>Works</Title>
-          </Wrapper>
-        )}
+            <Wrapper>
+              <Title>Works</Title>
+            </Wrapper>
+          )}
       </MyLayout>
     )
   }

@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Layout } from '../consts/Layout'
-import Link from 'next/link'
+import React from 'react';
+import styled from 'styled-components';
+import { Layout } from '../consts/Layout';
+import Link from 'next/link';
 
 const Wrapper = styled.div`
   display: flex;
@@ -28,17 +28,6 @@ const HeaderTitle = styled.a`
 
 const SectionWrapper = styled.div`
   margin-right: 60px;
-`
-
-const Icon = styled.img`
-  width: 20px;
-  height: 20px;
-  margin-top: 5px;
-  @media (max-width: 768px) {
-    width: 10px;
-    height: 10px;
-    margin-top: 4px;
-  }
 `;
 
 const Section = styled.a`
@@ -65,7 +54,7 @@ export const Header = () => {
         </Link>
       </SectionWrapper>
     </Wrapper>
-  )
-}
+  );
+};
 
 export default Header;

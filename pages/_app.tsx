@@ -1,18 +1,11 @@
-import React from 'react'
-import App, { Container } from 'next/app'
-import { css, Global } from '@emotion/core'
-import { getRepos } from '../lib/api/github'
+import React from 'react';
+import App, { Container } from 'next/app';
+import { css, Global } from '@emotion/core';
+import { getRepos } from '../lib/api/github';
 
 export default class MyApp extends App {
-  static async getInitialProps() {
-    const getReposResponse = await getRepos('yotaiyo')
-    return {
-      getReposResponse
-    }
-  }
-
   render() {
-    const { Component, getReposResponse } = this.props
+    const { Component } = this.props;
     return (
       <Container>
         <Global
@@ -27,7 +20,7 @@ export default class MyApp extends App {
             }
           `}
         />
-        <Component getReposResponse={getReposResponse} />
+        <Component />
       </Container>
     );
   }

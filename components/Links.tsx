@@ -1,13 +1,13 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Layout } from '../consts/Layout'
-import githubIcon from '../assets/images/github.png'
-import twitterIcon from '../assets/images/twitter.png'
-import atcoderIcon from '../assets/images/atcoder.png'
+import React from 'react';
+import styled from 'styled-components';
+import { Layout } from '../consts/Layout';
+import githubIcon from '../assets/images/github.png';
+import twitterIcon from '../assets/images/twitter.png';
+import atcoderIcon from '../assets/images/atcoder.png';
 
 const Wrapper = styled.div`
   margin-top: 100px;
-`
+`;
 
 const Title = styled.h1`
   font-size: ${Layout.Text.Largest}px;
@@ -16,12 +16,12 @@ const Title = styled.h1`
   border-bottom: 2px solid #3e4448;
   width: 100px;
   margin-bottom: 40px;
-`
+`;
 
 const LinksIconWrapper = styled.div`
   display: flex;
   justify-content: center;
-`
+`;
 
 const Link = styled.a`
   transition: all 0.5s ease;
@@ -29,12 +29,12 @@ const Link = styled.a`
     opacity: 0.7;
     filter: alpha(opacity=70);
   }
-`
+`;
 
 const LinkIcon = styled.img`
   width: 50px;
   height: 50px;
-`
+`;
 
 export const Links = () => {
   return (
@@ -56,5 +56,5 @@ export const Links = () => {
         </Link>
       </LinksIconWrapper>
     </Wrapper>
-  )
-}
+  );
+};
