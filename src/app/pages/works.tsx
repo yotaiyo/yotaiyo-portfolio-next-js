@@ -26,14 +26,17 @@ const Title = styled.h1`
 `;
 
 class Works extends React.Component<any> {
-  static getInitialProps(props) {
-    props.store.dispatch(getRepos());
+  static async getInitialProps(props) {
+    await props.store.dispatch(getRepos());
+    const state = await props.store.getState();
+    return { state };
   }
+
   render() {
-    const { repos, hasError } = this.props;
+    const { hasError, repos } = this.props.state;
     return (
       <MyLayout>
-        {hasError ? (
+        {hasError || repos.length === 0 ? (
           <LoadingWrapper>
             <ReactLoading
               type={'spinningBubbles'}
@@ -43,16 +46,16 @@ class Works extends React.Component<any> {
             />
           </LoadingWrapper>
         ) : (
-            <Wrapper>
-              <Title>Works</Title>
-              {repos.map((repo, index) => {
-                return <div key={index}>{repo.title}</div>;
-              })}
-            </Wrapper>
-          )}
+          <Wrapper>
+            <Title>Works</Title>
+            {repos.map((repo, index) => {
+              return <div key={index}>{repo.title}</div>;
+            })}
+          </Wrapper>
+        )}
       </MyLayout>
     );
   }
 }
 
-export default connect(state => state)(Works);
+export default Works;
