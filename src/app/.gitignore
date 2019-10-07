@@ -1,6 +1,2 @@
-node_modules
-out
-.next
-.DS_Store
-.firebase
 .env
+.next
