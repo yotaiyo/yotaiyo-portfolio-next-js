@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import IconImage from '../../assets/images/icon.png';
+import IconImage from '../assets/images/icon.png';
 import { Layout } from '../consts/Layout';
 
 const Wrapper = styled.div`

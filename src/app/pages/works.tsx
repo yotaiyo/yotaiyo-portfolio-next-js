@@ -1,10 +1,10 @@
 import React from 'react';
-import MyLayout from '../src/components/MyLayout';
+import MyLayout from '../components/MyLayout';
 import styled from 'styled-components';
-import { Layout } from '../src/consts/Layout';
+import { Layout } from '../consts/Layout';
 import ReactLoading from 'react-loading';
 import { connect } from 'react-redux';
-import { getRepos } from '../src/store/makeStore';
+import { getRepos } from '../store/makeStore';
 
 const LoadingWrapper = styled.div`
   padding-top: 120px;
@@ -43,13 +43,13 @@ class Works extends React.Component<any> {
             />
           </LoadingWrapper>
         ) : (
-          <Wrapper>
-            <Title>Works</Title>
-            {repos.map((repo, index) => {
-              return <div key={index}>{repo.title}</div>;
-            })}
-          </Wrapper>
-        )}
+            <Wrapper>
+              <Title>Works</Title>
+              {repos.map((repo, index) => {
+                return <div key={index}>{repo.title}</div>;
+              })}
+            </Wrapper>
+          )}
       </MyLayout>
     );
   }
