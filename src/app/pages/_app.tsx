@@ -4,8 +4,13 @@ import { css, Global } from '@emotion/core';
 import { Provider } from 'react-redux';
 import withRedux from 'next-redux-wrapper';
 import { makeStore } from '../store/makeStore';
+import { Store } from 'redux';
 
-class MyApp extends App<any> {
+type AppProps = {
+  store: Store;
+};
+
+class MyApp extends App<AppProps> {
   render() {
     const { Component, pageProps, store } = this.props;
     return (

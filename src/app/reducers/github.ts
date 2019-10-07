@@ -1,4 +1,4 @@
-import { Repos } from '../actions/github';
+import { Repo } from '../actions/github';
 import { AnyAction } from 'redux';
 
 const initialState = {
@@ -7,7 +7,7 @@ const initialState = {
 };
 
 export type InitialState = {
-  repos: Repos[];
+  repos: Repo[];
   hasError: boolean;
 };
 

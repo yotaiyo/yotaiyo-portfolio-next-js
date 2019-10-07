@@ -1,22 +1,13 @@
 import { fetchRepos } from '../lib/api';
-import { AnyAction } from 'redux';
-import { ThunkAction } from 'redux-thunk';
-import { InitialState } from '../reducers/github';
 
-export type IThunkAction<
-  Return,
-  ExtraArgument = undefined,
-  DispatchAction extends AnyAction = AnyAction
-> = ThunkAction<Return, InitialState, ExtraArgument, DispatchAction>;
-
-export type Repos = {
+export type Repo = {
   title: String;
 };
 
 const ADD_REPOS = 'ADD_REPOS';
 const ADD_HAS_ERROR = 'ADD_HAS_ERROR';
 
-const addRepos = (repos: Repos[]) => {
+const addRepos = (repos: Repo[]) => {
   return {
     type: ADD_REPOS,
     payload: {
@@ -34,7 +25,7 @@ const addHasError = (hasError: boolean) => {
   };
 };
 
-const convertFetchReposResult = (fetchReposSuccessResult: any): Repos[] => {
+const convertFetchReposResult = (fetchReposSuccessResult: any): Repo[] => {
   const repos = [];
   fetchReposSuccessResult.map((repo: any) => {
     repos.push({ title: repo.name });
@@ -42,7 +33,7 @@ const convertFetchReposResult = (fetchReposSuccessResult: any): Repos[] => {
   return repos;
 };
 
-export const getRepos = (): IThunkAction<Promise<void>> => async dispatch => {
+export const getRepos = () => async dispatch => {
   const fetchReposResult = await fetchRepos({
     userName: process.env.GITHUB_USER_NAME,
     token: process.env.GITHUB_API_TOKEN

@@ -3,7 +3,8 @@ import MyLayout from '../components/MyLayout';
 import styled from 'styled-components';
 import { Layout } from '../consts/Layout';
 import ReactLoading from 'react-loading';
-import { getRepos } from '../actions/github';
+import { getRepos, Repo } from '../actions/github';
+import { InitialState } from '../reducers/github';
 
 const LoadingWrapper = styled.div`
   padding-top: 120px;
@@ -24,7 +25,11 @@ const Title = styled.h1`
   margin-bottom: 40px;
 `;
 
-class Works extends React.Component<any> {
+type WorksProps = {
+  state: InitialState;
+};
+
+class Works extends React.Component<WorksProps> {
   static async getInitialProps(props) {
     await props.store.dispatch(getRepos());
     const state = await props.store.getState();
@@ -45,13 +50,13 @@ class Works extends React.Component<any> {
             />
           </LoadingWrapper>
         ) : (
-          <Wrapper>
-            <Title>Works</Title>
-            {repos.map((repo, index) => {
-              return <div key={index}>{repo.title}</div>;
-            })}
-          </Wrapper>
-        )}
+            <Wrapper>
+              <Title>Works</Title>
+              {repos.map((repo: Repo, index: number) => {
+                return <div key={index}>{repo.title}</div>;
+              })}
+            </Wrapper>
+          )}
       </MyLayout>
     );
   }
