@@ -17,5 +17,6 @@ module.exports = withImages({
         ]
 
         return config
-    }
+    },
+    distDir: '../../dist/functions/next'
 })
