@@ -3,8 +3,7 @@ import MyLayout from '../components/MyLayout';
 import styled from 'styled-components';
 import { Layout } from '../consts/Layout';
 import ReactLoading from 'react-loading';
-import { connect } from 'react-redux';
-import { getRepos } from '../store/makeStore';
+import { getRepos } from '../actions/github';
 
 const LoadingWrapper = styled.div`
   padding-top: 120px;

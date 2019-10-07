@@ -29,5 +29,11 @@
     "src/app/next-env.d.ts",
     "src/app/**/*.ts",
     "src/app/**/*.tsx"
-  ]
+  ],
+  "parserOptions": {
+    "project": [
+      "tsconfig.json",
+      "packages/config-danger/tsconfig.json"
+    ]
+  }
 }
