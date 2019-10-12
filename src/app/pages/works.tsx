@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Layout } from '../consts/Layout';
 import ReactLoading from 'react-loading';
 import { getRepos, Repo } from '../actions/github';
-import { InitialState } from '../reducers/github';
+import { InitialState } from '../store/makeStore';
 
 const LoadingWrapper = styled.div`
   padding-top: 120px;
@@ -37,7 +37,7 @@ class Works extends React.Component<WorksProps> {
   }
 
   render() {
-    const { hasError, repos } = this.props.state;
+    const { hasError, repos } = this.props.state.github;
     return (
       <MyLayout>
         {hasError || repos.length === 0 ? (

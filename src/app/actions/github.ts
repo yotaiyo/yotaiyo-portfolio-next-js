@@ -1,27 +1,42 @@
 import { fetchRepos } from '../lib/api';
 import { ThunkDispatch } from 'redux-thunk';
-import { InitialState } from '../reducers/github';
-import { AnyAction } from 'redux';
+import { githubState } from '../reducers/github';
 
 export type Repo = {
   title: string;
 };
 
-const ADD_REPOS = 'ADD_REPOS';
-const ADD_HAS_ERROR = 'ADD_HAS_ERROR';
+export enum Type {
+  ADD_REPOS = 'ADD_REPOS',
+  ADD_HAS_ERROR = 'ADD_HAS_ERROR'
+}
 
-const addRepos = (repos: Repo[]) => {
+export type Action =
+  | {
+      type: Type.ADD_REPOS;
+      payload: {
+        repos: Repo[];
+      };
+    }
+  | {
+      type: Type.ADD_HAS_ERROR;
+      payload: {
+        hasError: boolean;
+      };
+    };
+
+const addRepos = (repos: Repo[]): Action => {
   return {
-    type: ADD_REPOS,
+    type: Type.ADD_REPOS,
     payload: {
       repos
     }
   };
 };
 
-const addHasError = (hasError: boolean) => {
+const addHasError = (hasError: boolean): Action => {
   return {
-    type: ADD_HAS_ERROR,
+    type: Type.ADD_HAS_ERROR,
     payload: {
       hasError
     }
@@ -37,7 +52,7 @@ const convertFetchReposResult = (fetchReposSuccessResult: any): Repo[] => {
 };
 
 export const getRepos = () => async (
-  dispatch: ThunkDispatch<InitialState, undefined, AnyAction>
+  dispatch: ThunkDispatch<githubState, undefined, Action>
 ) => {
   const fetchReposResult = await fetchRepos({
     userName: process.env.GITHUB_USER_NAME,

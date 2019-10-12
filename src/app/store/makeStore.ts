@@ -1,7 +1,13 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-import { githubReducer } from '../reducers/github';
+import { github, githubState } from '../reducers/github';
+
+export type InitialState = {
+  github: githubState;
+};
+
+const rootReducer = combineReducers({ github });
 
 export const makeStore = () => {
-  return createStore(githubReducer, applyMiddleware(thunk));
+  return createStore(rootReducer, applyMiddleware(thunk));
 };
