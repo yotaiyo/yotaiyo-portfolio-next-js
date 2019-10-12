@@ -25,6 +25,39 @@ const Title = styled.h1`
   margin-bottom: 40px;
 `;
 
+const CardWrapper = styled.div``;
+
+const CardTitle = styled.div``;
+
+const CardUrl = styled.button``;
+
+const CardHomePage = styled.button``;
+
+const CardTopic = styled.div``;
+
+const showRepos = [
+  'portfolio',
+  'music-auto-tagging',
+  'to-do-app-frontend',
+  'to-do-app-backend',
+  'weather-app',
+  'tinder-card',
+  'to-do-app-hooks',
+  'music-genre-classification'
+];
+
+const Card = ({ title, url, topics, homepage }: Repo) =>
+  showRepos.indexOf(title) >= 0 ? (
+    <CardWrapper>
+      <CardTitle>{title}</CardTitle>
+      <CardUrl>{url}</CardUrl>
+      <CardHomePage>{homepage}</CardHomePage>
+      {topics.map((topic, index) => (
+        <CardTopic key={index}>{topic}</CardTopic>
+      ))}
+    </CardWrapper>
+  ) : null;
+
 type WorksProps = {
   state: InitialState;
 };
@@ -53,7 +86,15 @@ class Works extends React.Component<WorksProps> {
           <Wrapper>
             <Title>Works</Title>
             {repos.map((repo: Repo, index: number) => {
-              return <div key={index}>{repo.title}</div>;
+              return (
+                <Card
+                  title={repo.title}
+                  url={repo.url}
+                  homepage={repo.homepage}
+                  topics={repo.topics}
+                  key={index}
+                />
+              );
             })}
           </Wrapper>
         )}
