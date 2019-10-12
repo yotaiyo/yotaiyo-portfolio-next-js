@@ -13,7 +13,9 @@ const LoadingWrapper = styled.div`
 `;
 
 const Wrapper = styled.div`
-  padding-top: 120px;
+  padding-top: 100px;
+  margin-left: 100px;
+  margin-right: 100px;
 `;
 
 const Title = styled.h1`
@@ -25,15 +27,65 @@ const Title = styled.h1`
   margin-bottom: 40px;
 `;
 
-const CardWrapper = styled.div``;
+const CardsWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`;
 
-const CardTitle = styled.div``;
+const CardWrapper = styled.div`
+  margin-top: 20px;
+  box-shadow: 0 0 3px rgb(0, 0, 0, 0.5);
+  width: 45%;
+  padding: 12px 20px 12px 20px;
+  border-radius: 10px;
+`;
 
-const CardUrl = styled.button``;
+const CardTitle = styled.div`
+  color: #54595d;
+  font-size: ${Layout.Text.Normal}px;
+`;
 
-const CardHomePage = styled.button``;
+const CardButtonsWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: #54595d;
+  margin-top: 8px;
+  &::after {
+    margin-left: 12px;
+    content: '';
+    display: block;
+    width: 28%;
+  }
+`;
 
-const CardTopic = styled.div``;
+const CardButton = styled.button`
+  padding: 5px;
+  margin-left: 12px;
+  font-size: ${Layout.Text.Small}px;
+  color: #fff;
+  background-color: #00c4cc;
+  width: 28%;
+  border-radius: 5px;
+  border: 0.2px solid #54595d;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  outline: none;
+`;
+
+const CardTopicsWrapper = styled.div``;
+
+const CardTopic = styled.a`
+  font-size: 10px;
+  color: #54595d;
+  margin-left: 10px;
+  padding: 5px;
+  border: 1px solid #54595d;
+  border-radius: 5px;
+  white-space: nowrap;
+  box-sizing: border-box;
+`;
 
 const showRepos = [
   'portfolio',
@@ -46,15 +98,45 @@ const showRepos = [
   'music-genre-classification'
 ];
 
-const Card = ({ title, url, topics, homepage }: Repo) =>
+type Card = Repo & {
+  showDetail: boolean;
+  onClickDetailButton(): void;
+  openNewWindowWithUrl(url: string): void;
+};
+
+const Card = ({
+  title,
+  url,
+  topics,
+  homepage,
+  showDetail,
+  onClickDetailButton,
+  openNewWindowWithUrl
+}: Card) =>
   showRepos.indexOf(title) >= 0 ? (
     <CardWrapper>
       <CardTitle>{title}</CardTitle>
-      <CardUrl>{url}</CardUrl>
-      <CardHomePage>{homepage}</CardHomePage>
-      {topics.map((topic, index) => (
-        <CardTopic key={index}>{topic}</CardTopic>
-      ))}
+      <CardButtonsWrapper>
+        <CardButton
+          style={{ marginLeft: 0 }}
+          onClick={() => openNewWindowWithUrl(url)}
+        >
+          Repository
+        </CardButton>
+        {homepage ? (
+          <CardButton onClick={() => openNewWindowWithUrl(homepage)}>
+            Web Site
+          </CardButton>
+        ) : null}
+        <CardButton onClick={onClickDetailButton}>Detail</CardButton>
+      </CardButtonsWrapper>
+      {showDetail ? (
+        <CardTopicsWrapper>
+          {topics.map((topic, index) => (
+            <CardTopic key={index}>{topic}</CardTopic>
+          ))}
+        </CardTopicsWrapper>
+      ) : null}
     </CardWrapper>
   ) : null;
 
@@ -62,14 +144,34 @@ type WorksProps = {
   state: InitialState;
 };
 
-class Works extends React.Component<WorksProps> {
+type WorksState = {
+  showDetail: boolean;
+};
+
+class Works extends React.Component<WorksProps, WorksState> {
   static async getInitialProps(props: any) {
     await props.store.dispatch(getRepos());
     const state = await props.store.getState();
     return { state };
   }
 
+  constructor(props: WorksProps) {
+    super(props);
+    this.state = {
+      showDetail: false
+    };
+  }
+
+  onClickDetailButton = () => {
+    this.setState({ showDetail: !this.state.showDetail });
+  };
+
+  openNewWindowWithUrl = (url: string) => {
+    window.open(url, '_blank');
+  };
+
   render() {
+    const { showDetail } = this.state;
     const { hasError, repos } = this.props.state.github;
     return (
       <MyLayout>
@@ -85,17 +187,22 @@ class Works extends React.Component<WorksProps> {
         ) : (
           <Wrapper>
             <Title>Works</Title>
-            {repos.map((repo: Repo, index: number) => {
-              return (
-                <Card
-                  title={repo.title}
-                  url={repo.url}
-                  homepage={repo.homepage}
-                  topics={repo.topics}
-                  key={index}
-                />
-              );
-            })}
+            <CardsWrapper>
+              {repos.map((repo: Repo, index: number) => {
+                return (
+                  <Card
+                    title={repo.title}
+                    url={repo.url}
+                    homepage={repo.homepage}
+                    topics={repo.topics}
+                    key={index}
+                    showDetail={showDetail}
+                    onClickDetailButton={this.onClickDetailButton}
+                    openNewWindowWithUrl={this.openNewWindowWithUrl}
+                  />
+                );
+              })}
+            </CardsWrapper>
           </Wrapper>
         )}
       </MyLayout>
