@@ -50,13 +50,13 @@ class Works extends React.Component<WorksProps> {
             />
           </LoadingWrapper>
         ) : (
-            <Wrapper>
-              <Title>Works</Title>
-              {repos.map((repo: Repo, index: number) => {
-                return <div key={index}>{repo.title}</div>;
-              })}
-            </Wrapper>
-          )}
+          <Wrapper>
+            <Title>Works</Title>
+            {repos.map((repo: Repo, index: number) => {
+              return <div key={index}>{repo.title}</div>;
+            })}
+          </Wrapper>
+        )}
       </MyLayout>
     );
   }
