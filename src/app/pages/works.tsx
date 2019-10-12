@@ -30,7 +30,7 @@ type WorksProps = {
 };
 
 class Works extends React.Component<WorksProps> {
-  static async getInitialProps(props) {
+  static async getInitialProps(props: any) {
     await props.store.dispatch(getRepos());
     const state = await props.store.getState();
     return { state };

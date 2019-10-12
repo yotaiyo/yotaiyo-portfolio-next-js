@@ -1,7 +1,10 @@
 import { fetchRepos } from '../lib/api';
+import { ThunkDispatch } from 'redux-thunk';
+import { InitialState } from '../reducers/github';
+import { AnyAction } from 'redux';
 
 export type Repo = {
-  title: String;
+  title: string;
 };
 
 const ADD_REPOS = 'ADD_REPOS';
@@ -26,14 +29,16 @@ const addHasError = (hasError: boolean) => {
 };
 
 const convertFetchReposResult = (fetchReposSuccessResult: any): Repo[] => {
-  const repos = [];
+  const repos: Repo[] = [];
   fetchReposSuccessResult.map((repo: any) => {
     repos.push({ title: repo.name });
   });
   return repos;
 };
 
-export const getRepos = () => async dispatch => {
+export const getRepos = () => async (
+  dispatch: ThunkDispatch<InitialState, undefined, AnyAction>
+) => {
   const fetchReposResult = await fetchRepos({
     userName: process.env.GITHUB_USER_NAME,
     token: process.env.GITHUB_API_TOKEN

@@ -75,7 +75,13 @@ const CardTag = styled.span`
   white-space: nowrap;
 `;
 
-const Card = ({ title, body, tags }) => {
+type Card = {
+  title: string;
+  body: string;
+  tags: string[];
+};
+
+const Card = ({ title, body, tags }: Card) => {
   return (
     <CardWrapper>
       <CardTitle>{title}</CardTitle>
@@ -119,9 +125,13 @@ const Triangle = styled.div`
   filter: drop-shadow(0 2px 0 rgb(0, 0, 0, 0.1));
 `;
 
-const CircleAndCard = ({ title, body, tags, index }) => {
+type CircleAndCard = Card & {
+  index: number;
+};
+
+const CircleAndCard = ({ title, body, tags, index }: CircleAndCard) => {
   return (
-    <CircleAndCardWrapper style={{ marginTop: index === 0 ? 0 : null }}>
+    <CircleAndCardWrapper style={{ marginTop: index === 0 ? 0 : undefined }}>
       <Circle />
       <TriangleWrapper>
         <Triangle />

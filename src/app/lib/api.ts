@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 type FetchRepos = {
-  userName: string;
-  token: string;
+  userName?: string;
+  token?: string;
 };
 
 export const fetchRepos = async ({ userName, token }: FetchRepos) => {
