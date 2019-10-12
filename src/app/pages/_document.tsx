@@ -1,21 +1,33 @@
 import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
-
-export default class MyDocument extends Document<{ styleTags: any }> {
-  static getInitialProps({ renderPage }) {
+export default class MyDocument extends Document {
+  static async getInitialProps(ctx: any) {
     const sheet = new ServerStyleSheet();
-    const page = renderPage(App => props =>
-      sheet.collectStyles(<App {...props} />)
-    );
-    const styleTags = sheet.getStyleElement();
-    return { ...page, styleTags };
+    const originalRenderPage = ctx.renderPage;
+    ctx.renderPage = () =>
+      originalRenderPage({
+        enhanceApp: (App: any) => (props: any) =>
+          sheet.collectStyles(<App {...props} />)
+      });
+
+    const initialProps = await Document.getInitialProps(ctx);
+    return {
+      ...initialProps,
+      styles: [...(initialProps.styles as any), ...sheet.getStyleElement()]
+    };
   }
 
-  render() {
+  public render() {
     return (
-      <html>
-        <Head>{this.props.styleTags}</Head>
+      <html lang="ja">
+        <Head>
+          <meta charSet="UTF-8" />
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="width=device-width,initial-scale=1" />
+          <meta name="author" content="Curry Lover" />
+          <link rel="stylesheet" />
+        </Head>
         <body>
           <Main />
           <NextScript />
