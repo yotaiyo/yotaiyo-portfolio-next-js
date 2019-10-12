@@ -4,6 +4,9 @@ import { githubState } from '../reducers/github';
 
 export type Repo = {
   title: string;
+  url: string;
+  topics: string[];
+  homepage: string | null;
 };
 
 export enum Type {
@@ -46,7 +49,12 @@ const addHasError = (hasError: boolean): Action => {
 const convertFetchReposResult = (fetchReposSuccessResult: any): Repo[] => {
   const repos: Repo[] = [];
   fetchReposSuccessResult.map((repo: any) => {
-    repos.push({ title: repo.name });
+    repos.push({
+      title: repo.name,
+      url: repo.html_url,
+      topics: repo.topics,
+      homepage: repo.homepage
+    });
   });
   return repos;
 };

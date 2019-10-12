@@ -11,7 +11,8 @@ export const fetchRepos = async ({ userName, token }: FetchRepos) => {
       `https://api.github.com/users/${userName}/repos`,
       {
         headers: {
-          Authorization: { token }
+          Authorization: { token },
+          Accept: 'application/vnd.github.mercy-preview+json'
         }
       }
     );
