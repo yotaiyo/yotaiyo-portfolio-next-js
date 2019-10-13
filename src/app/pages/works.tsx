@@ -74,6 +74,10 @@ const CardButton = styled.button`
   outline: none;
 `;
 
+const CardDetailWrapper = styled.div``;
+
+const CardDescription = styled.div``;
+
 const CardTopicsWrapper = styled.div``;
 
 const CardTopic = styled.a`
@@ -87,17 +91,6 @@ const CardTopic = styled.a`
   box-sizing: border-box;
 `;
 
-const showRepos = [
-  'portfolio',
-  'music-auto-tagging',
-  'to-do-app-frontend',
-  'to-do-app-backend',
-  'weather-app',
-  'tinder-card',
-  'to-do-app-hooks',
-  'music-genre-classification'
-];
-
 type Card = Repo & {
   showDetail: boolean;
   onClickDetailButton(): void;
@@ -109,36 +102,39 @@ const Card = ({
   url,
   topics,
   homepage,
+  description,
   showDetail,
   onClickDetailButton,
   openNewWindowWithUrl
-}: Card) =>
-  showRepos.indexOf(title) >= 0 ? (
-    <CardWrapper>
-      <CardTitle>{title}</CardTitle>
-      <CardButtonsWrapper>
-        <CardButton
-          style={{ marginLeft: 0 }}
-          onClick={() => openNewWindowWithUrl(url)}
-        >
-          Repository
+}: Card) => (
+  <CardWrapper>
+    <CardTitle>{title}</CardTitle>
+    <CardButtonsWrapper>
+      <CardButton
+        style={{ marginLeft: 0 }}
+        onClick={() => openNewWindowWithUrl(url)}
+      >
+        Repository
+      </CardButton>
+      {homepage ? (
+        <CardButton onClick={() => openNewWindowWithUrl(homepage)}>
+          Web Site
         </CardButton>
-        {homepage ? (
-          <CardButton onClick={() => openNewWindowWithUrl(homepage)}>
-            Web Site
-          </CardButton>
-        ) : null}
-        <CardButton onClick={onClickDetailButton}>Detail</CardButton>
-      </CardButtonsWrapper>
-      {showDetail ? (
+      ) : null}
+      <CardButton onClick={onClickDetailButton}>Detail</CardButton>
+    </CardButtonsWrapper>
+    {showDetail ? (
+      <CardDetailWrapper>
+        <CardDescription>{description}</CardDescription>
         <CardTopicsWrapper>
           {topics.map((topic, index) => (
             <CardTopic key={index}>{topic}</CardTopic>
           ))}
         </CardTopicsWrapper>
-      ) : null}
-    </CardWrapper>
-  ) : null;
+      </CardDetailWrapper>
+    ) : null}
+  </CardWrapper>
+);
 
 type WorksProps = {
   state: InitialState;
@@ -195,6 +191,7 @@ class Works extends React.Component<WorksProps, WorksState> {
                     url={repo.url}
                     homepage={repo.homepage}
                     topics={repo.topics}
+                    description={repo.description}
                     key={index}
                     showDetail={showDetail}
                     onClickDetailButton={this.onClickDetailButton}
