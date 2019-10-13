@@ -15,9 +15,10 @@ const LoadingWrapper = styled.div`
 
 const Wrapper = styled.div`
   padding-top: 100px;
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-bottom: 100px;
+  margin: 0 100px 100px 100px;
+  @media (max-width: 1100px) {
+    margin: 0 50px 50px 50px;
+  }
 `;
 
 const Title = styled.h1`
@@ -35,14 +36,22 @@ const CardsWrapper = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
+  @media (max-width: 1100px) {
+    flex-direction: column;
+    flex-wrap: none;
+  }
 `;
 
 const CardWrapper = styled.div`
+  margin: 0 auto;
   margin-top: 20px;
   box-shadow: 0 0 3px rgb(0, 0, 0, 0.5);
   width: 45%;
   padding: 12px 20px 12px 20px;
   border-radius: 10px;
+  @media (max-width: 1100px) {
+    width: 95%;
+  }
 `;
 
 const CardTitle = styled.div`
