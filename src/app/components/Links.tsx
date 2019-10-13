@@ -21,8 +21,8 @@ const Title = styled.h1`
   width: 100px;
   margin-bottom: 40px;
   @media (max-width: 411px) {
-    font-size: ${Layout.Text.Large}px;
-    width: 62px;
+    font-size: ${Layout.Text.Larger}px;
+    width: 70px;
     margin-bottom: 20px;
   }
 `;
