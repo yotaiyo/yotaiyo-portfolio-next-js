@@ -73,7 +73,7 @@ const CardButton = styled.button`
   width: 28%;
   border-radius: 5px;
   border: 0.2px solid #54595d;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
   outline: none;
 `;
 
