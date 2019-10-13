@@ -65,7 +65,7 @@ const CardButtonsWrapper = styled.div`
 `;
 
 const CardButton = styled.button`
-  padding: 5px;
+  padding: 8px;
   margin-left: 12px;
   font-size: ${Layout.Text.Small}px;
   color: #fff;
