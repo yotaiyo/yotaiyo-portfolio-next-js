@@ -15,9 +15,11 @@ const LoadingWrapper = styled.div`
 
 const Wrapper = styled.div`
   padding-top: 100px;
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-bottom: 100px;
+  margin: 0 100px 100px 100px;
+  @media (max-width: 1200px) {
+    padding-top: 80px;
+    margin: 0 50px 50px 50px;
+  }
 `;
 
 const Title = styled.h1`
@@ -27,6 +29,11 @@ const Title = styled.h1`
   border-bottom: 2px solid ${Color.Black1};
   width: 125px;
   margin-bottom: 40px;
+  @media (max-width: 900px) {
+    font-size: ${Layout.Text.Large}px;
+    width: 80px;
+    margin-bottom: 20px;
+  }
 `;
 
 const CardsWrapper = styled.div`
@@ -35,20 +42,31 @@ const CardsWrapper = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    flex-wrap: none;
+  }
 `;
 
 const CardWrapper = styled.div`
+  margin: 0 auto;
   margin-top: 20px;
   box-shadow: 0 0 3px rgb(0, 0, 0, 0.5);
   width: 45%;
   padding: 12px 20px 12px 20px;
   border-radius: 10px;
+  @media (max-width: 1200px) {
+    width: 95%;
+  }
 `;
 
 const CardTitle = styled.div`
   color: ${Color.Black1};
   text-align: center;
   font-size: ${Layout.Text.Large}px;
+  @media (max-width: 900px) {
+    font-size: ${Layout.Text.Normal}px;
+  }
 `;
 
 const CardButtonsWrapper = styled.div`
@@ -79,6 +97,9 @@ const CardButton = styled.button`
   &:hover {
     color: ${Color.Red1};
   }
+  @media (max-width: 900px) {
+    font-size: ${Layout.Text.Smaller}px;
+  }
 `;
 
 const CardDetailWrapper = styled.div`
@@ -106,12 +127,18 @@ const CardDescription = styled.div`
   font-size: ${Layout.Text.Small}px;
   text-align: center;
   color: ${Color.Black2};
+  @media (max-width: 900px) {
+    font-size: ${Layout.Text.Smaller}px;
+  }
 `;
 
 const CardTopicsWrapper = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 16px;
+  @media (max-width: 900px) {
+    margin-top: 8px;
+  }
 `;
 
 const CardTopic = styled.a`
@@ -123,6 +150,9 @@ const CardTopic = styled.a`
   border-radius: 5px;
   white-space: nowrap;
   box-sizing: border-box;
+  @media (max-width: 900px) {
+    font-size: ${Layout.Text.Smallest}px;
+  }
 `;
 
 type Card = Repo & {
@@ -143,38 +173,38 @@ const Card = ({
   openNewWindowWithUrl,
   index
 }: Card) => (
-  <CardWrapper>
-    <CardTitle>{title}</CardTitle>
-    <CardButtonsWrapper>
-      <CardButton
-        style={{ marginLeft: 0 }}
-        onClick={() => openNewWindowWithUrl(url)}
-      >
-        Repository
+    <CardWrapper>
+      <CardTitle>{title}</CardTitle>
+      <CardButtonsWrapper>
+        <CardButton
+          style={{ marginLeft: 0 }}
+          onClick={() => openNewWindowWithUrl(url)}
+        >
+          Repository
       </CardButton>
-      {homepage ? (
-        <CardButton onClick={() => openNewWindowWithUrl(homepage)}>
-          Web Site
+        {homepage ? (
+          <CardButton onClick={() => openNewWindowWithUrl(homepage)}>
+            Web Site
         </CardButton>
+        ) : null}
+        <CardButton onClick={() => onClickDetailButton(index)}>Detail</CardButton>
+      </CardButtonsWrapper>
+      {showDetail ? (
+        <CardDetailWrapper>
+          <CardDescriptionWrapper>
+            {description.split('\n').map((line, index) => {
+              return <CardDescription key={index}>{line}</CardDescription>;
+            })}
+          </CardDescriptionWrapper>
+          <CardTopicsWrapper>
+            {topics.map((topic, index) => (
+              <CardTopic key={index}>{topic}</CardTopic>
+            ))}
+          </CardTopicsWrapper>
+        </CardDetailWrapper>
       ) : null}
-      <CardButton onClick={() => onClickDetailButton(index)}>Detail</CardButton>
-    </CardButtonsWrapper>
-    {showDetail ? (
-      <CardDetailWrapper>
-        <CardDescriptionWrapper>
-          {description.split('\n').map((line, index) => {
-            return <CardDescription key={index}>{line}</CardDescription>;
-          })}
-        </CardDescriptionWrapper>
-        <CardTopicsWrapper>
-          {topics.map((topic, index) => (
-            <CardTopic key={index}>{topic}</CardTopic>
-          ))}
-        </CardTopicsWrapper>
-      </CardDetailWrapper>
-    ) : null}
-  </CardWrapper>
-);
+    </CardWrapper>
+  );
 
 type WorksProps = {
   state: InitialState;
@@ -223,28 +253,28 @@ class Works extends React.Component<WorksProps, WorksState> {
             />
           </LoadingWrapper>
         ) : (
-          <Wrapper>
-            <Title>Works</Title>
-            <CardsWrapper>
-              {repos.map((repo: Repo, index: number) => {
-                return (
-                  <Card
-                    title={repo.title}
-                    url={repo.url}
-                    homepage={repo.homepage}
-                    topics={repo.topics}
-                    description={repo.description}
-                    key={index}
-                    showDetail={showDetail[index]}
-                    onClickDetailButton={this.onClickDetailButton}
-                    openNewWindowWithUrl={this.openNewWindowWithUrl}
-                    index={index}
-                  />
-                );
-              })}
-            </CardsWrapper>
-          </Wrapper>
-        )}
+            <Wrapper>
+              <Title>Works</Title>
+              <CardsWrapper>
+                {repos.map((repo: Repo, index: number) => {
+                  return (
+                    <Card
+                      title={repo.title}
+                      url={repo.url}
+                      homepage={repo.homepage}
+                      topics={repo.topics}
+                      description={repo.description}
+                      key={index}
+                      showDetail={showDetail[index]}
+                      onClickDetailButton={this.onClickDetailButton}
+                      openNewWindowWithUrl={this.openNewWindowWithUrl}
+                      index={index}
+                    />
+                  );
+                })}
+              </CardsWrapper>
+            </Wrapper>
+          )}
       </MyLayout>
     );
   }
