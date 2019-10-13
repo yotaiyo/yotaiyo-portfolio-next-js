@@ -20,6 +20,13 @@ const IconAndItemsWrapper = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 30px;
+  @media (max-width: 1100px) {
+    flex-direction: column;
+  }
+`;
+
+const IconWrapper = styled.div`
+  text-align: center;
 `;
 
 const Icon = styled.img`
@@ -30,9 +37,15 @@ const Icon = styled.img`
   box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.5);
 `;
 
+const ItemsTitleAndBodyWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 const ItemsWrapper = styled.div`
   margin-left: 60px;
   margin-top: 8px;
+  flex-direction: row;
 `;
 
 const ItemTitle = styled.div`
@@ -67,17 +80,21 @@ export const Profile = () => {
     <Wrapper>
       <Title>Profile</Title>
       <IconAndItemsWrapper>
-        <Icon src={IconImage} />
-        <ItemsWrapper>
-          {items.map((item, index) => {
-            return <ItemTitle key={index}>{item.title + ':'}</ItemTitle>;
-          })}
-        </ItemsWrapper>
-        <ItemsWrapper>
-          {items.map((item, index) => {
-            return <ItemBody key={index}>{item.body}</ItemBody>;
-          })}
-        </ItemsWrapper>
+        <IconWrapper>
+          <Icon src={IconImage} />
+        </IconWrapper>
+        <ItemsTitleAndBodyWrapper>
+          <ItemsWrapper>
+            {items.map((item, index) => {
+              return <ItemTitle key={index}>{item.title + ':'}</ItemTitle>;
+            })}
+          </ItemsWrapper>
+          <ItemsWrapper>
+            {items.map((item, index) => {
+              return <ItemBody key={index}>{item.body}</ItemBody>;
+            })}
+          </ItemsWrapper>
+        </ItemsTitleAndBodyWrapper>
       </IconAndItemsWrapper>
     </Wrapper>
   );
