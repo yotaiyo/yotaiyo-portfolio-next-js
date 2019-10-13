@@ -147,20 +147,20 @@ export const History = () => {
       period: '2019.09 ~',
       title: 'eureka 長期インターン',
       body: 'フロントエンドエンジニアとして、Pairs Web版の開発に参加中。',
-      tags: ['TypeScript', 'React', 'Redux']
+      tags: ['typescript', 'react', 'redux']
     },
     {
       period: '2019.09',
       title: 'DMM.com 短期インターン',
       body:
         'クエスト型インターン、DMM GUILDに参加。\nDMMが実際に抱えている技術的な課題に挑戦。',
-      tags: ['Vue', 'React', 'Redux', 'Vanilla JS']
+      tags: ['vue', 'react', 'redux', 'vanilla js']
     },
     {
       period: '2019.01 ~ 08',
       title: 'FIREBUG 長期インターン',
       body: 'toC向けマッチングアプリ開発に参加。',
-      tags: ['TypeScript', 'React Native', 'Graph QL']
+      tags: ['typescript', 'react native', 'graph ql']
     },
     {
       period: '2019.12 ~ 01',
@@ -168,12 +168,12 @@ export const History = () => {
       body:
         'webエンジニアリングに関する基礎を学ぶ。\nその後、業務委託のアプリ開発案件に参加。',
       tags: [
-        'HTML/CSS',
-        'JavaScript',
-        'TypeScript',
-        'jQuery',
-        'React',
-        'React Native'
+        'html/css',
+        'javascript',
+        'typescript',
+        'jquery',
+        'react',
+        'react native'
       ]
     }
   ];

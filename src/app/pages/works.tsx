@@ -16,6 +16,7 @@ const Wrapper = styled.div`
   padding-top: 100px;
   margin-left: 100px;
   margin-right: 100px;
+  margin-bottom: 100px;
 `;
 
 const Title = styled.h1`
@@ -32,6 +33,7 @@ const CardsWrapper = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: flex-start;
 `;
 
 const CardWrapper = styled.div`
@@ -44,7 +46,8 @@ const CardWrapper = styled.div`
 
 const CardTitle = styled.div`
   color: #54595d;
-  font-size: ${Layout.Text.Normal}px;
+  text-align: center;
+  font-size: ${Layout.Text.Large}px;
 `;
 
 const CardButtonsWrapper = styled.div`
@@ -74,14 +77,28 @@ const CardButton = styled.button`
   outline: none;
 `;
 
-const CardDetailWrapper = styled.div``;
+const CardDetailWrapper = styled.div`
+  margin-top: 16px;
+`;
 
-const CardDescription = styled.div``;
+const CardDescriptionWrapper = styled.div`
+  height: 80px;
+`;
 
-const CardTopicsWrapper = styled.div``;
+const CardDescription = styled.div`
+  font-size: ${Layout.Text.Small}px;
+  text-align: center;
+  color: #54595d;
+`;
+
+const CardTopicsWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+`;
 
 const CardTopic = styled.a`
-  font-size: 10px;
+  font-size: ${Layout.Text.Small}px;
   color: #54595d;
   margin-left: 10px;
   padding: 5px;
@@ -89,11 +106,13 @@ const CardTopic = styled.a`
   border-radius: 5px;
   white-space: nowrap;
   box-sizing: border-box;
+  color: #54595d;
 `;
 
 type Card = Repo & {
   showDetail: boolean;
-  onClickDetailButton(): void;
+  index: number;
+  onClickDetailButton(index: number): void;
   openNewWindowWithUrl(url: string): void;
 };
 
@@ -105,7 +124,8 @@ const Card = ({
   description,
   showDetail,
   onClickDetailButton,
-  openNewWindowWithUrl
+  openNewWindowWithUrl,
+  index
 }: Card) => (
   <CardWrapper>
     <CardTitle>{title}</CardTitle>
@@ -121,11 +141,15 @@ const Card = ({
           Web Site
         </CardButton>
       ) : null}
-      <CardButton onClick={onClickDetailButton}>Detail</CardButton>
+      <CardButton onClick={() => onClickDetailButton(index)}>Detail</CardButton>
     </CardButtonsWrapper>
     {showDetail ? (
       <CardDetailWrapper>
-        <CardDescription>{description}</CardDescription>
+        <CardDescriptionWrapper>
+          {description.split('\n').map((line, index) => {
+            return <CardDescription key={index}>{line}</CardDescription>;
+          })}
+        </CardDescriptionWrapper>
         <CardTopicsWrapper>
           {topics.map((topic, index) => (
             <CardTopic key={index}>{topic}</CardTopic>
@@ -141,7 +165,7 @@ type WorksProps = {
 };
 
 type WorksState = {
-  showDetail: boolean;
+  showDetail: boolean[];
 };
 
 class Works extends React.Component<WorksProps, WorksState> {
@@ -154,12 +178,14 @@ class Works extends React.Component<WorksProps, WorksState> {
   constructor(props: WorksProps) {
     super(props);
     this.state = {
-      showDetail: false
+      showDetail: new Array(10).fill(false)
     };
   }
 
-  onClickDetailButton = () => {
-    this.setState({ showDetail: !this.state.showDetail });
+  onClickDetailButton = (index: number) => {
+    let showDetail = this.state.showDetail;
+    showDetail[index] = !showDetail[index];
+    this.setState({ showDetail });
   };
 
   openNewWindowWithUrl = (url: string) => {
@@ -193,9 +219,10 @@ class Works extends React.Component<WorksProps, WorksState> {
                     topics={repo.topics}
                     description={repo.description}
                     key={index}
-                    showDetail={showDetail}
+                    showDetail={showDetail[index]}
                     onClickDetailButton={this.onClickDetailButton}
                     openNewWindowWithUrl={this.openNewWindowWithUrl}
+                    index={index}
                   />
                 );
               })}

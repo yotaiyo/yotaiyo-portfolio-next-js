@@ -1,6 +1,6 @@
 import { fetchRepos } from '../lib/api';
 import { ThunkDispatch } from 'redux-thunk';
-import { githubState } from '../reducers/github';
+import { InitialState } from '../store/makeStore';
 
 export type Repo = {
   title: string;
@@ -51,7 +51,7 @@ const showRepos = [
   {
     title: 'portfolio',
     description:
-      '私のポートフォリオサイト。worksはGitHub APIから動的に生成。デザインはfigmaで作成。'
+      '私のポートフォリオサイト。\nworksはGitHub APIから動的に生成。\nデザインはfigmaで作成。'
   },
   {
     title: 'music-auto-tagging',
@@ -80,7 +80,7 @@ const showRepos = [
   {
     title: 'to-do-app-hooks',
     description:
-      'タスク管理アプリケーションのフロントエンド部実装。React Hooksを用い、Class Componentを使用しないような実装にしている。'
+      'タスク管理アプリケーションのフロントエンド部実装。\nReact Hooksを用い、Class Componentを使用しないような実装にしている。'
   },
   {
     title: 'music-genre-classification',
@@ -112,7 +112,7 @@ const convertFetchReposResult = (fetchReposSuccessResult: any): Repo[] => {
 };
 
 export const getRepos = () => async (
-  dispatch: ThunkDispatch<githubState, undefined, Action>
+  dispatch: ThunkDispatch<InitialState, undefined, Action>
 ) => {
   const fetchReposResult = await fetchRepos({
     userName: process.env.GITHUB_USER_NAME,
