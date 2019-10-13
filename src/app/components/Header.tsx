@@ -16,10 +16,13 @@ const Wrapper = styled.div`
   padding: 20px 0 20px 0;
   color: ${Color.White};
   font-size: ${Layout.Text.Normal}px;
+  @media (max-width: 411px) {
+    font-size: ${Layout.Text.Small}px;
+    padding: 15px 0 15px 0;
+  }
 `;
 
 const HeaderTitle = styled.a`
-  font-size: ${Layout.Text.Normal}px;
   margin-left: 40px;
   transition: all 0.5s ease;
   &:hover {
@@ -33,19 +36,18 @@ const HeaderTitle = styled.a`
 const SectionWrapper = styled.div`
   margin-right: 60px;
   @media (max-width: 411px) {
-    margin-right: 30px;
+    margin-right: 10px;
   }
 `;
 
 const Section = styled.a`
-  font-size: ${Layout.Text.Normal}px;
   margin-left: 60px;
   transition: all 0.5s ease;
   &:hover {
     color: ${Color.Red1};
   }
   @media (max-width: 411px) {
-    margin-left: 15px;
+    margin-left: 10px;
   }
 `;
 
