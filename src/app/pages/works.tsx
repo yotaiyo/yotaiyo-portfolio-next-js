@@ -75,6 +75,10 @@ const CardButton = styled.button`
   border: 0.2px solid #54595d;
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
   outline: none;
+  transition: all 0.5s ease;
+  &:hover {
+    color: #cc0066;
+  }
 `;
 
 const CardDetailWrapper = styled.div`
