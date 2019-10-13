@@ -31,10 +31,16 @@ const HeaderTitle = styled.a`
   @media (max-width: 900px) {
     font-size: ${Layout.Text.Small}px;
   }
+  @media (max-width: 411px) {
+    margin-left: 10px;
+  }
 `;
 
 const SectionWrapper = styled.div`
   margin-right: 60px;
+  @media (max-width: 411px) {
+    margin-right: 30px;
+  }
 `;
 
 const Section = styled.a`
@@ -46,6 +52,9 @@ const Section = styled.a`
   }
   @media (max-width: 900px) {
     font-size: ${Layout.Text.Small}px;
+  }
+  @media (max-width: 411px) {
+    margin-left: 15px;
   }
 `;
 
