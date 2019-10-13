@@ -67,7 +67,7 @@ const CardBody = styled.div`
 const CardTagsWrapper = styled.div``;
 
 const CardTag = styled.span`
-  font-size: ${Layout.Text.Small}px;
+  font-size: ${Layout.Text.Smaller}px;
   color: ${Color.Black2};
   margin-left: 10px;
   padding: 5px;
@@ -147,7 +147,7 @@ export const History = () => {
     {
       period: '2019.09 ~',
       title: 'eureka 長期インターン',
-      body: 'フロントエンドエンジニアとして、Pairs Web版の開発に参加中。',
+      body: 'フロントエンドエンジニアとして、Pairs Web版の開発に参加。',
       tags: ['typescript', 'react', 'redux']
     },
     {

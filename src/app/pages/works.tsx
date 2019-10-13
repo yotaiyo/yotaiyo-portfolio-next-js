@@ -115,7 +115,7 @@ const CardTopicsWrapper = styled.div`
 `;
 
 const CardTopic = styled.a`
-  font-size: ${Layout.Text.Small}px;
+  font-size: ${Layout.Text.Smaller}px;
   color: ${Color.Black2};
   margin-left: 10px;
   padding: 5px;

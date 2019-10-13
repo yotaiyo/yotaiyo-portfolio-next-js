@@ -17,17 +17,17 @@ export enum Type {
 
 export type Action =
   | {
-    type: Type.ADD_REPOS;
-    payload: {
-      repos: Repo[];
-    };
-  }
+      type: Type.ADD_REPOS;
+      payload: {
+        repos: Repo[];
+      };
+    }
   | {
-    type: Type.ADD_HAS_ERROR;
-    payload: {
-      hasError: boolean;
+      type: Type.ADD_HAS_ERROR;
+      payload: {
+        hasError: boolean;
+      };
     };
-  };
 
 const addRepos = (repos: Repo[]): Action => {
   return {
@@ -56,7 +56,7 @@ const showRepos = [
   {
     title: 'music-auto-tagging',
     description:
-      'MagnaTagATuneと呼ばれる大規模データセットを用い、楽曲波形のジャンル、ムード、楽器といったタグを予測する楽曲タグ予測モデルの作成、評価を行うレポジトリ。'
+      '楽曲波形のジャンル、ムード、楽器といったタグを予測する楽曲タグ予測モデルの作成、評価を行うレポジトリ。\nMagnaTagATuneと呼ばれる大規模データセットを用いる。'
   },
   {
     title: 'to-do-app-frontend',
@@ -85,7 +85,7 @@ const showRepos = [
   {
     title: 'music-genre-classification',
     description:
-      'GTZANと呼ばれるデータセットを用い、楽曲波形のジャンルを予測する楽曲タグ予測モデルの作成、評価を行うレポジトリ。'
+      '楽曲波形のジャンルを予測する楽曲タグ予測モデルの作成、評価を行うレポジトリ。\nGTZANと呼ばれるデータセットを用いる。'
   }
 ];
 
