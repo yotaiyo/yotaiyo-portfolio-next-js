@@ -17,17 +17,17 @@ export enum Type {
 
 export type Action =
   | {
-      type: Type.ADD_REPOS;
-      payload: {
-        repos: Repo[];
-      };
-    }
-  | {
-      type: Type.ADD_HAS_ERROR;
-      payload: {
-        hasError: boolean;
-      };
+    type: Type.ADD_REPOS;
+    payload: {
+      repos: Repo[];
     };
+  }
+  | {
+    type: Type.ADD_HAS_ERROR;
+    payload: {
+      hasError: boolean;
+    };
+  };
 
 const addRepos = (repos: Repo[]): Action => {
   return {
@@ -71,11 +71,11 @@ const showRepos = [
   {
     title: 'weather-app',
     description:
-      'APIを叩いて向こう3日間の情報を表示するお天気アプリケーション。'
+      'APIを叩いて向こう3日間の情報を表示するお天気アプリケーション。\n初めて作成したアプリケーション。'
   },
   {
     title: 'tinder-card',
-    description: 'TinderのカードUIの再現実装。'
+    description: 'TinderのカードUIの再現実装。\nスマホのブラウザ環境を想定'
   },
   {
     title: 'to-do-app-hooks',
