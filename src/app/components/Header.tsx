@@ -1,19 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Layout } from '../consts/Layout';
+import { Color } from '../consts/Color';
 import Link from 'next/link';
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  box-shadow: 0px 5px 5px -5px #54595d;
-  background-color: #00abb3;
+  box-shadow: 0px 5px 5px -5px rgb(0, 0, 0, 0.5);
+  background-color: ${Color.Blue1};
   position: fixed;
   width: 100%;
   z-index: 1;
   padding: 20px 0 20px 0;
-  color: #fff;
+  color: ${Color.White};
   font-size: ${Layout.Text.Normal}px;
 `;
 
@@ -22,7 +23,7 @@ const HeaderTitle = styled.a`
   margin-left: 40px;
   transition: all 0.5s ease;
   &:hover {
-    color: #cc0066;
+    color: ${Color.Red1};
   }
 `;
 
@@ -35,7 +36,7 @@ const Section = styled.a`
   margin-left: 60px;
   transition: all 0.5s ease;
   &:hover {
-    color: #cc0066;
+    color: ${Color.Red1};
   }
 `;
 

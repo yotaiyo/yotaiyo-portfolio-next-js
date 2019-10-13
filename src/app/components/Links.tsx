@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Layout } from '../consts/Layout';
+import { Color } from '../consts/Color';
 import githubIcon from '../assets/images/github.png';
 import twitterIcon from '../assets/images/twitter.png';
 import atcoderIcon from '../assets/images/atcoder.png';
@@ -11,9 +12,9 @@ const Wrapper = styled.div`
 
 const Title = styled.h1`
   font-size: ${Layout.Text.Largest}px;
-  color: #3e4448;
+  color: ${Color.Black1};
   margin: 0 auto;
-  border-bottom: 2px solid #3e4448;
+  border-bottom: 2px solid ${Color.Black1};
   width: 100px;
   margin-bottom: 40px;
 `;

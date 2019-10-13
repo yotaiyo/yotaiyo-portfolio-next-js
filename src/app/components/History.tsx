@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Layout } from '../consts/Layout';
+import { Color } from '../consts/Color';
 
 const Wrapper = styled.div`
   margin-top: 100px;
@@ -8,9 +9,9 @@ const Wrapper = styled.div`
 
 const Title = styled.h1`
   font-size: ${Layout.Text.Largest}px;
-  color: #3e4448;
+  color: ${Color.Black1};
   margin: 0 auto;
-  border-bottom: 2px solid #3e4448;
+  border-bottom: 2px solid ${Color.Black1};
   width: 140px;
   margin-bottom: 40px;
 `;
@@ -22,7 +23,7 @@ const PeriodWrapper = styled.div`
 
 const Period = styled.div`
   font-size: ${Layout.Text.Small}px;
-  color: #54595d;
+  color: ${Color.Black2};
   text-align: center;
 `;
 
@@ -33,7 +34,7 @@ const MyHistoriesWrapper = styled.div`
 `;
 
 const MyHistories = styled.div`
-  border-left: 2px solid #cbced0;
+  border-left: 2px solid ${Color.Black3};
   flex: 0.5;
 `;
 
@@ -48,7 +49,7 @@ const CardWrapper = styled.div`
 
 const CardTitle = styled.div`
   font-size: ${Layout.Text.Large}px;
-  color: #3e4448;
+  color: ${Color.Black1};
   margin-top: 20px;
   height: 30px;
 `;
@@ -60,17 +61,17 @@ const CardBodyWrapper = styled.div`
 
 const CardBody = styled.div`
   font-size: ${Layout.Text.Small}px;
-  color: #54595d;
+  color: ${Color.Black2};
 `;
 
 const CardTagsWrapper = styled.div``;
 
 const CardTag = styled.span`
   font-size: ${Layout.Text.Small}px;
-  color: #54595d;
+  color: ${Color.Black2};
   margin-left: 10px;
   padding: 5px;
-  border: 1px solid #54595d;
+  border: 1px solid ${Color.Black2};
   border-radius: 5px;
   white-space: nowrap;
 `;
@@ -109,7 +110,7 @@ const Circle = styled.div`
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: #00c4cc;
+  background-color: ${Color.Blue2};
   position: relative;
   right: 16px;
   top: 80px;
@@ -121,7 +122,7 @@ const Triangle = styled.div`
   margin-top: 85px;
   border-style: solid;
   border-width: 10px 10px 10px 10px;
-  border-color: transparent #fff transparent transparent;
+  border-color: transparent ${Color.White} transparent transparent;
   filter: drop-shadow(0 2px 0 rgb(0, 0, 0, 0.1));
 `;
 

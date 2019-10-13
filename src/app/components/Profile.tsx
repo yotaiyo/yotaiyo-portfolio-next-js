@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import IconImage from '../assets/images/icon.png';
 import { Layout } from '../consts/Layout';
+import { Color } from '../consts/Color';
 
 const Wrapper = styled.div`
   padding-top: 120px;
@@ -9,9 +10,9 @@ const Wrapper = styled.div`
 
 const Title = styled.h1`
   font-size: ${Layout.Text.Largest}px;
-  color: #3e4448;
+  color: ${Color.Black1};
   margin: 0 auto;
-  border-bottom: 2px solid #3e4448;
+  border-bottom: 2px solid ${Color.Black1};
   width: 130px;
 `;
 
@@ -36,14 +37,14 @@ const ItemsWrapper = styled.div`
 
 const ItemTitle = styled.div`
   font-size: ${Layout.Text.Normal}px;
-  color: #54595d;
+  color: ${Color.Black2};
   text-align: left;
   margin-top: 12px;
 `;
 
 const ItemBody = styled.div`
   font-size: ${Layout.Text.Normal}px;
-  color: #54595d;
+  color: ${Color.Black2};
   text-align: left;
   margin-top: 12px;
   white-space: nowrap;

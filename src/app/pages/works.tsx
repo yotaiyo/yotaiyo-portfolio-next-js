@@ -2,6 +2,7 @@ import React from 'react';
 import MyLayout from '../components/MyLayout';
 import styled from 'styled-components';
 import { Layout } from '../consts/Layout';
+import { Color } from '../consts/Color';
 import ReactLoading from 'react-loading';
 import { getRepos, Repo } from '../actions/github';
 import { InitialState } from '../store/makeStore';
@@ -21,9 +22,9 @@ const Wrapper = styled.div`
 
 const Title = styled.h1`
   font-size: ${Layout.Text.Largest}px;
-  color: #3e4448;
+  color: ${Color.Black1};
   margin: 0 auto;
-  border-bottom: 2px solid #3e4448;
+  border-bottom: 2px solid ${Color.Black1};
   width: 125px;
   margin-bottom: 40px;
 `;
@@ -45,7 +46,7 @@ const CardWrapper = styled.div`
 `;
 
 const CardTitle = styled.div`
-  color: #54595d;
+  color: ${Color.Black1};
   text-align: center;
   font-size: ${Layout.Text.Large}px;
 `;
@@ -54,7 +55,6 @@ const CardButtonsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  color: #54595d;
   margin-top: 8px;
   &::after {
     margin-left: 12px;
@@ -68,16 +68,16 @@ const CardButton = styled.button`
   padding: 8px;
   margin-left: 12px;
   font-size: ${Layout.Text.Small}px;
-  color: #fff;
-  background-color: #00c4cc;
+  color: ${Color.White};
+  background-color: ${Color.Blue2};
   width: 28%;
   border-radius: 5px;
-  border: 0.2px solid #54595d;
+  border: 0.2px solid ${Color.Black2};
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
   outline: none;
   transition: all 0.5s ease;
   &:hover {
-    color: #cc0066;
+    color: ${Color.Red1};
   }
 `;
 
@@ -105,7 +105,7 @@ const CardDescriptionWrapper = styled.div`
 const CardDescription = styled.div`
   font-size: ${Layout.Text.Small}px;
   text-align: center;
-  color: #54595d;
+  color: ${Color.Black2};
 `;
 
 const CardTopicsWrapper = styled.div`
@@ -116,14 +116,13 @@ const CardTopicsWrapper = styled.div`
 
 const CardTopic = styled.a`
   font-size: ${Layout.Text.Small}px;
-  color: #54595d;
+  color: ${Color.Black2};
   margin-left: 10px;
   padding: 5px;
-  border: 1px solid #54595d;
+  border: 1px solid ${Color.Black2};
   border-radius: 5px;
   white-space: nowrap;
   box-sizing: border-box;
-  color: #54595d;
 `;
 
 type Card = Repo & {
@@ -218,7 +217,7 @@ class Works extends React.Component<WorksProps, WorksState> {
           <LoadingWrapper>
             <ReactLoading
               type={'spinningBubbles'}
-              color={'#00c4cc'}
+              color={Color.Blue2}
               height={'10%'}
               width={'10%'}
             />
