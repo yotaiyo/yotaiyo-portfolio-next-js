@@ -8,9 +8,6 @@ import atcoderIcon from '../assets/images/atcoder.png';
 
 const Wrapper = styled.div`
   margin-top: 100px;
-  @media (max-width: 900px) {
-    margin-top: 50px;
-  }
 `;
 
 const Title = styled.h1`
@@ -20,11 +17,6 @@ const Title = styled.h1`
   border-bottom: 2px solid ${Color.Black1};
   width: 100px;
   margin-bottom: 40px;
-  @media (max-width: 900px) {
-    font-size: ${Layout.Text.Large}px;
-    width: 65px;
-    margin-bottom: 20px;
-  }
 `;
 
 const LinksIconWrapper = styled.div`
@@ -43,10 +35,6 @@ const Link = styled.a`
 const LinkIcon = styled.img`
   width: 50px;
   height: 50px;
-  @media (max-width: 900px) {
-    width: 30px;
-    height: 30px;
-  }
 `;
 
 export const Links = () => {

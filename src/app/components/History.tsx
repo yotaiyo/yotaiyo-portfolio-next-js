@@ -5,9 +5,8 @@ import { Color } from '../consts/Color';
 
 const Wrapper = styled.div`
   margin-top: 100px;
-  @media (max-width: 900px) {
-    margin-top: 50px;
-  }
+  padding-left: 20px;
+  padding-right: 20px;
 `;
 
 const Title = styled.h1`
@@ -17,27 +16,18 @@ const Title = styled.h1`
   border-bottom: 2px solid ${Color.Black1};
   width: 140px;
   margin-bottom: 40px;
-  @media (max-width: 900px) {
-    font-size: ${Layout.Text.Large}px;
-    width: 90px;
-  }
 `;
 
 const PeriodWrapper = styled.div`
   margin-top: 20px;
-  margin-right: 40px;
-  @media (max-width: 900px) {
-    margin-right: 20px;
-  }
+  margin-right: 30px;
 `;
 
 const Period = styled.div`
   font-size: ${Layout.Text.Small}px;
   color: ${Color.Black2};
   text-align: center;
-  @media (max-width: 900px) {
-    font-size: ${Layout.Text.Smaller}px;
-  }
+  white-space: nowrap;
 `;
 
 const MyHistoriesWrapper = styled.div`
@@ -48,19 +38,18 @@ const MyHistoriesWrapper = styled.div`
 
 const MyHistories = styled.div`
   border-left: 2px solid ${Color.Black3};
-  flex: 0.5;
+  flex: 0.6;
 `;
 
 const CardWrapper = styled.div`
   border-radius: 30px;
   box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.5);
   height: 200px;
-  width: 680px;
+  padding-left: 20px;
+  padding-right: 20px;
+  min-width: 350px;
   flex: 1;
   text-align: center;
-  @media (max-width: 900px) {
-    width: 480px;
-  }
 `;
 
 const CardTitle = styled.div`
@@ -68,9 +57,6 @@ const CardTitle = styled.div`
   color: ${Color.Black1};
   margin-top: 20px;
   height: 30px;
-  @media (max-width: 900px) {
-    font-size: ${Layout.Text.Normal}px;
-  }
 `;
 
 const CardBodyWrapper = styled.div`
@@ -81,9 +67,6 @@ const CardBodyWrapper = styled.div`
 const CardBody = styled.div`
   font-size: ${Layout.Text.Small}px;
   color: ${Color.Black2};
-  @media (max-width: 900px) {
-    font-size: ${Layout.Text.Smaller}px;
-  }
 `;
 
 const CardTagsWrapper = styled.div``;
@@ -95,11 +78,6 @@ const CardTag = styled.span`
   padding: 5px;
   border: 1px solid ${Color.Black2};
   border-radius: 5px;
-  white-space: nowrap;
-  @media (max-width: 900px) {
-    font-size: ${Layout.Text.Smallest}px;
-    margin-left: 5px;
-  }
 `;
 
 type Card = {
@@ -140,12 +118,6 @@ const Circle = styled.div`
   position: relative;
   right: 16px;
   top: 80px;
-  @media (max-width: 900px) {
-    width: 15px;
-    height: 15px;
-    right: 8px;
-    top: 88px;
-  }
 `;
 
 const TriangleWrapper = styled.div``;
@@ -187,27 +159,20 @@ export const History = () => {
       title: 'DMM.com 短期インターン',
       body:
         'クエスト型インターン、DMM GUILDに参加。\nDMMが実際に抱えている技術的な課題に挑戦。',
-      tags: ['vue', 'react', 'redux', 'vanilla js']
+      tags: ['vue', 'react', 'redux', 'vanillajs']
     },
     {
       period: '2019.01 ~ 08',
       title: 'FIREBUG 長期インターン',
       body: 'toC向けマッチングアプリ開発に参加。',
-      tags: ['typescript', 'react native', 'graph ql']
+      tags: ['typescript', 'reactnative', 'graphql']
     },
     {
       period: '2019.12 ~ 01',
       title: 'Apollo 短期インターン',
       body:
         'webエンジニアリングに関する基礎を学ぶ。\nその後、業務委託のアプリ開発案件に参加。',
-      tags: [
-        'html/css',
-        'javascript',
-        'typescript',
-        'jquery',
-        'react',
-        'react native'
-      ]
+      tags: ['html/css', 'typescript', 'jquery', 'react']
     }
   ];
   return (
