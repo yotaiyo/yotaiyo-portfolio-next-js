@@ -5,6 +5,9 @@ import { Color } from '../consts/Color';
 
 const Wrapper = styled.div`
   margin-top: 100px;
+  @media (max-width: 900px) {
+    margin-top: 50px;
+  }
 `;
 
 const Title = styled.h1`
@@ -14,17 +17,27 @@ const Title = styled.h1`
   border-bottom: 2px solid ${Color.Black1};
   width: 140px;
   margin-bottom: 40px;
+  @media (max-width: 900px) {
+    font-size: ${Layout.Text.Large}px;
+    width: 90px;
+  }
 `;
 
 const PeriodWrapper = styled.div`
   margin-top: 20px;
   margin-right: 40px;
+  @media (max-width: 900px) {
+    margin-right: 20px;
+  }
 `;
 
 const Period = styled.div`
   font-size: ${Layout.Text.Small}px;
   color: ${Color.Black2};
   text-align: center;
+  @media (max-width: 900px) {
+    font-size: ${Layout.Text.Smaller}px;
+  }
 `;
 
 const MyHistoriesWrapper = styled.div`
@@ -45,6 +58,9 @@ const CardWrapper = styled.div`
   width: 680px;
   flex: 1;
   text-align: center;
+  @media (max-width: 900px) {
+    width: 480px;
+  }
 `;
 
 const CardTitle = styled.div`
@@ -52,6 +68,9 @@ const CardTitle = styled.div`
   color: ${Color.Black1};
   margin-top: 20px;
   height: 30px;
+  @media (max-width: 900px) {
+    font-size: ${Layout.Text.Normal}px;
+  }
 `;
 
 const CardBodyWrapper = styled.div`
@@ -62,6 +81,9 @@ const CardBodyWrapper = styled.div`
 const CardBody = styled.div`
   font-size: ${Layout.Text.Small}px;
   color: ${Color.Black2};
+  @media (max-width: 900px) {
+    font-size: ${Layout.Text.Smaller}px;
+  }
 `;
 
 const CardTagsWrapper = styled.div``;
@@ -74,6 +96,10 @@ const CardTag = styled.span`
   border: 1px solid ${Color.Black2};
   border-radius: 5px;
   white-space: nowrap;
+  @media (max-width: 900px) {
+    font-size: ${Layout.Text.Smallest}px;
+    margin-left: 5px;
+  }
 `;
 
 type Card = {
@@ -114,6 +140,12 @@ const Circle = styled.div`
   position: relative;
   right: 16px;
   top: 80px;
+  @media (max-width: 900px) {
+    width: 15px;
+    height: 15px;
+    right: 8px;
+    top: 88px;
+  }
 `;
 
 const TriangleWrapper = styled.div``;

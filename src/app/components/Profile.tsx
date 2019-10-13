@@ -6,6 +6,9 @@ import { Color } from '../consts/Color';
 
 const Wrapper = styled.div`
   padding-top: 120px;
+  @media (max-width: 900px) {
+    padding-top: 60px;
+  }
 `;
 
 const Title = styled.h1`
@@ -14,6 +17,10 @@ const Title = styled.h1`
   margin: 0 auto;
   border-bottom: 2px solid ${Color.Black1};
   width: 130px;
+  @media (max-width: 900px) {
+    font-size: ${Layout.Text.Large}px;
+    width: 85px;
+  }
 `;
 
 const IconAndItemsWrapper = styled.div`
@@ -35,6 +42,10 @@ const Icon = styled.img`
   border-radius: 30px;
   margin-right: 40px;
   box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.5);
+  @media (max-width: 900px) {
+    height: 200px;
+    width: 200px;
+  }
 `;
 
 const ItemsTitleAndBodyWrapper = styled.div`
@@ -46,17 +57,20 @@ const ItemsWrapper = styled.div`
   margin-left: 60px;
   margin-top: 8px;
   flex-direction: row;
+  font-size: ${Layout.Text.Normal}px;
+  @media (max-width: 900px) {
+    font-size: ${Layout.Text.Small}px;
+    margin-left: 20px;
+  }
 `;
 
 const ItemTitle = styled.div`
-  font-size: ${Layout.Text.Normal}px;
   color: ${Color.Black2};
   text-align: left;
   margin-top: 12px;
 `;
 
 const ItemBody = styled.div`
-  font-size: ${Layout.Text.Normal}px;
   color: ${Color.Black2};
   text-align: left;
   margin-top: 12px;
@@ -70,7 +84,7 @@ export const Profile = () => {
     { title: 'College', body: 'The University of Electro-Communications' },
     {
       title: 'Grade',
-      body: 'second-year master`s student (on a leave of absence )'
+      body: 'second-year master`s student ( leave of absence )'
     },
     { title: 'Graduation', body: '2021' },
     { title: 'Interests', body: 'web, front-end' },

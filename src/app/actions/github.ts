@@ -56,7 +56,7 @@ const showRepos = [
   {
     title: 'music-auto-tagging',
     description:
-      '楽曲波形のジャンル、ムード、楽器といったタグを予測する楽曲タグ予測モデルの作成、評価を行うレポジトリ。\nMagnaTagATuneと呼ばれる大規模データセットを用いる。'
+      '楽曲波形のジャンル、ムード、楽器といったタグを予測する楽曲タグ予測モデルの作成、評価を行う。\nMagnaTagATuneと呼ばれる大規模データセットを用いる。'
   },
   {
     title: 'to-do-app-frontend',
@@ -85,7 +85,7 @@ const showRepos = [
   {
     title: 'music-genre-classification',
     description:
-      '楽曲波形のジャンルを予測する楽曲タグ予測モデルの作成、評価を行うレポジトリ。\nGTZANと呼ばれるデータセットを用いる。'
+      '楽曲波形のジャンルを予測する楽曲タグ予測モデルの作成、評価を行う。\nGTZANと呼ばれるデータセットを用いる。'
   }
 ];
 
