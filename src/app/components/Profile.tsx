@@ -8,6 +8,11 @@ const Wrapper = styled.div`
   padding-top: 120px;
   padding-left: 20px;
   padding-right: 20px;
+  @media (max-width: 411px) {
+    padding-top: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 `;
 
 const Title = styled.h1`
@@ -16,6 +21,10 @@ const Title = styled.h1`
   margin: 0 auto;
   border-bottom: 2px solid ${Color.Black1};
   width: 120px;
+  @media (max-width: 411px) {
+    font-size: ${Layout.Text.Larger}px;
+    width: 85px;
+  }
 `;
 
 const IconAndItemsWrapper = styled.div`
@@ -24,6 +33,9 @@ const IconAndItemsWrapper = styled.div`
   margin-top: 30px;
   @media (max-width: 1100px) {
     flex-direction: column;
+  }
+  @media (max-width: 411px) {
+    margin-top: 15px;
   }
 `;
 
@@ -59,6 +71,9 @@ const ItemsWrapper = styled.div`
   @media (max-width: 900px) {
     margin-left: 0;
   }
+  @media (max-width: 411px) {
+    font-size: ${Layout.Text.Small}px;
+  }
 `;
 
 const ItemTitleAndBodyWrapper = styled.div`
@@ -69,14 +84,14 @@ const ItemTitle = styled.div`
   color: ${Color.Black2};
   text-align: left;
   margin-top: 12px;
-  flex: 0.3;
+  flex: 0.35;
 `;
 
 const ItemBody = styled.div`
   color: ${Color.Black2};
   text-align: left;
   margin-top: 12px;
-  flex: 0.7;
+  flex: 0.65;
 `;
 
 type ItemTitleAndBody = {
