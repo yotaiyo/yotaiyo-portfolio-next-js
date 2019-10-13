@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   padding-top: 120px;
   padding-left: 20px;
   padding-right: 20px;
-  @media (max-width: 411px) {
+  @media (max-width: 414px) {
     padding-top: 60px;
     padding-left: 10px;
     padding-right: 10px;
@@ -21,7 +21,7 @@ const Title = styled.h1`
   margin: 0 auto;
   border-bottom: 2px solid ${Color.Black1};
   width: 120px;
-  @media (max-width: 411px) {
+  @media (max-width: 414px) {
     font-size: ${Layout.Text.Larger}px;
     width: 85px;
   }
@@ -34,7 +34,7 @@ const IconAndItemsWrapper = styled.div`
   @media (max-width: 1100px) {
     flex-direction: column;
   }
-  @media (max-width: 411px) {
+  @media (max-width: 414px) {
     margin-top: 15px;
   }
 `;
@@ -52,7 +52,7 @@ const Icon = styled.img`
   @media (max-width: 900px) {
     margin-right: 0;
   }
-  @media (max-width: 411px) {
+  @media (max-width: 414px) {
     height: 150px;
     width: 150px;
   }
@@ -71,7 +71,7 @@ const ItemsWrapper = styled.div`
   @media (max-width: 900px) {
     margin-left: 0;
   }
-  @media (max-width: 411px) {
+  @media (max-width: 414px) {
     font-size: ${Layout.Text.Small}px;
   }
 `;

@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   margin-top: 100px;
   padding-left: 20px;
   padding-right: 20px;
-  @media (max-width: 411px) {
+  @media (max-width: 414px) {
     margin-top: 30px;
     padding-left: 10px;
     padding-right: 10px;
@@ -21,7 +21,7 @@ const Title = styled.h1`
   border-bottom: 2px solid ${Color.Black1};
   width: 140px;
   margin-bottom: 40px;
-  @media (max-width: 411px) {
+  @media (max-width: 414px) {
     font-size: ${Layout.Text.Larger}px;
     width: 95px;
   }
@@ -30,7 +30,7 @@ const Title = styled.h1`
 const PeriodWrapper = styled.div`
   margin-top: 20px;
   margin-right: 30px;
-  @media (max-width: 411px) {
+  @media (max-width: 414px) {
     display: none;
   }
 `;
@@ -40,7 +40,7 @@ const Period = styled.div`
   color: ${Color.Black2};
   text-align: center;
   white-space: nowrap;
-  @media (max-width: 411px) {
+  @media (max-width: 414px) {
     font-size: ${Layout.Text.Smaller}px;
   }
 `;
@@ -54,7 +54,7 @@ const MyHistoriesWrapper = styled.div`
 const MyHistories = styled.div`
   border-left: 2px solid ${Color.Black3};
   flex: 0.6;
-  @media (max-width: 411px) {
+  @media (max-width: 414px) {
     border-left: 1px solid ${Color.Black3};
   }
 `;
@@ -68,7 +68,7 @@ const CardWrapper = styled.div`
   min-width: 350px;
   flex: 1;
   text-align: center;
-  @media (max-width: 411px) {
+  @media (max-width: 414px) {
     min-width: 0;
     padding-left: 10px;
     padding-right: 10px;
@@ -80,7 +80,7 @@ const CardTitle = styled.div`
   color: ${Color.Black1};
   margin-top: 20px;
   height: 30px;
-  @media (max-width: 411px) {
+  @media (max-width: 414px) {
     font-size: ${Layout.Text.Normal - 2}px;
   }
 `;
@@ -93,7 +93,7 @@ const CardBodyWrapper = styled.div`
 const CardBody = styled.div`
   font-size: ${Layout.Text.Small}px;
   color: ${Color.Black2};
-  @media (max-width: 411px) {
+  @media (max-width: 414px) {
     font-size: ${Layout.Text.Smaller}px;
   }
 `;
@@ -107,7 +107,7 @@ const CardTag = styled.span`
   padding: 5px;
   border: 1px solid ${Color.Black2};
   border-radius: 5px;
-  @media (max-width: 411px) {
+  @media (max-width: 414px) {
     font-size: ${Layout.Text.Smallest}px;
     margin-left: 5px;
     padding: 2px;

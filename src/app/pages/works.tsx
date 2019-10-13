@@ -18,7 +18,7 @@ const Wrapper = styled.div`
   margin-left: 30px;
   margin-right: 30px;
   margin-bottom: 50px;
-  @media (max-width: 411px) {
+  @media (max-width: 414px) {
     padding-top: 60px;
     margin-left: 0;
     margin-right: 0;
@@ -32,7 +32,7 @@ const Title = styled.h1`
   border-bottom: 2px solid ${Color.Black1};
   width: 125px;
   margin-bottom: 40px;
-  @media (max-width: 411px) {
+  @media (max-width: 414px) {
     font-size: ${Layout.Text.Larger}px;
     width: 85px;
     margin-bottom: 10px;
@@ -61,7 +61,7 @@ const CardWrapper = styled.div`
   @media (max-width: 1200px) {
     width: 95%;
   }
-  @media (max-width: 411px) {
+  @media (max-width: 414px) {
     width: 85%;
     padding: 12px 10px 12px 10px;
   }
@@ -71,7 +71,7 @@ const CardTitle = styled.div`
   color: ${Color.Black1};
   text-align: center;
   font-size: ${Layout.Text.Large}px;
-  @media (max-width: 411px) {
+  @media (max-width: 414px) {
     font-size: ${Layout.Text.Normal}px;
   }
 `;
@@ -104,7 +104,7 @@ const CardButton = styled.button`
   &:hover {
     color: ${Color.Red1};
   }
-  @media (max-width: 411px) {
+  @media (max-width: 414px) {
     font-size: ${Layout.Text.Smaller}px;
     padding: 4px;
   }
@@ -133,7 +133,7 @@ const CardDescription = styled.div`
   font-size: ${Layout.Text.Small}px;
   text-align: center;
   color: ${Color.Black2};
-  @media (max-width: 411px) {
+  @media (max-width: 414px) {
     font-size: ${Layout.Text.Smaller}px;
   }
 `;
@@ -153,7 +153,7 @@ const CardTopic = styled.a`
   border-radius: 5px;
   white-space: nowrap;
   box-sizing: border-box;
-  @media (max-width: 411px) {
+  @media (max-width: 414px) {
     font-size: ${Layout.Text.Smallest}px;
     margin-left: 3px;
   }

@@ -8,7 +8,7 @@ import atcoderIcon from '../assets/images/atcoder.png';
 
 const Wrapper = styled.div`
   margin-top: 100px;
-  @media (max-width: 411px) {
+  @media (max-width: 414px) {
     margin-top: 30px;
   }
 `;
@@ -20,7 +20,7 @@ const Title = styled.h1`
   border-bottom: 2px solid ${Color.Black1};
   width: 100px;
   margin-bottom: 40px;
-  @media (max-width: 411px) {
+  @media (max-width: 414px) {
     font-size: ${Layout.Text.Larger}px;
     width: 70px;
     margin-bottom: 20px;
@@ -43,7 +43,7 @@ const Link = styled.a`
 const LinkIcon = styled.img`
   width: 50px;
   height: 50px;
-  @media (max-width: 411px) {
+  @media (max-width: 414px) {
     width: 30px;
     height: 30px;
   }
