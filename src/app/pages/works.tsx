@@ -79,6 +79,19 @@ const CardButton = styled.button`
 
 const CardDetailWrapper = styled.div`
   margin-top: 16px;
+  animation-name: fade-in;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, -20px, 0);
+    }
+    100% {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
 `;
 
 const CardDescriptionWrapper = styled.div`
