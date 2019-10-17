@@ -177,38 +177,38 @@ const Card = ({
   openNewWindowWithUrl,
   index
 }: Card) => (
-    <CardWrapper>
-      <CardTitle>{title}</CardTitle>
-      <CardButtonsWrapper>
-        <CardButton
-          style={{ marginLeft: 0 }}
-          onClick={() => openNewWindowWithUrl(url)}
-        >
-          Repository
+  <CardWrapper>
+    <CardTitle>{title}</CardTitle>
+    <CardButtonsWrapper>
+      <CardButton
+        style={{ marginLeft: 0 }}
+        onClick={() => openNewWindowWithUrl(url)}
+      >
+        Repository
       </CardButton>
-        {homepage ? (
-          <CardButton onClick={() => openNewWindowWithUrl(homepage)}>
-            Web Site
+      {homepage ? (
+        <CardButton onClick={() => openNewWindowWithUrl(homepage)}>
+          Web Site
         </CardButton>
-        ) : null}
-        <CardButton onClick={() => onClickDetailButton(index)}>Detail</CardButton>
-      </CardButtonsWrapper>
-      {showDetail ? (
-        <CardDetailWrapper>
-          <CardDescriptionWrapper>
-            {description.split('\n').map((line, index) => {
-              return <CardDescription key={index}>{line}</CardDescription>;
-            })}
-          </CardDescriptionWrapper>
-          <CardTopicsWrapper>
-            {topics.map((topic, index) => (
-              <CardTopic key={index}>{topic}</CardTopic>
-            ))}
-          </CardTopicsWrapper>
-        </CardDetailWrapper>
       ) : null}
-    </CardWrapper>
-  );
+      <CardButton onClick={() => onClickDetailButton(index)}>Detail</CardButton>
+    </CardButtonsWrapper>
+    {showDetail ? (
+      <CardDetailWrapper>
+        <CardDescriptionWrapper>
+          {description.split('\n').map((line, index) => {
+            return <CardDescription key={index}>{line}</CardDescription>;
+          })}
+        </CardDescriptionWrapper>
+        <CardTopicsWrapper>
+          {topics.map((topic, index) => (
+            <CardTopic key={index}>{topic}</CardTopic>
+          ))}
+        </CardTopicsWrapper>
+      </CardDetailWrapper>
+    ) : null}
+  </CardWrapper>
+);
 
 type WorksProps = {
   state: InitialState;
@@ -257,28 +257,28 @@ class Works extends React.Component<WorksProps, WorksState> {
             />
           </LoadingWrapper>
         ) : (
-            <Wrapper>
-              <Title>Works</Title>
-              <CardsWrapper>
-                {repos.map((repo: Repo, index: number) => {
-                  return (
-                    <Card
-                      title={repo.title}
-                      url={repo.url}
-                      homepage={repo.homepage}
-                      topics={repo.topics}
-                      description={repo.description}
-                      key={index}
-                      showDetail={showDetail[index]}
-                      onClickDetailButton={this.onClickDetailButton}
-                      openNewWindowWithUrl={this.openNewWindowWithUrl}
-                      index={index}
-                    />
-                  );
-                })}
-              </CardsWrapper>
-            </Wrapper>
-          )}
+          <Wrapper>
+            <Title>Works</Title>
+            <CardsWrapper>
+              {repos.map((repo: Repo, index: number) => {
+                return (
+                  <Card
+                    title={repo.title}
+                    url={repo.url}
+                    homepage={repo.homepage}
+                    topics={repo.topics}
+                    description={repo.description}
+                    key={index}
+                    showDetail={showDetail[index]}
+                    onClickDetailButton={this.onClickDetailButton}
+                    openNewWindowWithUrl={this.openNewWindowWithUrl}
+                    index={index}
+                  />
+                );
+              })}
+            </CardsWrapper>
+          </Wrapper>
+        )}
       </MyLayout>
     );
   }
