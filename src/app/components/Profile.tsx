@@ -49,7 +49,7 @@ const Icon = styled.img`
   border-radius: 30px;
   margin-right: 40px;
   box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.5);
-  @media (max-width: 900px) {
+  @media (max-width: 1100px) {
     margin-right: 0;
   }
   @media (max-width: 414px) {
@@ -68,11 +68,9 @@ const ItemsWrapper = styled.div`
   margin-top: 8px;
   flex-direction: row;
   font-size: ${Layout.Text.Normal}px;
-  @media (max-width: 900px) {
-    margin-left: 0;
-  }
   @media (max-width: 414px) {
     font-size: ${Layout.Text.Small}px;
+    margin-left: 30px;
   }
 `;
 
@@ -84,14 +82,20 @@ const ItemTitle = styled.div`
   color: ${Color.Black2};
   text-align: left;
   margin-top: 12px;
-  flex: 0.35;
+  flex: 0.25;
+  @media (max-width: 414px) {
+    flex: 0.4;
+  }
 `;
 
 const ItemBody = styled.div`
   color: ${Color.Black2};
   text-align: left;
   margin-top: 12px;
-  flex: 0.65;
+  flex: 0.75;
+  @media (max-width: 414px) {
+    flex: 0.65;
+  }
 `;
 
 type ItemTitleAndBody = {

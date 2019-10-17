@@ -47,7 +47,7 @@ const Section = styled.a`
     color: ${Color.Red1};
   }
   @media (max-width: 414px) {
-    margin-left: 10px;
+    margin-left: 25px;
   }
 `;
 
