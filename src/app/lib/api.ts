@@ -17,7 +17,7 @@ export const fetchRepos = async ({ userName, token }: FetchRepos) => {
       }
     );
     return {
-      success: result.data ? result.data : null,
+      success: result ? result.data : null,
       error: ''
     };
   } catch (err) {
