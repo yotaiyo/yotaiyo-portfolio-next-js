@@ -2,9 +2,14 @@ import React from 'react';
 import { getRepos } from '../actions/github';
 import { githubState } from '../reducers/github';
 import { Works } from '../components/Works';
+import { connect } from 'react-redux';
+import { InitialState } from '../store/makeStore';
+import { ThunkDispatch } from 'redux-thunk';
+import { Action } from '../actions/github';
 
 type WorksProps = {
   github: githubState;
+  dispatch: ThunkDispatch<InitialState, undefined, Action>;
 };
 
 type WorksState = {
@@ -22,6 +27,12 @@ class WorksContainer extends React.Component<WorksProps, WorksState> {
     this.state = {
       showDetail: new Array(10).fill(false)
     };
+  }
+
+  componentDidMount() {
+    if (this.props.github.hasError) {
+      this.props.dispatch(getRepos());
+    }
   }
 
   onClickDetailButton = (index: number) => {
@@ -46,4 +57,4 @@ class WorksContainer extends React.Component<WorksProps, WorksState> {
   }
 }
 
-export default WorksContainer;
+export default connect((state: InitialState) => state)(WorksContainer);

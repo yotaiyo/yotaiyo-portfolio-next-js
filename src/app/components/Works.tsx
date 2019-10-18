@@ -61,10 +61,10 @@ type WorksProps = {
 
 export const Works: React.FC<WorksProps> = props => {
   const { showDetail, onClickDetailButton, openNewWindowWithUrl } = props;
-  const state = useSelector((state: InitialState) => state);
+  const github = useSelector((state: InitialState) => state.github);
   return (
     <MyLayout>
-      {state.github.hasError || state.github.repos.length === 0 ? (
+      {github.hasError || github.repos.length === 0 ? (
         <LoadingWrapper>
           <ReactLoading
             type={'spinningBubbles'}
@@ -77,7 +77,7 @@ export const Works: React.FC<WorksProps> = props => {
         <Wrapper>
           <Title>Works</Title>
           <CardsWrapper>
-            {state.github.repos.map((repo: Repo, index: number) => {
+            {github.repos.map((repo: Repo, index: number) => {
               return (
                 <Card
                   title={repo.title}
