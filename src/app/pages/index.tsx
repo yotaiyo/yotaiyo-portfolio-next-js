@@ -4,19 +4,29 @@ import styled from 'styled-components';
 import { Profile } from '../components/Profile';
 import { History } from '../components/History';
 import { Links } from '../components/Links';
+import { getRepos } from '../actions/github';
 
 const Wrapper = styled.div`
   margin-bottom: 100px;
 `;
 
-const Top = () => (
-  <MyLayout>
-    <Wrapper>
-      <Profile />
-      <History />
-      <Links />
-    </Wrapper>
-  </MyLayout>
-);
+class Top extends React.Component {
+  static async getInitialProps(props: any) {
+    await props.store.dispatch(getRepos());
+    return {};
+  }
+
+  render() {
+    return (
+      <MyLayout>
+        <Wrapper>
+          <Profile />
+          <History />
+          <Links />
+        </Wrapper>
+      </MyLayout>
+    );
+  }
+}
 
 export default Top;
