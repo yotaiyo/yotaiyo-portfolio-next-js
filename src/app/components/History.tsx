@@ -198,7 +198,7 @@ export const History = () => {
     {
       period: '2019.01 ~ 08',
       title: 'FIREBUG 長期インターン',
-      body: 'toC向けマッチングアプリ開発に参加。',
+      body: 'toB向けマッチングアプリ開発に参加。',
       tags: ['typescript', 'reactnative', 'graphql']
     },
     {
