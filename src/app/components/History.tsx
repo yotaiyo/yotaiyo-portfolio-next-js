@@ -202,7 +202,7 @@ export const History = () => {
       tags: ['typescript', 'reactnative', 'graphql']
     },
     {
-      period: '2019.12 ~ 01',
+      period: '2018.12 ~ 01',
       title: 'Apollo 短期インターン',
       body:
         'webエンジニアリングに関する基礎を学ぶ。その後、業務委託のアプリ開発案件に参加。',
