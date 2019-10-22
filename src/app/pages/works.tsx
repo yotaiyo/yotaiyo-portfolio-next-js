@@ -20,7 +20,7 @@ class WorksContainer extends React.Component<WorksProps, WorksState> {
     if (props.store.getState().github.hasError) {
       await props.store.dispatch(getRepos());
     }
-    return { github: props.store.getState().github };
+    return {};
   }
 
   constructor(props: WorksProps) {
@@ -47,7 +47,6 @@ class WorksContainer extends React.Component<WorksProps, WorksState> {
         showDetail={showDetail}
         onClickDetailButton={this.onClickDetailButton}
         openNewWindowWithUrl={this.openNewWindowWithUrl}
-        github={this.props.github}
       />
     );
   }

@@ -6,7 +6,8 @@ import { Card } from '../components/Card';
 import { Repo } from '../actions/github';
 import { Color } from '../consts/Color';
 import { Layout } from '../consts/Layout';
-import { githubState } from '../reducers/github';
+import { useSelector } from 'react-redux';
+import { InitialState } from '../store/makeStore';
 
 const LoadingWrapper = styled.div`
   padding-top: 120px;
@@ -54,18 +55,13 @@ const CardsWrapper = styled.div`
 
 type WorksProps = {
   showDetail: boolean[];
-  github: githubState;
   onClickDetailButton(index: number): void;
   openNewWindowWithUrl(url: string): void;
 };
 
 export const Works: React.FC<WorksProps> = props => {
-  const {
-    showDetail,
-    onClickDetailButton,
-    openNewWindowWithUrl,
-    github
-  } = props;
+  const { showDetail, onClickDetailButton, openNewWindowWithUrl } = props;
+  const github = useSelector((state: InitialState) => state.github);
   return (
     <MyLayout>
       {github.hasError || github.repos.length === 0 ? (
