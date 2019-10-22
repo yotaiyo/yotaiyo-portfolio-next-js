@@ -8,6 +8,6 @@ export type InitialState = {
 
 const rootReducer = combineReducers({ github });
 
-export const makeStore = () => {
-  return createStore(rootReducer, applyMiddleware(thunk));
+export const makeStore = (initialState: InitialState) => {
+  return createStore(rootReducer, initialState, applyMiddleware(thunk));
 };

@@ -2,10 +2,10 @@ import React from 'react';
 import { getRepos } from '../actions/github';
 import { githubState } from '../reducers/github';
 import { Works } from '../components/Works';
-import { connect } from 'react-redux';
 import { InitialState } from '../store/makeStore';
 import { ThunkDispatch } from 'redux-thunk';
 import { Action } from '../actions/github';
+import { connect } from 'react-redux';
 
 type WorksProps = {
   github: githubState;
@@ -17,17 +17,25 @@ type WorksState = {
 };
 
 class WorksContainer extends React.Component<WorksProps, WorksState> {
+  static async getInitialProps(props: any) {
+    if (props.store.getState().github.hasError) {
+      await props.store.dispatch(getRepos());
+    }
+    return {};
+  }
+
+  // 課金しないとfirebase functionsで外部API叩けないっぽいので応急処置。。。
+  componentDidMount() {
+    if (this.props.github.hasError) {
+      this.props.dispatch(getRepos());
+    }
+  }
+
   constructor(props: WorksProps) {
     super(props);
     this.state = {
       showDetail: new Array(10).fill(false)
     };
-  }
-
-  componentDidMount() {
-    if (this.props.github.hasError) {
-      this.props.dispatch(getRepos());
-    }
   }
 
   onClickDetailButton = (index: number) => {
