@@ -5,6 +5,7 @@ import { Works } from '../components/Works';
 import { InitialState } from '../store/makeStore';
 import { ThunkDispatch } from 'redux-thunk';
 import { Action } from '../actions/github';
+import { connect } from 'react-redux';
 
 type WorksProps = {
   github: githubState;
@@ -21,6 +22,13 @@ class WorksContainer extends React.Component<WorksProps, WorksState> {
       await props.store.dispatch(getRepos());
     }
     return {};
+  }
+
+  // 課金しないとfirebase functionsで外部API叩けないっぽいので応急処置。。。
+  componentDidMount() {
+    if (this.props.github.hasError) {
+      this.props.dispatch(getRepos());
+    }
   }
 
   constructor(props: WorksProps) {
@@ -52,4 +60,4 @@ class WorksContainer extends React.Component<WorksProps, WorksState> {
   }
 }
 
-export default WorksContainer;
+export default connect((state: InitialState) => state)(WorksContainer);
