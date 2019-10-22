@@ -12,7 +12,9 @@ const Wrapper = styled.div`
 
 class Top extends React.Component {
   static async getInitialProps(props: any) {
-    await props.store.dispatch(getRepos());
+    if (props.isServer) {
+      await props.store.dispatch(getRepos());
+    }
     return {};
   }
 

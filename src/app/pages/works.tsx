@@ -2,7 +2,6 @@ import React from 'react';
 import { getRepos } from '../actions/github';
 import { githubState } from '../reducers/github';
 import { Works } from '../components/Works';
-import { connect } from 'react-redux';
 import { InitialState } from '../store/makeStore';
 import { ThunkDispatch } from 'redux-thunk';
 import { Action } from '../actions/github';
@@ -18,8 +17,10 @@ type WorksState = {
 
 class WorksContainer extends React.Component<WorksProps, WorksState> {
   static async getInitialProps(props: any) {
-    await props.store.dispatch(getRepos());
-    return {};
+    if (props.store.getState().github.hasError) {
+      await props.store.dispatch(getRepos());
+    }
+    return { github: props.store.getState().github };
   }
 
   constructor(props: WorksProps) {
@@ -27,12 +28,6 @@ class WorksContainer extends React.Component<WorksProps, WorksState> {
     this.state = {
       showDetail: new Array(10).fill(false)
     };
-  }
-
-  componentDidMount() {
-    if (this.props.github.hasError) {
-      this.props.dispatch(getRepos());
-    }
   }
 
   onClickDetailButton = (index: number) => {
@@ -52,9 +47,10 @@ class WorksContainer extends React.Component<WorksProps, WorksState> {
         showDetail={showDetail}
         onClickDetailButton={this.onClickDetailButton}
         openNewWindowWithUrl={this.openNewWindowWithUrl}
+        github={this.props.github}
       />
     );
   }
 }
 
-export default connect((state: InitialState) => state)(WorksContainer);
+export default WorksContainer;

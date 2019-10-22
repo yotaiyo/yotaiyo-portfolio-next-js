@@ -17,17 +17,17 @@ export enum Type {
 
 export type Action =
   | {
-    type: Type.ADD_REPOS;
-    payload: {
-      repos: Repo[];
-    };
-  }
+      type: Type.ADD_REPOS;
+      payload: {
+        repos: Repo[];
+      };
+    }
   | {
-    type: Type.ADD_HAS_ERROR;
-    payload: {
-      hasError: boolean;
+      type: Type.ADD_HAS_ERROR;
+      payload: {
+        hasError: boolean;
+      };
     };
-  };
 
 const addRepos = (repos: Repo[]): Action => {
   return {
