@@ -1,9 +1,9 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-import { github, githubState } from '../reducers/github';
+import { github, GithubState } from '../reducers/github';
 
 export type InitialState = {
-  github: githubState;
+  github: GithubState;
 };
 
 const rootReducer = combineReducers({ github });
