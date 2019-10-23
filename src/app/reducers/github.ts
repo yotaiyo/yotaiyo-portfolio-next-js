@@ -6,15 +6,15 @@ const initialGithubState = {
   hasError: true
 };
 
-export type githubState = {
+export type GithubState = {
   repos: Repo[];
   hasError: boolean;
 };
 
 export const github = (
-  state: githubState = initialGithubState,
+  state: GithubState = initialGithubState,
   action: Action
-): githubState => {
+): GithubState => {
   switch (action.type) {
     case Type.ADD_REPOS:
       return {
