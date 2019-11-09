@@ -24,13 +24,6 @@ class WorksContainer extends React.Component<WorksProps, WorksState> {
     return {};
   }
 
-  // 課金しないとfirebase functionsで外部API叩けないっぽいので応急処置。。。
-  componentDidMount() {
-    if (this.props.github.hasError) {
-      this.props.dispatch(getRepos());
-    }
-  }
-
   constructor(props: WorksProps) {
     super(props);
     this.state = {

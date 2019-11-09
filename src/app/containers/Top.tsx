@@ -28,13 +28,6 @@ class Top extends React.Component<TopProps> {
     return {};
   }
 
-  // 課金しないとfirebase functionsで外部API叩けないっぽいので応急処置。。。
-  componentDidMount() {
-    if (this.props.github.hasError) {
-      this.props.dispatch(getRepos());
-    }
-  }
-
   render() {
     return (
       <MyLayout>
