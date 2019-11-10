@@ -14,16 +14,21 @@ const Wrapper = styled.div`
   }
 `;
 
-const Title = styled.h1`
-  font-size: ${Layout.Text.Largest}px;
-  color: ${Color.Black1};
-  margin: 0 auto;
-  border-bottom: 2px solid ${Color.Black1};
-  width: 140px;
+const TitleWrapper = styled.h1`
+  display: flex;
+  justify-content: center;
   margin-bottom: 40px;
   @media (max-width: 414px) {
+    margin-bottom: 20px;
+  }
+`;
+
+const Title = styled.text`
+  font-size: ${Layout.Text.Largest}px;
+  color: ${Color.Black1};
+  border-bottom: 2px solid ${Color.Black1};
+  @media (max-width: 414px) {
     font-size: ${Layout.Text.Larger}px;
-    width: 95px;
   }
 `;
 
@@ -211,7 +216,9 @@ export const History = () => {
   ];
   return (
     <Wrapper>
-      <Title>History</Title>
+      <TitleWrapper>
+        <Title>History</Title>
+      </TitleWrapper>
       <MyHistoriesWrapper>
         <PeriodWrapper>
           {Items.map((item, index) => {

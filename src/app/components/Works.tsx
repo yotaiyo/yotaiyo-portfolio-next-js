@@ -27,17 +27,21 @@ const Wrapper = styled.div`
   }
 `;
 
-const Title = styled.h1`
-  font-size: ${Layout.Text.Largest}px;
-  color: ${Color.Black1};
-  margin: 0 auto;
-  border-bottom: 2px solid ${Color.Black1};
-  width: 125px;
+const TitleWrapper = styled.h1`
+  display: flex;
+  justify-content: center;
   margin-bottom: 40px;
   @media (max-width: 414px) {
+    margin-bottom: 0;
+  }
+`;
+
+const Title = styled.text`
+  font-size: ${Layout.Text.Largest}px;
+  color: ${Color.Black1};
+  border-bottom: 2px solid ${Color.Black1};
+  @media (max-width: 414px) {
     font-size: ${Layout.Text.Larger}px;
-    width: 85px;
-    margin-bottom: 10px;
   }
 `;
 
@@ -77,7 +81,9 @@ export const Works: React.FC<WorksProps> = props => {
         </LoadingWrapper>
       ) : (
         <Wrapper>
-          <Title>Works</Title>
+          <TitleWrapper>
+            <Title>Works</Title>
+          </TitleWrapper>
           <CardsWrapper>
             {github.repos.map((repo: Repo, index: number) => {
               return (

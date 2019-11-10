@@ -13,17 +13,21 @@ const Wrapper = styled.div`
   }
 `;
 
-const Title = styled.h1`
-  font-size: ${Layout.Text.Largest}px;
-  color: ${Color.Black1};
-  margin: 0 auto;
-  border-bottom: 2px solid ${Color.Black1};
-  width: 100px;
+const TitleWrapper = styled.h1`
+  display: flex;
+  justify-content: center;
   margin-bottom: 40px;
   @media (max-width: 414px) {
-    font-size: ${Layout.Text.Larger}px;
-    width: 70px;
     margin-bottom: 20px;
+  }
+`;
+
+const Title = styled.text`
+  font-size: ${Layout.Text.Largest}px;
+  color: ${Color.Black1};
+  border-bottom: 2px solid ${Color.Black1};
+  @media (max-width: 414px) {
+    font-size: ${Layout.Text.Larger}px;
   }
 `;
 
@@ -52,7 +56,9 @@ const LinkIcon = styled.img`
 export const Links = () => {
   return (
     <Wrapper>
-      <Title>Links</Title>
+      <TitleWrapper>
+        <Title>Links</Title>
+      </TitleWrapper>
       <LinksIconWrapper>
         <Link href="https://github.com/yotaiyo" target="_blank">
           <LinkIcon src={githubIcon} alt="github" />
