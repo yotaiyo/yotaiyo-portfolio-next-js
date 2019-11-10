@@ -23,6 +23,10 @@ export default class MyDocument extends Document {
       <html lang="ja">
         <Head>
           <title key="title">yotaiyo`s portfolio</title>
+          <meta
+            name="description"
+            content="穴繁陽太のポートフォリオサイトです。"
+          />
           <meta charSet="UTF-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width,initial-scale=1" />
