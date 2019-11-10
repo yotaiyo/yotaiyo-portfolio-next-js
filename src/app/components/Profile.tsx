@@ -128,7 +128,7 @@ export const Profile = () => {
       <Title>Profile</Title>
       <IconAndItemsWrapper>
         <IconWrapper>
-          <Icon src={IconImage} />
+          <Icon src={IconImage} alt="yotaiyo-icon" />
         </IconWrapper>
         <ItemsTitleAndBodyWrapper>
           <ItemsWrapper>
