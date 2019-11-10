@@ -60,17 +60,25 @@ export const Links = () => {
         <Title>Links</Title>
       </TitleWrapper>
       <LinksIconWrapper>
-        <Link href="https://github.com/yotaiyo" target="_blank">
+        <Link href="https://github.com/yotaiyo" target="_blank" rel="noopener">
           <LinkIcon src={githubIcon} alt="github" />
         </Link>
-        <Link href="https://twitter.com/yotaiyo_1218" target="_blank">
+        <Link
+          href="https://twitter.com/yotaiyo_1218"
+          target="_blank"
+          rel="noopener"
+        >
           <LinkIcon
             src={twitterIcon}
             style={{ marginLeft: 30, marginRight: 30 }}
             alt="twitter"
           />
         </Link>
-        <Link href="https://atcoder.jp/users/yotaiyo" target="_blank">
+        <Link
+          href="https://atcoder.jp/users/yotaiyo"
+          target="_blank"
+          rel="noopener"
+        >
           <LinkIcon src={atcoderIcon} alt="atcoder" />
         </Link>
       </LinksIconWrapper>

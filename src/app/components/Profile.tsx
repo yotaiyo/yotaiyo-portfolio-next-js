@@ -47,7 +47,6 @@ const IconWrapper = styled.div`
 
 const Icon = styled.img`
   height: 300px;
-  width: 300px;
   border-radius: 30px;
   margin-right: 40px;
   box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.5);

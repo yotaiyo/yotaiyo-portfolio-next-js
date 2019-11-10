@@ -38,7 +38,7 @@ class WorksContainer extends React.Component<WorksProps, WorksState> {
   };
 
   openNewWindowWithUrl = (url: string) => {
-    window.open(url, '_blank');
+    window.open(url, '_blank', 'noopener');
   };
 
   render() {
