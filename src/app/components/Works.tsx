@@ -36,7 +36,7 @@ const TitleWrapper = styled.h1`
   }
 `;
 
-const Title = styled.text`
+const Title = styled.span`
   font-size: ${Layout.Text.Largest}px;
   color: ${Color.Black1};
   border-bottom: 2px solid ${Color.Black1};
@@ -80,30 +80,30 @@ export const Works: React.FC<WorksProps> = props => {
           />
         </LoadingWrapper>
       ) : (
-        <Wrapper>
-          <TitleWrapper>
-            <Title>Works</Title>
-          </TitleWrapper>
-          <CardsWrapper>
-            {github.repos.map((repo: Repo, index: number) => {
-              return (
-                <Card
-                  title={repo.title}
-                  url={repo.url}
-                  homepage={repo.homepage}
-                  topics={repo.topics}
-                  description={repo.description}
-                  key={index}
-                  showDetail={showDetail[index]}
-                  onClickDetailButton={onClickDetailButton}
-                  openNewWindowWithUrl={openNewWindowWithUrl}
-                  index={index}
-                />
-              );
-            })}
-          </CardsWrapper>
-        </Wrapper>
-      )}
+          <Wrapper>
+            <TitleWrapper>
+              <Title>Works</Title>
+            </TitleWrapper>
+            <CardsWrapper>
+              {github.repos.map((repo: Repo, index: number) => {
+                return (
+                  <Card
+                    title={repo.title}
+                    url={repo.url}
+                    homepage={repo.homepage}
+                    topics={repo.topics}
+                    description={repo.description}
+                    key={index}
+                    showDetail={showDetail[index]}
+                    onClickDetailButton={onClickDetailButton}
+                    openNewWindowWithUrl={openNewWindowWithUrl}
+                    index={index}
+                  />
+                );
+              })}
+            </CardsWrapper>
+          </Wrapper>
+        )}
     </MyLayout>
   );
 };

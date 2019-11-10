@@ -20,7 +20,7 @@ const TitleWrapper = styled.h1`
   justify-content: center;
 `;
 
-const Title = styled.text`
+const Title = styled.span`
   font-size: ${Layout.Text.Largest}px;
   color: ${Color.Black1};
   border-bottom: 2px solid ${Color.Black1};
