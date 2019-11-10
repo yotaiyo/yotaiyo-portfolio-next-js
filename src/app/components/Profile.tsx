@@ -15,15 +15,17 @@ const Wrapper = styled.div`
   }
 `;
 
-const Title = styled.h1`
+const TitleWrapper = styled.h1`
+  display: flex;
+  justify-content: center;
+`;
+
+const Title = styled.span`
   font-size: ${Layout.Text.Largest}px;
   color: ${Color.Black1};
-  margin: 0 auto;
   border-bottom: 2px solid ${Color.Black1};
-  width: 120px;
   @media (max-width: 414px) {
     font-size: ${Layout.Text.Larger}px;
-    width: 85px;
   }
 `;
 
@@ -125,10 +127,12 @@ export const Profile = () => {
   ];
   return (
     <Wrapper>
-      <Title>Profile</Title>
+      <TitleWrapper>
+        <Title>Profile</Title>
+      </TitleWrapper>
       <IconAndItemsWrapper>
         <IconWrapper>
-          <Icon src={IconImage} />
+          <Icon src={IconImage} alt="yotaiyo-icon" />
         </IconWrapper>
         <ItemsTitleAndBodyWrapper>
           <ItemsWrapper>

@@ -27,17 +27,21 @@ const Wrapper = styled.div`
   }
 `;
 
-const Title = styled.h1`
+const TitleWrapper = styled.h1`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  @media (max-width: 768px) {
+    margin-bottom: 0;
+  }
+`;
+
+const Title = styled.span`
   font-size: ${Layout.Text.Largest}px;
   color: ${Color.Black1};
-  margin: 0 auto;
   border-bottom: 2px solid ${Color.Black1};
-  width: 125px;
-  margin-bottom: 40px;
   @media (max-width: 414px) {
     font-size: ${Layout.Text.Larger}px;
-    width: 85px;
-    margin-bottom: 10px;
   }
 `;
 
@@ -76,28 +80,30 @@ export const Works: React.FC<WorksProps> = props => {
           />
         </LoadingWrapper>
       ) : (
-        <Wrapper>
-          <Title>Works</Title>
-          <CardsWrapper>
-            {github.repos.map((repo: Repo, index: number) => {
-              return (
-                <Card
-                  title={repo.title}
-                  url={repo.url}
-                  homepage={repo.homepage}
-                  topics={repo.topics}
-                  description={repo.description}
-                  key={index}
-                  showDetail={showDetail[index]}
-                  onClickDetailButton={onClickDetailButton}
-                  openNewWindowWithUrl={openNewWindowWithUrl}
-                  index={index}
-                />
-              );
-            })}
-          </CardsWrapper>
-        </Wrapper>
-      )}
+          <Wrapper>
+            <TitleWrapper>
+              <Title>Works</Title>
+            </TitleWrapper>
+            <CardsWrapper>
+              {github.repos.map((repo: Repo, index: number) => {
+                return (
+                  <Card
+                    title={repo.title}
+                    url={repo.url}
+                    homepage={repo.homepage}
+                    topics={repo.topics}
+                    description={repo.description}
+                    key={index}
+                    showDetail={showDetail[index]}
+                    onClickDetailButton={onClickDetailButton}
+                    openNewWindowWithUrl={openNewWindowWithUrl}
+                    index={index}
+                  />
+                );
+              })}
+            </CardsWrapper>
+          </Wrapper>
+        )}
     </MyLayout>
   );
 };
