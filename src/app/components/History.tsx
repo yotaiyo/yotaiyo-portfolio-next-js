@@ -68,13 +68,15 @@ const CardWrapper = styled.div`
   border-radius: 30px;
   box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.5);
   height: 200px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
   min-width: 350px;
   flex: 1;
   text-align: center;
   @media (max-width: 414px) {
     min-width: 0;
+  }
+  @media (max-width: 320px) {
     padding-left: 10px;
     padding-right: 10px;
   }

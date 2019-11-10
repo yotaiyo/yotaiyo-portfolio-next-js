@@ -30,8 +30,8 @@ const Wrapper = styled.div`
 const TitleWrapper = styled.h1`
   display: flex;
   justify-content: center;
-  margin-bottom: 40px;
-  @media (max-width: 414px) {
+  margin-bottom: 20px;
+  @media (max-width: 768px) {
     margin-bottom: 0;
   }
 `;
