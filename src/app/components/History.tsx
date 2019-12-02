@@ -190,7 +190,13 @@ const CircleAndCard = ({ title, body, tags, index }: CircleAndCard) => {
 export const History = () => {
   const Items = [
     {
-      period: '2019.09 ~',
+      period: '2020.01 ~ ',
+      title: 'エムスリー 長期インターン',
+      body: 'Comming Soon',
+      tags: []
+    },
+    {
+      period: '2019.09 ~ 12',
       title: 'eureka 長期インターン',
       body: 'フロントエンドエンジニアとして、Pairs Web版の開発に参加。',
       tags: ['typescript', 'react', 'redux']
