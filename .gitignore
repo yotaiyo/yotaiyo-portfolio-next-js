@@ -1,4 +1,4 @@
 node_modules
-dist
-.firebase
-firebase-debug.log
+.env
+.next
+now.json

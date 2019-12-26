@@ -6,7 +6,7 @@
 ## 使用した技術
 - TypeScript
 - Next.js
-- Firebase
+- now
 - redux
 - redux-thunk
 
@@ -18,15 +18,15 @@ git clone git@github.com:yotaiyo/portfolio.git
 cd portfolio
 ```
 
+### Create .env (開発時に必要)
+- .env.exampleを参考にしてください
+
+### Create now.json (本番で必要)
+- now.json.exampleを参考にして下さい
+
 ### Install Project
 ```
 npm install
-```
-
-### Create .env
-```
-GITHUB_API_TOKEN=<Your Github Token>
-GITHUB_USER_NAME=<Your Github Username>
 ```
 
 ### Run Next.js development
@@ -34,17 +34,7 @@ GITHUB_USER_NAME=<Your Github Username>
 npm run dev
 ```
 
-### Run Firebase locally for testing
+### Deploy
 ```
-npm run serve
-```
-
-### Deploy it to the cloud with Firebase
-```
-npm run deploy
-```
-
-### Clean dist folder
-```
-npm run clean
+now
 ```
