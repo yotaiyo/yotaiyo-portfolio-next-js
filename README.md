@@ -34,6 +34,11 @@ npm install
 npm run dev
 ```
 
+### build
+```
+npm run build
+```
+
 ### Deploy
 ```
 now
