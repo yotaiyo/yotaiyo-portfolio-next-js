@@ -1,8 +1,8 @@
 {
   "name": "yotaiyo's portfolio",
   "short_name": "yotaiyo's portfolio",
-  "theme_color": "#4773aa",
-  "background_color": "#ffffff",
+  "theme_color": "#fff",
+  "background_color": "#fff",
   "display": "fullscreen",
   "Scope": "/",
   "start_url": "/",
