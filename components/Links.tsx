@@ -48,8 +48,8 @@ const LinkIcon = styled.img`
   width: 50px;
   height: 50px;
   @media (max-width: 414px) {
-    width: 30px;
-    height: 30px;
+    width: 48px;
+    height: 48px;
   }
 `;
 
