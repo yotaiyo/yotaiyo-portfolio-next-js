@@ -41,5 +41,5 @@ npm run build
 
 ### Deploy
 ```
-now
+now --target production
 ```
