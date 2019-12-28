@@ -1,5 +1,6 @@
 {
     "version": 2,
+    "alias": "<example.com>",
     "routes": [
         {
             "src": "^/service-worker.js$",
