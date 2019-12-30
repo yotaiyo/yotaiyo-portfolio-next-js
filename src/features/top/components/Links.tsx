@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Layout } from '../../../../consts/Layout';
-import { Color } from '../../../../consts/Color';
+import { Layout } from 'src/consts/Layout';
+import { Color } from 'src/consts/Color';
 import githubIcon from 'public/github.png';
 import twitterIcon from 'public/twitter.png';
 import atcoderIcon from 'public/atcoder.png';

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Layout } from '../../../../consts/Layout';
-import { Color } from '../../../../consts/Color';
+import { Layout } from 'src/consts/Layout';
+import { Color } from 'src/consts/Color';
 import { Repo } from '../actions';
 
 const CardWrapper = styled.div`
