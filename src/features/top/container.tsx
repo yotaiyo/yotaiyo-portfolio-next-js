@@ -4,12 +4,11 @@ import styled from 'styled-components';
 import { Profile } from './components/Profile';
 import { History } from './components/History';
 import { Links } from './components/Links';
-import { getRepos } from '../../../actions/github';
+import { getRepos, Action } from 'src/features/works/actions';
+import { GithubState } from 'src/features/works/reducers';
 import { connect } from 'react-redux';
 import { InitialState } from 'src/app/makeStore';
-import { GithubState } from '../../../reducers/github';
 import { ThunkDispatch } from 'redux-thunk';
-import { Action } from '../../../actions/github';
 
 const Wrapper = styled.div`
   margin-bottom: 100px;

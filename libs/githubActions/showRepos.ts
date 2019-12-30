@@ -1,4 +1,4 @@
-import { Repo } from '../../actions/github';
+import { Repo } from 'src/features/works/actions';
 
 const showRepos = [
   {

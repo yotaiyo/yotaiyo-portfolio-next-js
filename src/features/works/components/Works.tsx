@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import ReactLoading from 'react-loading';
-import MyLayout from './MyLayout';
+import MyLayout from '../../components/MyLayout';
 import { Card } from './Card';
-import { Repo } from '../../../actions/github';
-import { Color } from '../../../consts/Color';
-import { Layout } from '../../../consts/Layout';
+import { Repo } from '../actions';
+import { Color } from '../../../../consts/Color';
+import { Layout } from '../../../../consts/Layout';
 import { useSelector } from 'react-redux';
 import { InitialState } from 'src/app/makeStore';
 
@@ -80,30 +80,30 @@ export const Works: React.FC<WorksProps> = props => {
           />
         </LoadingWrapper>
       ) : (
-          <Wrapper>
-            <TitleWrapper>
-              <Title>Works</Title>
-            </TitleWrapper>
-            <CardsWrapper>
-              {github.repos.map((repo: Repo, index: number) => {
-                return (
-                  <Card
-                    title={repo.title}
-                    url={repo.url}
-                    homepage={repo.homepage}
-                    topics={repo.topics}
-                    description={repo.description}
-                    key={index}
-                    showDetail={showDetail[index]}
-                    onClickDetailButton={onClickDetailButton}
-                    openNewWindowWithUrl={openNewWindowWithUrl}
-                    index={index}
-                  />
-                );
-              })}
-            </CardsWrapper>
-          </Wrapper>
-        )}
+        <Wrapper>
+          <TitleWrapper>
+            <Title>Works</Title>
+          </TitleWrapper>
+          <CardsWrapper>
+            {github.repos.map((repo: Repo, index: number) => {
+              return (
+                <Card
+                  title={repo.title}
+                  url={repo.url}
+                  homepage={repo.homepage}
+                  topics={repo.topics}
+                  description={repo.description}
+                  key={index}
+                  showDetail={showDetail[index]}
+                  onClickDetailButton={onClickDetailButton}
+                  openNewWindowWithUrl={openNewWindowWithUrl}
+                  index={index}
+                />
+              );
+            })}
+          </CardsWrapper>
+        </Wrapper>
+      )}
     </MyLayout>
   );
 };

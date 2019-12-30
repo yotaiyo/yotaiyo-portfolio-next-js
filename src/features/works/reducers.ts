@@ -1,5 +1,5 @@
-import { Repo } from '../actions/github';
-import { Type, Action } from '../actions/github';
+import { Repo } from './actions';
+import { Type, Action } from './actions';
 
 const initialGithubState = {
   repos: [],

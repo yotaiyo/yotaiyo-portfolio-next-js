@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Layout } from '../../../consts/Layout';
-import { Color } from '../../../consts/Color';
-import { Repo } from '../../../actions/github';
+import { Layout } from '../../../../consts/Layout';
+import { Color } from '../../../../consts/Color';
+import { Repo } from '../actions';
 
 const CardWrapper = styled.div`
   margin: 0 auto;
