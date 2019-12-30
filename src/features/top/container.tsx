@@ -1,5 +1,5 @@
 import React from 'react';
-import MyLayout from '../../layouts/components/MyLayout';
+import MyLayout from '../../common/components/MyLayout';
 import styled from 'styled-components';
 import { Profile } from './components/Profile';
 import { History } from './components/History';
