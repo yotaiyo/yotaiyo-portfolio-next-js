@@ -30,7 +30,7 @@ export default class MyDocument extends Document {
           <meta charSet="UTF-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width,initial-scale=1" />
-          <meta name="author" content="Curry Lover" />
+          <meta name="author" content="yotaiyo" />
           <meta name="theme-color" content="#fff" />
           <link rel="stylesheet" />
           <link rel="manifest" href="/manifest.json" />
