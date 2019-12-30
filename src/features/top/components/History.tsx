@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Layout } from 'src/consts/Layout';
-import { Color } from 'src/consts/Color';
-import { historyItems } from 'src/consts/historyItems';
+import { Layout } from 'consts/Layout';
+import { Color } from 'consts/Color';
+import { historyItems } from 'consts/historyItems';
 
 const Wrapper = styled.div`
   margin-top: 100px;

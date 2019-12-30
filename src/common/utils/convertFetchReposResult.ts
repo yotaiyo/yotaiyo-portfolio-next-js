@@ -1,5 +1,5 @@
 import { Repo } from 'src/common/types/state';
-import { showRepos } from 'src/consts/showRepos';
+import { showRepos } from 'consts/showRepos';
 
 const showReposTitle: string[] = [];
 showRepos.forEach(showRepo => {

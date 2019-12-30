@@ -4,8 +4,8 @@ import ReactLoading from 'react-loading';
 import MyLayout from 'src/common/components/MyLayout';
 import { Card } from './Card';
 import { Repo } from 'src/common/types/state';
-import { Color } from 'src/consts/Color';
-import { Layout } from 'src/consts/Layout';
+import { Color } from 'consts/Color';
+import { Layout } from 'consts/Layout';
 import { useSelector } from 'react-redux';
 import { InitialState } from 'src/common/types/state';
 
