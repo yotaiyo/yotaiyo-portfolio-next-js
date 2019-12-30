@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { ThunkDispatch } from 'redux-thunk';
-import { InitialState } from 'src/app/makeStore';
+import { InitialState } from 'src/common/types/state';
 import { convertFetchReposResult } from 'src/common/utils/showRepos';
 
 export type Repo = {

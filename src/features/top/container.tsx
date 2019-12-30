@@ -7,7 +7,7 @@ import { Links } from './components/Links';
 import { getRepos, Action } from 'src/features/works/actions';
 import { GithubState } from 'src/features/works/reducers';
 import { connect } from 'react-redux';
-import { InitialState } from 'src/app/makeStore';
+import { InitialState } from 'src/common/types/state';
 import { ThunkDispatch } from 'redux-thunk';
 
 const Wrapper = styled.div`

@@ -7,7 +7,7 @@ import { Repo } from '../actions';
 import { Color } from 'src/consts/Color';
 import { Layout } from 'src/consts/Layout';
 import { useSelector } from 'react-redux';
-import { InitialState } from 'src/app/makeStore';
+import { InitialState } from 'src/common/types/state';
 
 const LoadingWrapper = styled.div`
   padding-top: 120px;
