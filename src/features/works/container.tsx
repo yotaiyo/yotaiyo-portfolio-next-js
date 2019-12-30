@@ -1,6 +1,6 @@
 import React from 'react';
 import { getRepos, Action } from './actions';
-import { GithubState } from './reducers';
+import { GithubState } from 'src/common/types/state';
 import { Works } from './components/Works';
 import { InitialState } from 'src/common/types/state';
 import { ThunkDispatch } from 'redux-thunk';

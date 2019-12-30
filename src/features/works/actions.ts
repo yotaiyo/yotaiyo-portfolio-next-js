@@ -2,14 +2,7 @@ import axios from 'axios';
 import { ThunkDispatch } from 'redux-thunk';
 import { InitialState } from 'src/common/types/state';
 import { convertFetchReposResult } from 'src/common/utils/showRepos';
-
-export type Repo = {
-  title: string;
-  url: string;
-  topics: string[];
-  homepage: string | null;
-  description: string;
-};
+import { Repo } from 'src/common/types/state';
 
 export enum Type {
   ADD_REPOS = 'ADD_REPOS',

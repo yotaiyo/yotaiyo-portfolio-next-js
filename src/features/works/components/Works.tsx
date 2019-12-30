@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import ReactLoading from 'react-loading';
 import MyLayout from 'src/common/components/MyLayout';
 import { Card } from './Card';
-import { Repo } from '../actions';
+import { Repo } from 'src/common/types/state';
 import { Color } from 'src/consts/Color';
 import { Layout } from 'src/consts/Layout';
 import { useSelector } from 'react-redux';

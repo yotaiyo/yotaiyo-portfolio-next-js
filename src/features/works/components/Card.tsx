@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Layout } from 'src/consts/Layout';
 import { Color } from 'src/consts/Color';
-import { Repo } from '../actions';
+import { Repo } from 'src/common/types/state';
 
 const CardWrapper = styled.div`
   margin: 0 auto;

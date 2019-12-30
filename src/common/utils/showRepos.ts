@@ -1,4 +1,4 @@
-import { Repo } from 'src/features/works/actions';
+import { Repo } from 'src/common/types/state';
 
 const showRepos = [
   {

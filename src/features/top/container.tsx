@@ -5,7 +5,7 @@ import { Profile } from './components/Profile';
 import { History } from './components/History';
 import { Links } from './components/Links';
 import { getRepos, Action } from 'src/features/works/actions';
-import { GithubState } from 'src/features/works/reducers';
+import { GithubState } from 'src/common/types/state';
 import { connect } from 'react-redux';
 import { InitialState } from 'src/common/types/state';
 import { ThunkDispatch } from 'redux-thunk';

@@ -1,14 +1,9 @@
-import { Repo } from './actions';
 import { Type, Action } from './actions';
+import { GithubState } from 'src/common/types/state';
 
 const initialGithubState = {
   repos: [],
   hasError: true
-};
-
-export type GithubState = {
-  repos: Repo[];
-  hasError: boolean;
 };
 
 export const github = (
