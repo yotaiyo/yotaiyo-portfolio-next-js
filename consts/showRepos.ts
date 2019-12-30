@@ -2,7 +2,7 @@ export const showRepos = [
   {
     title: 'portfolio',
     description:
-      '私のポートフォリオサイト。\nworksはGitHub APIから動的に生成。\nデザインはfigmaで作成。'
+      '私のポートフォリオサイト。\nWorksはGitHub APIから動的に生成。\nPWAになっている。'
   },
   {
     title: 'music-auto-tagging',

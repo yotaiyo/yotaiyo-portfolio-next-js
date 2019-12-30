@@ -2,13 +2,14 @@ export const historyItems = [
   {
     period: '2020.01 ~ ',
     title: 'エムスリー 長期インターン',
-    body: 'Comming Soon',
+    body: 'クラウド電子カルテチームで就業予定',
     tags: []
   },
   {
     period: '2019.09 ~ 12',
     title: 'eureka 長期インターン',
-    body: 'フロントエンドエンジニアとして、Pairs Web版の開発に参加。',
+    body:
+      'Webフロントエンドチームで就業。SP版リニューアル・運用やキャンペーンLPの作成などを担当。',
     tags: ['typescript', 'react', 'redux']
   },
   {
