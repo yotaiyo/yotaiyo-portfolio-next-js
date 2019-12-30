@@ -1,6 +1,4 @@
-import { Repo } from 'src/common/types/state';
-
-const showRepos = [
+export const showRepos = [
   {
     title: 'portfolio',
     description:
@@ -41,27 +39,3 @@ const showRepos = [
       '楽曲波形のジャンルを予測する楽曲タグ予測モデルの作成、評価を行う。\nGTZANと呼ばれるデータセットを用いる。'
   }
 ];
-
-const showReposTitle: string[] = [];
-showRepos.forEach(showRepo => {
-  showReposTitle.push(showRepo.title);
-});
-
-export const convertFetchReposResult = (
-  fetchReposSuccessResult: any
-): Repo[] => {
-  const repos: Repo[] = [];
-  fetchReposSuccessResult.map((repo: any) => {
-    const showRepoIndex = showReposTitle.indexOf(repo.name);
-    if (showRepoIndex >= 0) {
-      repos.push({
-        title: repo.name,
-        url: repo.html_url,
-        topics: repo.topics,
-        homepage: repo.homepage,
-        description: showRepos[showRepoIndex].description
-      });
-    }
-  });
-  return repos;
-};

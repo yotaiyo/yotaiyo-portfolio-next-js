@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { ThunkDispatch } from 'redux-thunk';
 import { InitialState } from 'src/common/types/state';
-import { convertFetchReposResult } from 'src/common/utils/showRepos';
+import { convertFetchReposResult } from 'src/common/utils/convertFetchReposResult';
 import { Repo } from 'src/common/types/state';
 
 export enum Type {
