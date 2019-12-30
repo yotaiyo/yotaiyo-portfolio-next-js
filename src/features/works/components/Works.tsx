@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ReactLoading from 'react-loading';
-import MyLayout from '../../components/MyLayout';
+import MyLayout from '../../../layouts/components/MyLayout';
 import { Card } from './Card';
 import { Repo } from '../actions';
 import { Color } from 'src/consts/Color';
