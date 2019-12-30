@@ -1,3 +1,3 @@
-import Works from '../containers/Works';
+import Works from 'src/features/containers/Works';
 
 export default Works;
