@@ -1,9 +1,9 @@
 import React from 'react';
-import MyLayout from '../../../components/MyLayout';
+import MyLayout from '../components/MyLayout';
 import styled from 'styled-components';
-import { Profile } from '../../../components/Profile';
-import { History } from '../../../components/History';
-import { Links } from '../../../components/Links';
+import { Profile } from '../components/Profile';
+import { History } from '../components/History';
+import { Links } from '../components/Links';
 import { getRepos } from '../../../actions/github';
 import { connect } from 'react-redux';
 import { InitialState } from 'src/app/makeStore';

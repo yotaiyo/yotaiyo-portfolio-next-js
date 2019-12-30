@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import ReactLoading from 'react-loading';
-import MyLayout from '../components/MyLayout';
-import { Card } from '../components/Card';
-import { Repo } from '../actions/github';
-import { Color } from '../consts/Color';
-import { Layout } from '../consts/Layout';
+import MyLayout from './MyLayout';
+import { Card } from './Card';
+import { Repo } from '../../../actions/github';
+import { Color } from '../../../consts/Color';
+import { Layout } from '../../../consts/Layout';
 import { useSelector } from 'react-redux';
 import { InitialState } from 'src/app/makeStore';
 
