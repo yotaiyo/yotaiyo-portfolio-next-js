@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Layout } from '../consts/Layout';
-import { Color } from '../consts/Color';
+import { Layout } from 'src/consts/Layout';
+import { Color } from 'src/consts/Color';
+import { historyItems } from 'src/consts/historyItems';
 
 const Wrapper = styled.div`
   margin-top: 100px;
@@ -188,40 +189,6 @@ const CircleAndCard = ({ title, body, tags, index }: CircleAndCard) => {
 };
 
 export const History = () => {
-  const Items = [
-    {
-      period: '2020.01 ~ ',
-      title: 'エムスリー 長期インターン',
-      body: 'Comming Soon',
-      tags: []
-    },
-    {
-      period: '2019.09 ~ 12',
-      title: 'eureka 長期インターン',
-      body: 'フロントエンドエンジニアとして、Pairs Web版の開発に参加。',
-      tags: ['typescript', 'react', 'redux']
-    },
-    {
-      period: '2019.09',
-      title: 'DMM.com 短期インターン',
-      body:
-        'クエスト型インターン、DMM GUILDに参加。DMMが実際に抱えている技術的な課題に挑戦。',
-      tags: ['vue', 'react', 'redux', 'vanillajs']
-    },
-    {
-      period: '2019.01 ~ 08',
-      title: 'FIREBUG 長期インターン',
-      body: 'toB向けマッチングアプリ開発に参加。',
-      tags: ['typescript', 'reactnative', 'graphql']
-    },
-    {
-      period: '2018.12 ~ 01',
-      title: 'Apollo 短期インターン',
-      body:
-        'webエンジニアリングに関する基礎を学ぶ。その後、業務委託のアプリ開発案件に参加。',
-      tags: ['html/css', 'typescript', 'jquery', 'react']
-    }
-  ];
   return (
     <Wrapper>
       <TitleWrapper>
@@ -229,12 +196,12 @@ export const History = () => {
       </TitleWrapper>
       <MyHistoriesWrapper>
         <PeriodWrapper>
-          {Items.map((item, index) => {
+          {historyItems.map((item, index) => {
             return (
               <Period
                 style={{
                   marginTop: index === 0 ? 68 : 30,
-                  height: index === Items.length - 1 ? 100 : 200
+                  height: index === historyItems.length - 1 ? 100 : 200
                 }}
                 key={index}
               >
@@ -244,7 +211,7 @@ export const History = () => {
           })}
         </PeriodWrapper>
         <MyHistories>
-          {Items.map((item, index) => {
+          {historyItems.map((item, index) => {
             return (
               <CircleAndCard
                 title={item.title}

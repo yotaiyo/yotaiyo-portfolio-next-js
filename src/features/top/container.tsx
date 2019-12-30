@@ -1,15 +1,14 @@
 import React from 'react';
-import MyLayout from '../components/MyLayout';
+import MyLayout from 'src/common/components/MyLayout';
 import styled from 'styled-components';
-import { Profile } from '../components/Profile';
-import { History } from '../components/History';
-import { Links } from '../components/Links';
-import { getRepos } from '../actions/github';
+import { Profile } from './components/Profile';
+import { History } from './components/History';
+import { Links } from './components/Links';
+import { getRepos, Action } from 'src/features/works/actions';
+import { GithubState } from 'src/common/types/state';
 import { connect } from 'react-redux';
-import { InitialState } from '../store/makeStore';
-import { GithubState } from '../reducers/github';
+import { InitialState } from 'src/common/types/state';
 import { ThunkDispatch } from 'redux-thunk';
-import { Action } from '../actions/github';
 
 const Wrapper = styled.div`
   margin-bottom: 100px;

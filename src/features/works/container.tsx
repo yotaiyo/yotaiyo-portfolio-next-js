@@ -1,10 +1,9 @@
 import React from 'react';
-import { getRepos } from '../actions/github';
-import { GithubState } from '../reducers/github';
-import { Works } from '../components/Works';
-import { InitialState } from '../store/makeStore';
+import { getRepos, Action } from './actions';
+import { GithubState } from 'src/common/types/state';
+import { Works } from './components/Works';
+import { InitialState } from 'src/common/types/state';
 import { ThunkDispatch } from 'redux-thunk';
-import { Action } from '../actions/github';
 import { connect } from 'react-redux';
 
 type WorksProps = {

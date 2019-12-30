@@ -1,3 +1,3 @@
-import Top from '../containers/Top';
+import Top from 'src/features/top/container';
 
 export default Top;
