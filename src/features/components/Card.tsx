@@ -130,35 +130,35 @@ export const Card = ({
   openNewWindowWithUrl,
   index
 }: Card) => (
-    <CardWrapper>
-      <CardTitle>{title}</CardTitle>
-      <CardButtonsWrapper>
-        <CardButton
-          style={{ marginLeft: 0 }}
-          onClick={() => openNewWindowWithUrl(url)}
-        >
-          Repository
+  <CardWrapper>
+    <CardTitle>{title}</CardTitle>
+    <CardButtonsWrapper>
+      <CardButton
+        style={{ marginLeft: 0 }}
+        onClick={() => openNewWindowWithUrl(url)}
+      >
+        Repository
       </CardButton>
-        {homepage ? (
-          <CardButton onClick={() => openNewWindowWithUrl(homepage)}>
-            Web Site
+      {homepage ? (
+        <CardButton onClick={() => openNewWindowWithUrl(homepage)}>
+          Web Site
         </CardButton>
-        ) : null}
-        <CardButton onClick={() => onClickDetailButton(index)}>Detail</CardButton>
-      </CardButtonsWrapper>
-      {showDetail ? (
-        <CardDetailWrapper>
-          <CardDescriptionWrapper>
-            {description.split('\n').map((line, index) => {
-              return <CardDescription key={index}>{line}</CardDescription>;
-            })}
-          </CardDescriptionWrapper>
-          <CardTopicsWrapper>
-            {topics.map((topic, index) => (
-              <CardTopic key={index}>{topic}</CardTopic>
-            ))}
-          </CardTopicsWrapper>
-        </CardDetailWrapper>
       ) : null}
-    </CardWrapper>
-  );
+      <CardButton onClick={() => onClickDetailButton(index)}>Detail</CardButton>
+    </CardButtonsWrapper>
+    {showDetail ? (
+      <CardDetailWrapper>
+        <CardDescriptionWrapper>
+          {description.split('\n').map((line, index) => {
+            return <CardDescription key={index}>{line}</CardDescription>;
+          })}
+        </CardDescriptionWrapper>
+        <CardTopicsWrapper>
+          {topics.map((topic, index) => (
+            <CardTopic key={index}>{topic}</CardTopic>
+          ))}
+        </CardTopicsWrapper>
+      </CardDetailWrapper>
+    ) : null}
+  </CardWrapper>
+);
