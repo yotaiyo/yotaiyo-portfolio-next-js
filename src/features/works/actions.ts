@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { ThunkDispatch } from 'redux-thunk';
 import { InitialState } from 'src/app/makeStore';
-import { convertFetchReposResult } from '../../common/utils/showRepos';
+import { convertFetchReposResult } from 'src/common/utils/showRepos';
 
 export type Repo = {
   title: string;
