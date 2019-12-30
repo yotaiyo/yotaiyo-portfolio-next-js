@@ -2,7 +2,7 @@ import React from 'react';
 import { getRepos } from '../actions/github';
 import { GithubState } from '../reducers/github';
 import { Works } from '../components/Works';
-import { InitialState } from '../src/app/makeStore';
+import { InitialState } from 'src/app/makeStore';
 import { ThunkDispatch } from 'redux-thunk';
 import { Action } from '../actions/github';
 import { connect } from 'react-redux';
