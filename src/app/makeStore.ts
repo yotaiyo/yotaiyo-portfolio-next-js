@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-import { github, GithubState } from '../reducers/github';
+import { github, GithubState } from '../../reducers/github';
 
 export type InitialState = {
   github: GithubState;

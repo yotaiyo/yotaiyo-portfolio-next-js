@@ -3,7 +3,7 @@ import App from 'next/app';
 import { css, Global } from '@emotion/core';
 import { Provider } from 'react-redux';
 import withRedux from 'next-redux-wrapper';
-import { makeStore } from '../store/makeStore';
+import { makeStore } from '../src/app/makeStore';
 import { Store } from 'redux';
 
 type AppProps = {

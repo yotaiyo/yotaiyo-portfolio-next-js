@@ -6,7 +6,7 @@ import { History } from '../components/History';
 import { Links } from '../components/Links';
 import { getRepos } from '../actions/github';
 import { connect } from 'react-redux';
-import { InitialState } from '../store/makeStore';
+import { InitialState } from '../src/app/makeStore';
 import { GithubState } from '../reducers/github';
 import { ThunkDispatch } from 'redux-thunk';
 import { Action } from '../actions/github';

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { ThunkDispatch } from 'redux-thunk';
-import { InitialState } from '../store/makeStore';
+import { InitialState } from '../src/app/makeStore';
 import { convertFetchReposResult } from '../libs/githubActions/showRepos';
 
 export type Repo = {
@@ -18,17 +18,17 @@ export enum Type {
 
 export type Action =
   | {
-      type: Type.ADD_REPOS;
-      payload: {
-        repos: Repo[];
-      };
-    }
-  | {
-      type: Type.ADD_HAS_ERROR;
-      payload: {
-        hasError: boolean;
-      };
+    type: Type.ADD_REPOS;
+    payload: {
+      repos: Repo[];
     };
+  }
+  | {
+    type: Type.ADD_HAS_ERROR;
+    payload: {
+      hasError: boolean;
+    };
+  };
 
 const addRepos = (repos: Repo[]): Action => {
   return {
