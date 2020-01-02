@@ -16,11 +16,8 @@ type WorksState = {
 };
 
 class WorksContainer extends React.Component<WorksProps, WorksState> {
-  static async getInitialProps(props: any) {
-    if (props.store.getState().github.hasError) {
-      await props.store.dispatch(getRepos());
-    }
-    return {};
+  componentDidMount() {
+    this.props.dispatch(getRepos());
   }
 
   constructor(props: WorksProps) {

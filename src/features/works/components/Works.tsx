@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import ReactLoading from 'react-loading';
 import MyLayout from 'src/common/components/MyLayout';
 import { Card } from './Card';
 import { Repo } from 'src/common/types/state';
@@ -8,12 +7,6 @@ import { Color } from 'consts/Color';
 import { Layout } from 'consts/Layout';
 import { useSelector } from 'react-redux';
 import { InitialState } from 'src/common/types/state';
-
-const LoadingWrapper = styled.div`
-  padding-top: 120px;
-  display: flex;
-  justify-content: center;
-`;
 
 const Wrapper = styled.div`
   padding-top: 100px;
@@ -69,42 +62,35 @@ export const Works: React.FC<WorksProps> = props => {
   const { showDetail, onClickDetailButton, openNewWindowWithUrl } = props;
   const github = useSelector((state: InitialState) => state.github);
   return (
-    <MyLayout>
-      {github.hasError || github.repos.length === 0 ? (
-        <LoadingWrapper>
-          <ReactLoading
-            type={'spinningBubbles'}
-            color={Color.Blue2}
-            height={'10%'}
-            width={'10%'}
-          />
-        </LoadingWrapper>
-      ) : (
-        <Wrapper>
-          <TitleWrapper>
-            <Title>Works</Title>
-          </TitleWrapper>
-          <CardsWrapper>
-            {github.repos.map((repo: Repo, index: number) => {
-              return (
-                <Card
-                  title={repo.title}
-                  url={repo.url}
-                  homepage={repo.homepage}
-                  topics={repo.topics}
-                  description={repo.description}
-                  key={index}
-                  showDetail={showDetail[index]}
-                  onClickDetailButton={onClickDetailButton}
-                  openNewWindowWithUrl={openNewWindowWithUrl}
-                  index={index}
-                />
-              );
-            })}
-          </CardsWrapper>
-        </Wrapper>
-      )}
-    </MyLayout>
+    <>
+      {github.repos.length !== 0 ? (
+        <MyLayout>
+          <Wrapper>
+            <TitleWrapper>
+              <Title>Works</Title>
+            </TitleWrapper>
+            <CardsWrapper>
+              {github.repos.map((repo: Repo, index: number) => {
+                return (
+                  <Card
+                    title={repo.title}
+                    url={repo.url}
+                    homepage={repo.homepage}
+                    topics={repo.topics}
+                    description={repo.description}
+                    key={index}
+                    showDetail={showDetail[index]}
+                    onClickDetailButton={onClickDetailButton}
+                    openNewWindowWithUrl={openNewWindowWithUrl}
+                    index={index}
+                  />
+                );
+              })}
+            </CardsWrapper>
+          </Wrapper>
+        </MyLayout>
+      ) : null}
+    </>
   );
 };
 

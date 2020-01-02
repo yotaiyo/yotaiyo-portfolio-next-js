@@ -4,9 +4,8 @@ import styled from 'styled-components';
 import { Profile } from './components/Profile';
 import { History } from './components/History';
 import { Links } from './components/Links';
-import { getRepos, Action } from 'src/features/works/actions';
+import { Action } from 'src/features/works/actions';
 import { GithubState } from 'src/common/types/state';
-import { connect } from 'react-redux';
 import { InitialState } from 'src/common/types/state';
 import { ThunkDispatch } from 'redux-thunk';
 
@@ -20,13 +19,6 @@ type TopProps = {
 };
 
 class Top extends React.Component<TopProps> {
-  static async getInitialProps(props: any) {
-    if (props.isServer) {
-      await props.store.dispatch(getRepos());
-    }
-    return {};
-  }
-
   render() {
     return (
       <MyLayout>
@@ -40,4 +32,4 @@ class Top extends React.Component<TopProps> {
   }
 }
 
-export default connect((state: InitialState) => state)(Top);
+export default Top;
