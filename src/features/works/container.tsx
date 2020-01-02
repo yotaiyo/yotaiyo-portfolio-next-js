@@ -1,55 +1,40 @@
-import React from 'react';
-import { getRepos, Action } from './actions';
-import { GithubState } from 'src/common/types/state';
+import React, { useState } from 'react';
+import { getRepos } from './actions';
 import { Works } from './components/Works';
+import { NextPage } from 'next';
+import { useSelector } from 'react-redux';
 import { InitialState } from 'src/common/types/state';
-import { ThunkDispatch } from 'redux-thunk';
-import { connect } from 'react-redux';
 
-type WorksProps = {
-  github: GithubState;
-  dispatch: ThunkDispatch<InitialState, undefined, Action>;
-};
+export const WorksContainer: NextPage = () => {
+  const [flag, setFlag] = useState(false);
+  const [showDetail, setShowDetail] = useState(new Array(10).fill(false));
 
-type WorksState = {
-  showDetail: boolean[];
-};
+  const github = useSelector((state: InitialState) => state.github);
 
-class WorksContainer extends React.Component<WorksProps, WorksState> {
-  static async getInitialProps(props: any) {
-    if (props.store.getState().github.hasError) {
-      await props.store.dispatch(getRepos());
-    }
-    return {};
-  }
-
-  constructor(props: WorksProps) {
-    super(props);
-    this.state = {
-      showDetail: new Array(10).fill(false)
-    };
-  }
-
-  onClickDetailButton = (index: number) => {
-    let showDetail = this.state.showDetail;
+  const onClickDetailButton = (index: number) => {
     showDetail[index] = !showDetail[index];
-    this.setState({ showDetail });
+    setFlag(!flag);
+    setShowDetail(showDetail);
   };
 
-  openNewWindowWithUrl = (url: string) => {
+  const openNewWindowWithUrl = (url: string) => {
     window.open(url, '_blank', 'noopener');
   };
 
-  render() {
-    const { showDetail } = this.state;
-    return (
-      <Works
-        showDetail={showDetail}
-        onClickDetailButton={this.onClickDetailButton}
-        openNewWindowWithUrl={this.openNewWindowWithUrl}
-      />
-    );
-  }
-}
+  return (
+    <Works
+      github={github}
+      showDetail={showDetail}
+      onClickDetailButton={onClickDetailButton}
+      openNewWindowWithUrl={openNewWindowWithUrl}
+    />
+  );
+};
 
-export default connect((state: InitialState) => state)(WorksContainer);
+WorksContainer.getInitialProps = async (props: any) => {
+  if (props.store.getState().github.hasError) {
+    await props.store.dispatch(getRepos());
+  }
+  return {};
+};
+export default WorksContainer;
