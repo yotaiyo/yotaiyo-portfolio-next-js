@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import IconImage from 'public/myicon.png';
 import { Layout } from 'consts/Layout';
 import { Color } from 'consts/Color';
+import { ProfileItem } from '../molecules/ProfileItem';
 
 const Wrapper = styled.div`
   padding-top: 120px;
@@ -75,42 +76,6 @@ const ItemsWrapper = styled.div`
   }
 `;
 
-const ItemTitleAndBodyWrapper = styled.div`
-  display: flex;
-`;
-
-const ItemTitle = styled.div`
-  color: ${Color.Black2};
-  text-align: left;
-  margin-top: 12px;
-  flex: 0.25;
-  @media (max-width: 414px) {
-    flex: 0.4;
-  }
-`;
-
-const ItemBody = styled.div`
-  color: ${Color.Black2};
-  text-align: left;
-  margin-top: 12px;
-  flex: 0.75;
-  @media (max-width: 414px) {
-    flex: 0.65;
-  }
-`;
-
-type ItemTitleAndBody = {
-  body: string;
-  title: string;
-};
-
-const ItemTitleAndBody = ({ body, title }: ItemTitleAndBody) => (
-  <ItemTitleAndBodyWrapper>
-    <ItemTitle>{title + ':'}</ItemTitle>
-    <ItemBody>{body}</ItemBody>
-  </ItemTitleAndBodyWrapper>
-);
-
 export const Profile = () => {
   const items = [
     { title: 'Name', body: 'Yota Anashige' },
@@ -137,11 +102,7 @@ export const Profile = () => {
           <ItemsWrapper>
             {items.map((item, index) => {
               return (
-                <ItemTitleAndBody
-                  key={index}
-                  body={item.body}
-                  title={item.title}
-                />
+                <ProfileItem key={index} body={item.body} title={item.title} />
               );
             })}
           </ItemsWrapper>
