@@ -4,6 +4,7 @@ import IconImage from 'public/myicon.png';
 import { Layout } from 'consts/Layout';
 import { Color } from 'consts/Color';
 import { ProfileItem } from '../molecules/ProfileItem';
+import { profileItems } from 'consts/profileItems';
 
 const Wrapper = styled.div`
   padding-top: 120px;
@@ -77,18 +78,6 @@ const ItemsWrapper = styled.div`
 `;
 
 export const Profile = () => {
-  const items = [
-    { title: 'Name', body: 'Yota Anashige' },
-    { title: 'BirthDay', body: '1995/12/18' },
-    { title: 'College', body: 'The University of Electro-Communications' },
-    {
-      title: 'Grade',
-      body: 'second-year master`s student ( on a leave of absence )'
-    },
-    { title: 'Graduation', body: '2021' },
-    { title: 'Interests', body: 'web, front-end' },
-    { title: 'Hobbies', body: 'music, jazz, guitar' }
-  ];
   return (
     <Wrapper>
       <TitleWrapper>
@@ -100,7 +89,7 @@ export const Profile = () => {
         </IconWrapper>
         <ItemsTitleAndBodyWrapper>
           <ItemsWrapper>
-            {items.map((item, index) => {
+            {profileItems.map((item, index) => {
               return (
                 <ProfileItem key={index} body={item.body} title={item.title} />
               );
