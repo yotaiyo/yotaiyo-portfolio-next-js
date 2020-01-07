@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { getRepos } from './actions';
-import { Works } from './components/Works';
+import { Works } from './components/templates/Works';
 import { NextPage } from 'next';
 import { useSelector } from 'react-redux';
 import { InitialState } from 'src/common/types/state';
