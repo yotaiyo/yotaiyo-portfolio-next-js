@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import IconImage from 'public/myicon.png';
 import { Layout } from 'consts/Layout';
 import { Color } from 'consts/Color';
+import { ProfileItem } from '../molecules/ProfileItem';
+import { profileItems } from 'consts/profileItems';
 
 const Wrapper = styled.div`
   padding-top: 120px;
@@ -75,55 +77,7 @@ const ItemsWrapper = styled.div`
   }
 `;
 
-const ItemTitleAndBodyWrapper = styled.div`
-  display: flex;
-`;
-
-const ItemTitle = styled.div`
-  color: ${Color.Black2};
-  text-align: left;
-  margin-top: 12px;
-  flex: 0.25;
-  @media (max-width: 414px) {
-    flex: 0.4;
-  }
-`;
-
-const ItemBody = styled.div`
-  color: ${Color.Black2};
-  text-align: left;
-  margin-top: 12px;
-  flex: 0.75;
-  @media (max-width: 414px) {
-    flex: 0.65;
-  }
-`;
-
-type ItemTitleAndBody = {
-  body: string;
-  title: string;
-};
-
-const ItemTitleAndBody = ({ body, title }: ItemTitleAndBody) => (
-  <ItemTitleAndBodyWrapper>
-    <ItemTitle>{title + ':'}</ItemTitle>
-    <ItemBody>{body}</ItemBody>
-  </ItemTitleAndBodyWrapper>
-);
-
 export const Profile = () => {
-  const items = [
-    { title: 'Name', body: 'Yota Anashige' },
-    { title: 'BirthDay', body: '1995/12/18' },
-    { title: 'College', body: 'The University of Electro-Communications' },
-    {
-      title: 'Grade',
-      body: 'second-year master`s student ( on a leave of absence )'
-    },
-    { title: 'Graduation', body: '2021' },
-    { title: 'Interests', body: 'web, front-end' },
-    { title: 'Hobbies', body: 'music, jazz, guitar' }
-  ];
   return (
     <Wrapper>
       <TitleWrapper>
@@ -135,13 +89,9 @@ export const Profile = () => {
         </IconWrapper>
         <ItemsTitleAndBodyWrapper>
           <ItemsWrapper>
-            {items.map((item, index) => {
+            {profileItems.map((item, index) => {
               return (
-                <ItemTitleAndBody
-                  key={index}
-                  body={item.body}
-                  title={item.title}
-                />
+                <ProfileItem key={index} body={item.body} title={item.title} />
               );
             })}
           </ItemsWrapper>
