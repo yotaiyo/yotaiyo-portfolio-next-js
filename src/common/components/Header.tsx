@@ -107,7 +107,7 @@ export const Header = () => {
           </Link>
         </HeaderTitleWrapper>
         <SectionWrapper>
-          <MenuIcon src={menuIcon} />
+          <MenuIcon src={menuIcon} alt="menu" />
           {/* <Link href="/">
             <Section>Top</Section>
           </Link>
