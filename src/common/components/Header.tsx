@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Layout } from 'consts/Layout';
 import { Color } from 'consts/Color';
 import Link from 'next/link';
+import menuIcon from 'public/menu.png';
 
 const Wrapper = styled.div`
   display: flex;
@@ -15,20 +16,29 @@ const Wrapper = styled.div`
   z-index: 1;
   padding: 20px 0 20px 0;
   color: ${Color.White};
-  font-size: ${Layout.Text.Normal}px;
   @media (max-width: 414px) {
-    font-size: ${Layout.Text.Small}px;
-    padding: 15px 0 15px 0;
+    padding: 10px 0 12px 0;
   }
+`;
+
+const HeaderTitleWrapper = styled.div`
+  display: flex;
+  flex-direction; column;
+  justify-content: center;
+  align-items: center;
 `;
 
 const HeaderTitle = styled.a`
   margin-left: 40px;
   transition: all 0.5s ease;
+  font-size: ${Layout.Text.Normal}px;
+  height: ${Layout.Text.Normal}px;
   &:hover {
     color: ${Color.Red1};
   }
   @media (max-width: 414px) {
+    font-size: ${Layout.Text.Small}px;
+    height: ${Layout.Text.Small}px;
     margin-left: 10px;
   }
 `;
@@ -51,19 +61,27 @@ const Section = styled.a`
   }
 `;
 
+const MenuIcon = styled.img`
+  height: 24px;
+  margin-top: 4px;
+`;
+
 export const Header = () => {
   return (
     <Wrapper>
-      <Link href="/">
-        <HeaderTitle>yotaiyo`s portfolio</HeaderTitle>
-      </Link>
-      <SectionWrapper>
+      <HeaderTitleWrapper>
         <Link href="/">
+          <HeaderTitle>yotaiyo`s portfolio</HeaderTitle>
+        </Link>
+      </HeaderTitleWrapper>
+      <SectionWrapper>
+        <MenuIcon src={menuIcon} />
+        {/* <Link href="/">
           <Section>Top</Section>
         </Link>
         <Link href="/works">
           <Section>Works</Section>
-        </Link>
+        </Link> */}
       </SectionWrapper>
     </Wrapper>
   );
