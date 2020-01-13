@@ -6,16 +6,16 @@ import Link from 'next/link';
 import menuIcon from 'public/menu.png';
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  box-shadow: 0px 5px 5px -5px rgb(0, 0, 0, 0.5);
+  // box-shadow: 0px 5px 5px -5px rgb(0, 0, 0, 0.5);
   background-color: ${Color.Blue1};
   position: fixed;
   width: 100%;
   z-index: 1;
   padding: 20px 0 20px 0;
   color: ${Color.White};
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   @media (max-width: 414px) {
     padding: 10px 0 12px 0;
   }
@@ -66,24 +66,56 @@ const MenuIcon = styled.img`
   margin-top: 4px;
 `;
 
+const MenusWrapper = styled.div`
+  padding-top: 58px;
+  position: fixed;
+  width: 100%;
+  background-color: ${Color.Blue1};
+  box-shadow: 0px 5px 5px -5px rgb(0, 0, 0, 0.5);
+`;
+
+const Menus = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const Menu = styled.div`
+  &:first-child {
+    margin-left: 0;
+  }
+  margin-left: 60px;
+  color: ${Color.White};
+  font-size: ${Layout.Text.Smaller}px;
+  font-weight: 300;
+  padding: 0 0 15px 0;
+`;
+
 export const Header = () => {
   return (
-    <Wrapper>
-      <HeaderTitleWrapper>
-        <Link href="/">
-          <HeaderTitle>yotaiyo`s portfolio</HeaderTitle>
-        </Link>
-      </HeaderTitleWrapper>
-      <SectionWrapper>
-        <MenuIcon src={menuIcon} />
-        {/* <Link href="/">
-          <Section>Top</Section>
-        </Link>
-        <Link href="/works">
-          <Section>Works</Section>
-        </Link> */}
-      </SectionWrapper>
-    </Wrapper>
+    <>
+      <Wrapper>
+        <HeaderTitleWrapper>
+          <Link href="/">
+            <HeaderTitle>yotaiyo`s portfolio</HeaderTitle>
+          </Link>
+        </HeaderTitleWrapper>
+        <SectionWrapper>
+          <MenuIcon src={menuIcon} />
+          {/* <Link href="/">
+            <Section>Top</Section>
+          </Link>
+          <Link href="/works">
+            <Section>Works</Section>
+          </Link> */}
+        </SectionWrapper>
+      </Wrapper>
+      <MenusWrapper>
+        <Menus>
+          <Menu>Top</Menu>
+          <Menu>Works</Menu>
+        </Menus>
+      </MenusWrapper>
+    </>
   );
 };
 
