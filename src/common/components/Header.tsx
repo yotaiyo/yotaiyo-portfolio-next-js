@@ -70,7 +70,8 @@ const MenusWrapper = styled.div`
   padding-top: 58px;
   position: fixed;
   width: 100%;
-  background-color: ${Color.Blue1};
+  // background-color: ${Color.Blue1};
+  background-color: rgba(0, 0, 0, 0.5);
   box-shadow: 0px 5px 5px -5px rgb(0, 0, 0, 0.5);
 `;
 
@@ -83,11 +84,17 @@ const Menu = styled.div`
   &:first-child {
     margin-left: 0;
   }
+  width: 60px;
+  height: 20x;
   margin-left: 60px;
-  color: ${Color.White};
+  color: ${Color.Blue1};
+  background-color: ${Color.White};
   font-size: ${Layout.Text.Smaller}px;
-  font-weight: 300;
-  padding: 0 0 15px 0;
+  padding: 6px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+  border-radius: 8px;
 `;
 
 export const Header = () => {
@@ -111,8 +118,12 @@ export const Header = () => {
       </Wrapper>
       <MenusWrapper>
         <Menus>
-          <Menu>Top</Menu>
-          <Menu>Works</Menu>
+          <Link href="/">
+            <Menu>Top</Menu>
+          </Link>
+          <Link href="/works">
+            <Menu>Works</Menu>
+          </Link>
         </Menus>
       </MenusWrapper>
     </>
