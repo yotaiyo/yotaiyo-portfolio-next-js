@@ -80,15 +80,22 @@ const Menus = styled.div`
   justify-content: center;
 `;
 
-const Menu = styled.div`
+type MenuType = {
+  isCurrentPath: boolean;
+};
+
+const Menu = styled.div.attrs((props: MenuType) => ({
+  isCurrentPath: props.isCurrentPath
+}))`
   &:first-child {
     margin-left: 0;
   }
   width: 60px;
   height: 20x;
   margin-left: 60px;
-  color: ${Color.Blue1};
-  background-color: ${Color.White};
+  color: ${props => (props.isCurrentPath ? Color.White : Color.Blue1)};
+  background-color: ${props =>
+    props.isCurrentPath ? Color.Blue1 : Color.White};
   font-size: ${Layout.Text.Smaller}px;
   padding: 6px;
   margin-top: 10px;
@@ -96,13 +103,13 @@ const Menu = styled.div`
   text-align: center;
   border-radius: 8px;
 `;
+
 type HeaderProps = {
   pathname: string;
 };
 
 export const Header = (props: HeaderProps) => {
   const [showMenu, setShowMenu] = useState(false);
-  console.log(props.pathname);
 
   return (
     <>
@@ -130,10 +137,10 @@ export const Header = (props: HeaderProps) => {
         <MenusWrapper>
           <Menus>
             <Link href="/">
-              <Menu>Top</Menu>
+              <Menu isCurrentPath={props.pathname === '/'}>Top</Menu>
             </Link>
             <Link href="/works">
-              <Menu>Works</Menu>
+              <Menu isCurrentPath={props.pathname === '/works'}>Works</Menu>
             </Link>
           </Menus>
         </MenusWrapper>
