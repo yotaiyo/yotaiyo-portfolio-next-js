@@ -96,9 +96,13 @@ const Menu = styled.div`
   text-align: center;
   border-radius: 8px;
 `;
+type HeaderProps = {
+  pathname: string;
+};
 
-export const Header = () => {
+export const Header = (props: HeaderProps) => {
   const [showMenu, setShowMenu] = useState(false);
+  console.log(props.pathname);
 
   return (
     <>

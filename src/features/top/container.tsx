@@ -4,14 +4,19 @@ import styled from 'styled-components';
 import { Profile } from './components/templates/Profile';
 import { History } from './components/templates/History';
 import { Links } from './components/templates/Links';
+import { NextPage } from 'next';
 
 const Wrapper = styled.div`
   margin-bottom: 100px;
 `;
 
-export const TopContainer = () => {
+type TopContainerProps = {
+  pathname: string;
+};
+
+const TopContainer: NextPage<TopContainerProps> = props => {
   return (
-    <MyLayout>
+    <MyLayout pathname={props.pathname}>
       <Wrapper>
         <Profile />
         <History />
@@ -20,3 +25,9 @@ export const TopContainer = () => {
     </MyLayout>
   );
 };
+
+TopContainer.getInitialProps = async (props: any) => {
+  return { pathname: props.pathname };
+};
+
+export default TopContainer;
