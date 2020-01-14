@@ -73,7 +73,7 @@ export const Works: React.FC<WorksProps> = props => {
   } = props;
 
   return (
-    <MyLayout>
+    <>
       {github.hasError || github.repos.length === 0 ? (
         <LoadingWrapper>
           <ReactLoading
@@ -108,7 +108,7 @@ export const Works: React.FC<WorksProps> = props => {
           </CardsWrapper>
         </Wrapper>
       )}
-    </MyLayout>
+    </>
   );
 };
 

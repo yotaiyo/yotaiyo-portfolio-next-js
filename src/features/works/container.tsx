@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { getRepos } from './actions';
+import MyLayout from 'src/common/components/MyLayout';
 import { Works } from './components/templates/Works';
 import { NextPage } from 'next';
 import { useSelector } from 'react-redux';
@@ -22,12 +23,14 @@ export const WorksContainer: NextPage = () => {
   };
 
   return (
-    <Works
-      github={github}
-      showDetail={showDetail}
-      onClickDetailButton={onClickDetailButton}
-      openNewWindowWithUrl={openNewWindowWithUrl}
-    />
+    <MyLayout>
+      <Works
+        github={github}
+        showDetail={showDetail}
+        onClickDetailButton={onClickDetailButton}
+        openNewWindowWithUrl={openNewWindowWithUrl}
+      />
+    </MyLayout>
   );
 };
 
