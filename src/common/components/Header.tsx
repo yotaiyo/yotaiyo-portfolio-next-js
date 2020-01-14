@@ -5,8 +5,15 @@ import { Color } from 'consts/Color';
 import Link from 'next/link';
 import menuIcon from 'public/menu.png';
 
-const Wrapper = styled.div`
-  // box-shadow: 0px 5px 5px -5px rgb(0, 0, 0, 0.5);
+type WrapperType = {
+  showMenu: boolean;
+};
+
+const Wrapper = styled.div.attrs((props: WrapperType) => ({
+  showMenu: props.showMenu
+}))`
+  box-shadow: ${props =>
+    props.showMenu ? null : '0px 5px 5px -5px rgb(0, 0, 0, 0.5)'};
   background-color: ${Color.Blue1};
   position: fixed;
   width: 100%;
@@ -113,7 +120,7 @@ export const Header = (props: HeaderProps) => {
 
   return (
     <>
-      <Wrapper>
+      <Wrapper showMenu={showMenu}>
         <HeaderTitleWrapper>
           <Link href="/">
             <HeaderTitle>yotaiyo`s portfolio</HeaderTitle>
