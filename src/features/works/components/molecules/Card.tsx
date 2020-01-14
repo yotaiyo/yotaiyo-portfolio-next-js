@@ -137,7 +137,7 @@ export const Card = ({
         style={{ marginLeft: 0 }}
         onClick={() => openNewWindowWithUrl(url)}
       >
-        Repository
+        Repo
       </CardButton>
       {homepage ? (
         <CardButton onClick={() => openNewWindowWithUrl(homepage)}>
