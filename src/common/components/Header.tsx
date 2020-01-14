@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Layout } from 'consts/Layout';
 import { Color } from 'consts/Color';
@@ -98,6 +98,8 @@ const Menu = styled.div`
 `;
 
 export const Header = () => {
+  const [showMenu, setShowMenu] = useState(false);
+
   return (
     <>
       <Wrapper>
@@ -107,7 +109,11 @@ export const Header = () => {
           </Link>
         </HeaderTitleWrapper>
         <SectionWrapper>
-          <MenuIcon src={menuIcon} alt="menu" />
+          <MenuIcon
+            src={menuIcon}
+            onClick={() => setShowMenu(!showMenu)}
+            alt="menu"
+          />
           {/* <Link href="/">
             <Section>Top</Section>
           </Link>
@@ -116,16 +122,18 @@ export const Header = () => {
           </Link> */}
         </SectionWrapper>
       </Wrapper>
-      <MenusWrapper>
-        <Menus>
-          <Link href="/">
-            <Menu>Top</Menu>
-          </Link>
-          <Link href="/works">
-            <Menu>Works</Menu>
-          </Link>
-        </Menus>
-      </MenusWrapper>
+      {showMenu ? (
+        <MenusWrapper>
+          <Menus>
+            <Link href="/">
+              <Menu>Top</Menu>
+            </Link>
+            <Link href="/works">
+              <Menu>Works</Menu>
+            </Link>
+          </Menus>
+        </MenusWrapper>
+      ) : null}
     </>
   );
 };
