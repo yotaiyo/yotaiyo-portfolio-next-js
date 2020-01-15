@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import ReactLoading from 'react-loading';
-import MyLayout from 'src/common/components/MyLayout';
 import { Card } from '../molecules/Card';
 import { Repo, GithubState } from 'src/common/types/state';
 import { Color } from 'consts/Color';
@@ -73,7 +72,7 @@ export const Works: React.FC<WorksProps> = props => {
   } = props;
 
   return (
-    <MyLayout>
+    <>
       {github.hasError || github.repos.length === 0 ? (
         <LoadingWrapper>
           <ReactLoading
@@ -108,7 +107,7 @@ export const Works: React.FC<WorksProps> = props => {
           </CardsWrapper>
         </Wrapper>
       )}
-    </MyLayout>
+    </>
   );
 };
 

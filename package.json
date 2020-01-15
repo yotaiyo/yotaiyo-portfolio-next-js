@@ -33,6 +33,7 @@
     "react-dom": "^16.8.6",
     "react-loading": "^2.0.3",
     "react-redux": "^7.1.1",
+    "react-use-dimensions": "^1.2.1",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
     "set-value": "^2.0.1",

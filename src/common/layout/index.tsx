@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from './Header';
+import Header from '../components/molecules/Header';
 import styled from 'styled-components';
 
 const Wrapper = styled.div``;
 
-const MyLayout = (props: { children: React.ReactNode }) => (
+const MyLayout = (props: { children: React.ReactNode; pathname: string }) => (
   <Wrapper style={{ flex: 1 }}>
-    <Header />
+    <Header pathname={props.pathname} />
     {props.children}
   </Wrapper>
 );
