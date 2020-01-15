@@ -81,6 +81,19 @@ const MenusWrapper = styled.div`
   // background-color: ${Color.Blue1};
   background-color: rgba(0, 0, 0, 0.5);
   box-shadow: 0px 5px 5px -5px rgb(0, 0, 0, 0.5);
+  animation-name: fade-in;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, -20px, 0);
+    }
+    100% {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
 `;
 
 const Menus = styled.div`
