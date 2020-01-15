@@ -132,7 +132,6 @@ type HeaderProps = {
 export const Header = (props: HeaderProps) => {
   const [showMenu, setShowMenu] = useState(false);
   const { ref, rect } = useRect();
-  console.log(rect);
 
   return (
     <>
@@ -143,17 +142,24 @@ export const Header = (props: HeaderProps) => {
           </Link>
         </HeaderTitleWrapper>
         <SectionWrapper>
-          <MenuIcon
-            src={menuIcon}
-            onClick={() => setShowMenu(!showMenu)}
-            alt="menu"
-          />
-          {/* <Link href="/">
-            <Section>Top</Section>
-          </Link>
-          <Link href="/works">
-            <Section>Works</Section>
-          </Link> */}
+          {rect ? (
+            rect.width <= 375 ? (
+              <MenuIcon
+                src={menuIcon}
+                onClick={() => setShowMenu(!showMenu)}
+                alt="menu"
+              />
+            ) : (
+              <>
+                <Link href="/">
+                  <Section>Top</Section>
+                </Link>
+                <Link href="/works">
+                  <Section>Works</Section>
+                </Link>
+              </>
+            )
+          ) : null}
         </SectionWrapper>
       </Wrapper>
       {showMenu ? (
