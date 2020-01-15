@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { getRepos } from './actions';
-import MyLayout from 'src/common/components/MyLayout';
+import MyLayout from 'src/common/layout';
 import { Works } from './components/templates/Works';
 import { NextPage } from 'next';
 import { useSelector } from 'react-redux';
