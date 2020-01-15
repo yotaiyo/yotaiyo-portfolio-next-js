@@ -131,7 +131,7 @@ type HeaderProps = {
 
 export const Header = (props: HeaderProps) => {
   const [showMenu, setShowMenu] = useState(false);
-  const [ref, { x, y, width }] = useDimensions();
+  const [ref, { width }] = useDimensions();
 
   return (
     <>
