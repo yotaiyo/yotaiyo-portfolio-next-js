@@ -26,7 +26,7 @@ const Wrapper = styled.div.attrs((props: WrapperType) => ({
   flex-direction: row;
   justify-content: space-between;
   @media (max-width: 414px) {
-    padding: 10px 0 12px 0;
+    padding: 6px 0 6px 0;
   }
 `;
 
@@ -70,7 +70,7 @@ const Section = styled.a`
 `;
 
 const MenuIcon = styled.img`
-  height: 24px;
+  height: 36px;
   margin-top: 4px;
 `;
 
@@ -113,12 +113,12 @@ const Menu = styled.div.attrs((props: MenuType) => ({
   }
   width: 60px;
   height: 20x;
-  margin-left: 60px;
+  margin-left: 50px;
   color: ${props => (props.isCurrentPath ? Color.White : Color.Blue1)};
   background-color: ${props =>
     props.isCurrentPath ? Color.Blue1 : Color.White};
-  font-size: ${Layout.Text.Smaller}px;
-  padding: 6px;
+  font-size: ${Layout.Text.Small}px;
+  padding: 10px;
   margin-top: 10px;
   margin-bottom: 15px;
   text-align: center;
