@@ -38,15 +38,13 @@ const HeaderTitleWrapper = styled.div`
 
 const HeaderTitle = styled.a`
   margin-left: 40px;
-  transition: all 0.5s ease;
   font-size: ${Layout.Text.Normal}px;
-  height: ${Layout.Text.Normal}px;
+  transition: all 0.5s ease;
   &:hover {
     color: ${Color.Red1};
   }
   @media (max-width: 414px) {
     font-size: ${Layout.Text.Small}px;
-    height: ${Layout.Text.Small}px;
     margin-left: 10px;
   }
 `;
@@ -60,6 +58,7 @@ const SectionWrapper = styled.div`
 
 const Section = styled.a`
   margin-left: 60px;
+  font-size: ${Layout.Text.Normal}px;
   transition: all 0.5s ease;
   &:hover {
     color: ${Color.Red1};
