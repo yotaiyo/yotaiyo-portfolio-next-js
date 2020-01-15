@@ -4,7 +4,8 @@ import { Layout } from 'consts/Layout';
 import { Color } from 'consts/Color';
 import Link from 'next/link';
 import menuIcon from 'public/menu.png';
-import { useRect } from 'src/common/utils/useRect';
+// @ts-ignore
+import useDimensions from 'react-use-dimensions';
 
 type WrapperType = {
   showMenu: boolean;
@@ -130,7 +131,7 @@ type HeaderProps = {
 
 export const Header = (props: HeaderProps) => {
   const [showMenu, setShowMenu] = useState(false);
-  const { ref, rect } = useRect();
+  const [ref, { x, y, width }] = useDimensions();
 
   return (
     <>
@@ -141,8 +142,8 @@ export const Header = (props: HeaderProps) => {
           </Link>
         </HeaderTitleWrapper>
         <SectionWrapper>
-          {rect ? (
-            rect.width <= 375 ? (
+          {width !== undefined ? (
+            width <= 414 ? (
               <MenuIcon
                 src={menuIcon}
                 onClick={() => setShowMenu(!showMenu)}
