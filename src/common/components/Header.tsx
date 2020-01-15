@@ -4,6 +4,7 @@ import { Layout } from 'consts/Layout';
 import { Color } from 'consts/Color';
 import Link from 'next/link';
 import menuIcon from 'public/menu.png';
+import menuOpenIcon from 'public/menu-open.png';
 // @ts-ignore
 import useDimensions from 'react-use-dimensions';
 
@@ -145,7 +146,7 @@ export const Header = (props: HeaderProps) => {
           {width !== undefined ? (
             width <= 414 ? (
               <MenuIcon
-                src={menuIcon}
+                src={showMenu ? menuOpenIcon : menuIcon}
                 onClick={() => setShowMenu(!showMenu)}
                 alt="menu"
               />
