@@ -54,7 +54,6 @@ const MenusWrapper = styled.div`
   padding-top: 58px;
   position: fixed;
   width: 100%;
-  // background-color: ${Color.Blue1};
   background-color: rgba(0, 0, 0, 0.5);
   box-shadow: 0px 5px 5px -5px rgb(0, 0, 0, 0.5);
   animation-name: fade-in;
