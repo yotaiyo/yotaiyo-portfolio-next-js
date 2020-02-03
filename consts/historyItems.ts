@@ -1,9 +1,10 @@
 export const historyItems = [
   {
-    period: '2020.01 ~ ',
+    period: '2020.01',
     title: 'エムスリー インターン',
-    body: 'クラウド電子カルテチームで就業予定',
-    tags: []
+    body:
+      'デジカルチームで就業。AngularJSからReactへのリプレースを担当し、レガシーフロントエンドの改善に取り組む。',
+    tags: ['angularjs', 'react', 'draftjs']
   },
   {
     period: '2019.09 ~ 12',

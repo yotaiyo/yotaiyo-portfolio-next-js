@@ -40,7 +40,7 @@ const CardBody = styled.div`
   font-size: ${Layout.Text.Small}px;
   color: ${Color.Black2};
   @media (max-width: 414px) {
-    font-size: ${Layout.Text.Smaller}px;
+    font-size: ${Layout.Text.Smallest}px;
   }
 `;
 
