@@ -34,24 +34,6 @@ const Title = styled.span`
   }
 `;
 
-const PeriodWrapper = styled.div`
-  margin-top: 20px;
-  margin-right: 30px;
-  @media (max-width: 414px) {
-    display: none;
-  }
-`;
-
-const Period = styled.div`
-  font-size: ${Layout.Text.Small}px;
-  color: ${Color.Black2};
-  text-align: center;
-  white-space: nowrap;
-  @media (max-width: 414px) {
-    font-size: ${Layout.Text.Smaller}px;
-  }
-`;
-
 const MyHistoriesWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -73,26 +55,12 @@ export const History = () => {
         <Title>History</Title>
       </TitleWrapper>
       <MyHistoriesWrapper>
-        <PeriodWrapper>
-          {historyItems.map((item, index) => {
-            return (
-              <Period
-                style={{
-                  marginTop: index === 0 ? 68 : 30,
-                  height: index === historyItems.length - 1 ? 100 : 200
-                }}
-                key={index}
-              >
-                {item.period}
-              </Period>
-            );
-          })}
-        </PeriodWrapper>
         <MyHistories>
           {historyItems.map((item, index) => {
             return (
               <HistoryCard
                 title={item.title}
+                period={item.period}
                 body={item.body}
                 tags={item.tags}
                 index={index}

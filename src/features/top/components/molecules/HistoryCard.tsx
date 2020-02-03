@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Color } from 'consts/Color';
 import { Card, CardType } from './Card';
+// @ts-ignore
+import useDimensions from 'react-use-dimensions';
 
 const HistoryCardWrapper = styled.div`
   display: flex;
@@ -9,20 +11,32 @@ const HistoryCardWrapper = styled.div`
   margin-top: 30px;
 `;
 
-const Circle = styled.div`
+type CircleType = {
+  cardHeight: number;
+};
+
+const Circle = styled.div.attrs((props: CircleType) => ({
+  cardHeight: props.cardHeight
+}))`
   width: 30px;
   height: 30px;
   border-radius: 50%;
   background-color: ${Color.Blue2};
   position: relative;
+  top: ${props => `${props.cardHeight / 2 - 15}px`}
   right: 16px;
-  top: 80px;
 `;
 
 const TriangleWrapper = styled.div``;
 
-const Triangle = styled.div`
-  margin-top: 85px;
+type TriangleType = {
+  cardHeight: number;
+};
+
+const Triangle = styled.div.attrs((props: TriangleType) => ({
+  cardHeight: props.cardHeight
+}))`
+  margin-top: ${props => `${props.cardHeight / 2 - 10}px`}
   border-style: solid;
   border-width: 10px 10px 10px 10px;
   border-color: transparent ${Color.White} transparent transparent;
@@ -33,14 +47,25 @@ type HistoryCardType = CardType & {
   index: number;
 };
 
-export const HistoryCard = ({ title, body, tags, index }: HistoryCardType) => {
+export const HistoryCard = ({
+  title,
+  period,
+  body,
+  tags,
+  index
+}: HistoryCardType) => {
+  const [ref, { height }] = useDimensions();
+
   return (
-    <HistoryCardWrapper style={{ marginTop: index === 0 ? 0 : undefined }}>
-      <Circle />
+    <HistoryCardWrapper
+      style={{ marginTop: index === 0 ? 0 : undefined }}
+      ref={ref}
+    >
+      <Circle cardHeight={height} />
       <TriangleWrapper>
-        <Triangle />
+        <Triangle cardHeight={height} />
       </TriangleWrapper>
-      <Card title={title} body={body} tags={tags} />
+      <Card title={title} period={period} body={body} tags={tags} />
     </HistoryCardWrapper>
   );
 };

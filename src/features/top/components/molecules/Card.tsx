@@ -6,12 +6,10 @@ import { Color } from 'consts/Color';
 const CardWrapper = styled.div`
   border-radius: 30px;
   box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.5);
-  height: 200px;
   padding-left: 30px;
   padding-right: 30px;
   min-width: 350px;
   flex: 1;
-  text-align: center;
   @media (max-width: 414px) {
     min-width: 0;
   }
@@ -25,26 +23,49 @@ const CardTitle = styled.div`
   font-size: ${Layout.Text.Large}px;
   color: ${Color.Black1};
   margin-top: 20px;
-  height: 30px;
+  text-align: center;
   @media (max-width: 414px) {
     font-size: ${Layout.Text.Normal - 2}px;
   }
 `;
 
-const CardBodyWrapper = styled.div`
+const CardPeriod = styled.div`
+  font-size: ${Layout.Text.Small}px;
+  color: ${Color.Black2};
+  text-align: center;
+  margin-top: 10px;
+  @media (max-width: 414px) {
+    font-size: ${Layout.Text.Smaller}px;
+  }
+`;
+
+const CardBodiesWrapper = styled.div`
+  margin: 0 auto;
+  text-align: center;
+  max-width: 1000px;
+`;
+
+const CardBodies = styled.div`
+  display: inline-block;
   margin-top: 20px;
-  height: 80px;
+  text-align: left;
 `;
 
 const CardBody = styled.div`
-  font-size: ${Layout.Text.Small}px;
+  font-size: ${Layout.Text.Smaller}px;
   color: ${Color.Black2};
+  display: inline-block;
   @media (max-width: 414px) {
     font-size: ${Layout.Text.Smallest}px;
   }
 `;
 
-const CardTagsWrapper = styled.div``;
+const CardTagsWrapper = styled.div`
+  text-align: center;
+  box-sizing: border-box;
+  margin-top: 20px;
+  margin-bottom: 20px;
+`;
 
 const CardTag = styled.span`
   font-size: ${Layout.Text.Smaller}px;
@@ -62,19 +83,23 @@ const CardTag = styled.span`
 
 export type CardType = {
   title: string;
+  period: string;
   body: string;
   tags: string[];
 };
 
-export const Card = ({ title, body, tags }: CardType) => {
+export const Card = ({ title, period, body, tags }: CardType) => {
   return (
     <CardWrapper>
       <CardTitle>{title}</CardTitle>
-      <CardBodyWrapper>
-        {body.split('\n').map((line, index) => {
-          return <CardBody key={index}>{line}</CardBody>;
-        })}
-      </CardBodyWrapper>
+      <CardPeriod>{period}</CardPeriod>
+      <CardBodiesWrapper>
+        <CardBodies>
+          {body.split('\n').map((line, index) => {
+            return <CardBody key={index}>{line}</CardBody>;
+          })}
+        </CardBodies>
+      </CardBodiesWrapper>
       <CardTagsWrapper>
         {tags.map((tag, index) => {
           return <CardTag key={index}>{tag}</CardTag>;
