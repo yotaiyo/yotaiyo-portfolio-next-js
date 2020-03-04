@@ -56,6 +56,7 @@ const MenusWrapper = styled.div`
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   box-shadow: 0px 5px 5px -5px rgb(0, 0, 0, 0.5);
+  z-index: 1;
   animation-name: fade-in;
   animation-duration: 0.5s;
   animation-timing-function: ease-out;
