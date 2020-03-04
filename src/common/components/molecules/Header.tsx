@@ -19,7 +19,7 @@ const Wrapper = styled.div.attrs((props: WrapperType) => ({
   background-color: ${Color.Blue1};
   position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
   padding: 20px 0 20px 0;
   color: ${Color.White};
   display: flex;
