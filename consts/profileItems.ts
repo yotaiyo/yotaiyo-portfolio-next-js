@@ -8,5 +8,5 @@ export const profileItems = [
   },
   { title: 'Graduation', body: '2021' },
   { title: 'Interests', body: 'web, front-end' },
-  { title: 'Hobbies', body: 'music, jazz, guitar' }
+  { title: 'Likes', body: 'music, jazz, guitar' }
 ];
