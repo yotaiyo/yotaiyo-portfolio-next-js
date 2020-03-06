@@ -45,12 +45,15 @@ export const getRepos = () => async (
   dispatch: ThunkDispatch<InitialState, undefined, Action>
 ) => {
   await axios
-    .get(`https://api.github.com/users/${process.env.GITHUB_USER_NAME}/repos`, {
-      headers: {
-        Authorization: `Bearer ${process.env.GITHUB_API_TOKEN}`,
-        Accept: 'application/vnd.github.mercy-preview+json'
+    .get(
+      `https://api.github.com/users/${process.env.GITHUB_USER_NAME}/repos?per_page=100`,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.GITHUB_API_TOKEN}`,
+          Accept: 'application/vnd.github.mercy-preview+json'
+        }
       }
-    })
+    )
     .then(res => {
       dispatch(addRepos(convertFetchReposResult(res.data)));
     })
