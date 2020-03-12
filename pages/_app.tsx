@@ -1,20 +1,12 @@
 import React from 'react';
 import App from 'next/app';
 import { css, Global } from '@emotion/core';
-import { Provider } from 'react-redux';
-import withRedux from 'next-redux-wrapper';
-import { makeStore } from 'src/app/makeStore';
-import { Store } from 'redux';
 
-type AppProps = {
-  store: Store;
-};
-
-class MyApp extends App<AppProps> {
+class MyApp extends App {
   render() {
-    const { Component, pageProps, store } = this.props;
+    const { Component, pageProps } = this.props;
     return (
-      <Provider store={store}>
+      <>
         <Component {...pageProps} />
         <Global
           styles={css`
@@ -26,9 +18,9 @@ class MyApp extends App<AppProps> {
             }
           `}
         />
-      </Provider>
+      </>
     );
   }
 }
 
-export default withRedux(makeStore)(MyApp);
+export default MyApp;
