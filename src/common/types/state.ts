@@ -5,12 +5,3 @@ export type Repo = {
   homepage: string | null;
   description: string;
 };
-
-export type GithubState = {
-  repos: Repo[];
-  hasError: boolean;
-};
-
-export type InitialState = {
-  github: GithubState;
-};

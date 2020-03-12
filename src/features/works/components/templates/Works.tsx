@@ -1,16 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import ReactLoading from 'react-loading';
 import { Card } from '../molecules/Card';
-import { Repo, GithubState } from 'src/common/types/state';
+import { Repo } from 'src/common/types/state';
 import { Color } from 'consts/Color';
 import { Layout } from 'consts/Layout';
-
-const LoadingWrapper = styled.div`
-  padding-top: 120px;
-  display: flex;
-  justify-content: center;
-`;
 
 const Wrapper = styled.div`
   padding-top: 100px;
@@ -57,7 +50,7 @@ const CardsWrapper = styled.div`
 `;
 
 type WorksProps = {
-  github: GithubState;
+  repos: Repo[];
   showDetail: boolean[];
   onClickDetailButton(index: number): void;
   openNewWindowWithUrl(url: string): void;
@@ -65,7 +58,7 @@ type WorksProps = {
 
 export const Works: React.FC<WorksProps> = props => {
   const {
-    github,
+    repos,
     showDetail,
     onClickDetailButton,
     openNewWindowWithUrl
@@ -73,40 +66,29 @@ export const Works: React.FC<WorksProps> = props => {
 
   return (
     <>
-      {github.hasError || github.repos.length === 0 ? (
-        <LoadingWrapper>
-          <ReactLoading
-            type={'spinningBubbles'}
-            color={Color.Blue2}
-            height={'10%'}
-            width={'10%'}
-          />
-        </LoadingWrapper>
-      ) : (
-        <Wrapper>
-          <TitleWrapper>
-            <Title>Works</Title>
-          </TitleWrapper>
-          <CardsWrapper>
-            {github.repos.map((repo: Repo, index: number) => {
-              return (
-                <Card
-                  title={repo.title}
-                  url={repo.url}
-                  homepage={repo.homepage}
-                  topics={repo.topics}
-                  description={repo.description}
-                  key={index}
-                  showDetail={showDetail[index]}
-                  onClickDetailButton={onClickDetailButton}
-                  openNewWindowWithUrl={openNewWindowWithUrl}
-                  index={index}
-                />
-              );
-            })}
-          </CardsWrapper>
-        </Wrapper>
-      )}
+      <Wrapper>
+        <TitleWrapper>
+          <Title>Works</Title>
+        </TitleWrapper>
+        <CardsWrapper>
+          {repos.map((repo: Repo, index: number) => {
+            return (
+              <Card
+                title={repo.title}
+                url={repo.url}
+                homepage={repo.homepage}
+                topics={repo.topics}
+                description={repo.description}
+                key={index}
+                showDetail={showDetail[index]}
+                onClickDetailButton={onClickDetailButton}
+                openNewWindowWithUrl={openNewWindowWithUrl}
+                index={index}
+              />
+            );
+          })}
+        </CardsWrapper>
+      </Wrapper>
     </>
   );
 };
