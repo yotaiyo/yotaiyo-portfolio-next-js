@@ -7,10 +7,9 @@ import { convertFetchReposResult } from 'src/common/utils/convertFetchReposResul
 
 type WorksContainerProps = {
   repos: Repo[];
-  pathname: string;
 };
 
-function WorksContainer({ pathname, repos }: WorksContainerProps) {
+function WorksContainer({ repos }: WorksContainerProps) {
   const [flag, setFlag] = useState(false);
   const [showDetail, setShowDetail] = useState(new Array(10).fill(false));
 
@@ -25,7 +24,7 @@ function WorksContainer({ pathname, repos }: WorksContainerProps) {
   };
 
   return (
-    <MyLayout pathname={pathname}>
+    <MyLayout pathname={'/works'}>
       <Works
         repos={convertFetchReposResult(repos)}
         showDetail={showDetail}
