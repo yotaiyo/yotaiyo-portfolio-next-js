@@ -4,6 +4,7 @@ import { Works } from './components/templates/Works';
 import { NextPage } from 'next';
 import fetch from 'isomorphic-unfetch';
 import { Repo } from 'src/common/types/state';
+import { convertFetchReposResult } from 'src/common/utils/convertFetchReposResult';
 
 type WorksContainerProps = {
   repos: Repo[];
@@ -24,12 +25,10 @@ export const WorksContainer: NextPage<WorksContainerProps> = props => {
     window.open(url, '_blank', 'noopener');
   };
 
-  console.log(props.repos);
-
   return (
     <MyLayout pathname={props.pathname}>
       <Works
-        github={props.repos}
+        repos={convertFetchReposResult(props.repos)}
         showDetail={showDetail}
         onClickDetailButton={onClickDetailButton}
         openNewWindowWithUrl={openNewWindowWithUrl}
