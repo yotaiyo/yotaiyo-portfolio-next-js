@@ -1,20 +1,18 @@
 import React, { useState } from 'react';
-import { getRepos } from './actions';
 import MyLayout from 'src/common/layout';
 import { Works } from './components/templates/Works';
 import { NextPage } from 'next';
-import { useSelector } from 'react-redux';
-import { InitialState } from 'src/common/types/state';
+import fetch from 'isomorphic-unfetch';
+import { Repo } from 'src/common/types/state';
 
 type WorksContainerProps = {
+  repos: Repo[];
   pathname: string;
 };
 
 export const WorksContainer: NextPage<WorksContainerProps> = props => {
   const [flag, setFlag] = useState(false);
   const [showDetail, setShowDetail] = useState(new Array(10).fill(false));
-
-  const github = useSelector((state: InitialState) => state.github);
 
   const onClickDetailButton = (index: number) => {
     showDetail[index] = !showDetail[index];
@@ -26,10 +24,12 @@ export const WorksContainer: NextPage<WorksContainerProps> = props => {
     window.open(url, '_blank', 'noopener');
   };
 
+  console.log(props.repos);
+
   return (
     <MyLayout pathname={props.pathname}>
       <Works
-        github={github}
+        github={props.repos}
         showDetail={showDetail}
         onClickDetailButton={onClickDetailButton}
         openNewWindowWithUrl={openNewWindowWithUrl}
@@ -39,9 +39,18 @@ export const WorksContainer: NextPage<WorksContainerProps> = props => {
 };
 
 WorksContainer.getInitialProps = async (props: any) => {
-  if (props.store.getState().github.hasError) {
-    await props.store.dispatch(getRepos());
-  }
-  return { pathname: props.pathname };
+  const res = await fetch(
+    `https://api.github.com/users/${process.env.GITHUB_USER_NAME}/repos?per_page=100`,
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.GITHUB_API_TOKEN}`,
+        Accept: 'application/vnd.github.mercy-preview+json'
+      }
+    }
+  );
+
+  const json = await res.json();
+
+  return { pathname: props.pathname, repos: json };
 };
 export default WorksContainer;
