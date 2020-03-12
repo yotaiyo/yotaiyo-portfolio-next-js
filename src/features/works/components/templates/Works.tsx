@@ -1,16 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import ReactLoading from 'react-loading';
 import { Card } from '../molecules/Card';
 import { Repo } from 'src/common/types/state';
 import { Color } from 'consts/Color';
 import { Layout } from 'consts/Layout';
-
-const LoadingWrapper = styled.div`
-  padding-top: 120px;
-  display: flex;
-  justify-content: center;
-`;
 
 const Wrapper = styled.div`
   padding-top: 100px;
