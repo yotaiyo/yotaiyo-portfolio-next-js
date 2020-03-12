@@ -7,8 +7,6 @@
 - TypeScript
 - Next.js
 - now
-- redux
-- redux-thunk
 
 ## Setup
 
