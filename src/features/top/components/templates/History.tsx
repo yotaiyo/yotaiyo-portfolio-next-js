@@ -43,6 +43,7 @@ const MyHistoriesWrapper = styled.div`
 const MyHistories = styled.div`
   border-left: 2px solid ${Color.Black3};
   flex: 0.6;
+  max-width: 1000px;
   @media (max-width: 414px) {
     border-left: 1px solid ${Color.Black3};
   }
