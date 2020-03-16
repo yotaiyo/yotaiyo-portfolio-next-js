@@ -77,16 +77,11 @@ const Menu = styled.div.attrs((props: MenuType) => ({
   &:first-child {
     margin-top: 0;
   }
-  margin-top: 20px;
+  margin-top: 30px;
   width: 60px;
-  height: 20x;
-  color: ${props => (props.isCurrentPath ? Color.Blue1 : Color.Blue1)};
-  background-color: ${props =>
-    props.isCurrentPath ? Color.White : Color.Black1};
-  font-size: ${Layout.Text.Small}px;
-  padding: 10px;
-  border-radius: 8px;
   text-align: center;
+  color: ${props => (props.isCurrentPath ? Color.Red1 : Color.White)};
+  font-size: ${Layout.Text.Large}px;
   transform: translateX(-50%);
 `;
 
