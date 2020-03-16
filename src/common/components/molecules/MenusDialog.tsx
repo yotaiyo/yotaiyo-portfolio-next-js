@@ -4,6 +4,7 @@ import { Layout } from 'consts/Layout';
 import { Color } from 'consts/Color';
 import Link from 'next/link';
 import { setOverflow } from 'src/common/utils/scroll';
+import clearIcon from 'public/clear.png';
 
 const MenusWrapper = styled.div`
   background-color: red;
@@ -53,17 +54,35 @@ const Menu = styled.div.attrs((props: MenuType) => ({
   transform: translateX(-50%);
 `;
 
+const ClearIcon = styled.img`
+  position: fixed;
+  top: 12px;
+  right: 10px;
+  z-index: 3;
+`;
+
 export type MenusDialogProps = {
   pathname: string;
+  showMenu: boolean;
+  setShowMenu(showMenu: boolean): void;
 };
 
 export const MenusDialog = (props: MenusDialogProps) => {
+  const { pathname, showMenu, setShowMenu } = props;
   return (
     <MenusWrapper>
+      <ClearIcon
+        src={clearIcon}
+        alt="clear"
+        onClick={() => {
+          setOverflow('visible');
+          setShowMenu(!showMenu);
+        }}
+      />
       <Menus>
         <Link href="/">
           <Menu
-            isCurrentPath={props.pathname === '/'}
+            isCurrentPath={pathname === '/'}
             onClick={() => {
               setOverflow('visible');
             }}

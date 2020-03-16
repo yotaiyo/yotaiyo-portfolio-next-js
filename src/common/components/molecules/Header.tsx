@@ -6,8 +6,6 @@ import Link from 'next/link';
 import { HeaderRight } from '../atoms/HeaderRight';
 // @ts-ignore
 import useDimensions from 'react-use-dimensions';
-import clearIcon from 'public/clear.png';
-import { setOverflow } from 'src/common/utils/scroll';
 import {
   MenusDialog,
   MenusDialogProps
@@ -56,14 +54,9 @@ const HeaderTitle = styled.a`
   }
 `;
 
-const ClearIcon = styled.img`
-  position: fixed;
-  top: 12px;
-  right: 10px;
-  z-index: 3;
-`;
-
-export type HeaderProps = MenusDialogProps;
+export type HeaderProps = {
+  pathname: string;
+};
 
 export const Header = (props: HeaderProps) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -84,17 +77,11 @@ export const Header = (props: HeaderProps) => {
         />
       </Wrapper>
       {showMenu ? (
-        <>
-          <ClearIcon
-            src={clearIcon}
-            alt="clear"
-            onClick={() => {
-              setOverflow('visible');
-              setShowMenu(!showMenu);
-            }}
-          />
-          <MenusDialog pathname={props.pathname} />
-        </>
+        <MenusDialog
+          pathname={props.pathname}
+          showMenu={showMenu}
+          setShowMenu={setShowMenu}
+        />
       ) : null}
     </>
   );
