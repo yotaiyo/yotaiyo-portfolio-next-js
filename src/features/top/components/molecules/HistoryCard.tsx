@@ -21,7 +21,7 @@ const Circle = styled.div.attrs((props: CircleType) => ({
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: ${Color.Blue2};
+  background-color: ${Color.Blue1};
   position: relative;
   top: ${props => `${props.cardHeight / 2 - 15}px`}
   right: 16px;

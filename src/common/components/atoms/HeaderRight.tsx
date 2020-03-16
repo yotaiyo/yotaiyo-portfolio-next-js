@@ -4,7 +4,7 @@ import { Layout } from 'consts/Layout';
 import { Color } from 'consts/Color';
 import Link from 'next/link';
 import menuIcon from 'public/menu.png';
-import menuOpenIcon from 'public/menu-open.png';
+import { setOverflow } from 'src/common/utils/scroll';
 
 const HeaderRightWrapper = styled.div`
   margin-right: 60px;
@@ -26,7 +26,7 @@ const Section = styled.a`
 `;
 
 const MenuIcon = styled.img`
-  height: 36px;
+  height: 48px;
   margin-top: 4px;
 `;
 
@@ -43,8 +43,11 @@ export const HeaderRight: React.FC<HeaderRightType> = props => {
       {width !== undefined ? (
         width <= 414 ? (
           <MenuIcon
-            src={showMenu ? menuOpenIcon : menuIcon}
-            onClick={() => setShowMenu(!showMenu)}
+            src={menuIcon}
+            onClick={() => {
+              setOverflow('hidden');
+              setShowMenu(!showMenu);
+            }}
             alt="menu"
           />
         ) : (
