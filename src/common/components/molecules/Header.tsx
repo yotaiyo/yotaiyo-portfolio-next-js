@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { HeaderRight } from '../atoms/HeaderRight';
 // @ts-ignore
 import useDimensions from 'react-use-dimensions';
+import clearIcon from 'public/clear.png';
 
 type WrapperType = {
   showMenu: boolean;
@@ -48,6 +49,12 @@ const HeaderTitle = styled.a`
     font-size: ${Layout.Text.Small}px;
     margin-left: 10px;
   }
+`;
+
+const ClearIcon = styled.img`
+  position: absolute;
+  top: 12px;
+  right: 10px;
 `;
 
 const MenusWrapper = styled.div`
@@ -109,6 +116,11 @@ export const Header = (props: HeaderProps) => {
       </Wrapper>
       {showMenu ? (
         <MenusWrapper>
+          <ClearIcon
+            src={clearIcon}
+            alt="clear"
+            onClick={() => setShowMenu(!showMenu)}
+          />
           <Menus>
             <Link href="/">
               <Menu isCurrentPath={props.pathname === '/'}>Top</Menu>
