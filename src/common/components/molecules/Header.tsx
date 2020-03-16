@@ -46,7 +46,6 @@ const HeaderTitle = styled.a`
     color: ${Color.Red1};
   }
   @media (max-width: 414px) {
-    font-size: ${Layout.Text.Small}px;
     margin-left: 10px;
   }
 `;

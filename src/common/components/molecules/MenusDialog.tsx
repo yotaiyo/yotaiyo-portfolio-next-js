@@ -59,6 +59,7 @@ const ClearIcon = styled.img`
   top: 12px;
   right: 10px;
   z-index: 3;
+  height: 48px;
 `;
 
 export type MenusDialogProps = {

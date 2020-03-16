@@ -26,7 +26,7 @@ const Section = styled.a`
 `;
 
 const MenuIcon = styled.img`
-  height: 36px;
+  height: 48px;
   margin-top: 4px;
 `;
 
