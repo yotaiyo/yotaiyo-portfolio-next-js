@@ -6,10 +6,7 @@ import Link from 'next/link';
 import { HeaderRight } from '../atoms/HeaderRight';
 // @ts-ignore
 import useDimensions from 'react-use-dimensions';
-import {
-  MenusDialog,
-  MenusDialogProps
-} from 'src/common/components/molecules/MenusDialog';
+import { MenusDialog } from 'src/common/components/molecules/MenusDialog';
 
 type WrapperType = {
   showMenu: boolean;
