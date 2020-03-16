@@ -55,6 +55,7 @@ const ClearIcon = styled.img`
   position: absolute;
   top: 12px;
   right: 10px;
+  z-index: 3;
 `;
 
 const MenusWrapper = styled.div`
@@ -64,6 +65,19 @@ const MenusWrapper = styled.div`
   position: fixed;
   z-index: 2;
   background-color: ${Color.Blue1};
+  animation-name: fade-in-menus;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
+  @keyframes fade-in-menus {
+    0% {
+      opacity: 0;
+      transform: translate3d(100px, 0, 0);
+    }
+    100% {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
 `;
 
 const Menus = styled.div`
@@ -115,21 +129,23 @@ export const Header = (props: HeaderProps) => {
         />
       </Wrapper>
       {showMenu ? (
-        <MenusWrapper>
+        <>
           <ClearIcon
             src={clearIcon}
             alt="clear"
             onClick={() => setShowMenu(!showMenu)}
           />
-          <Menus>
-            <Link href="/">
-              <Menu isCurrentPath={props.pathname === '/'}>Top</Menu>
-            </Link>
-            <Link href="/works">
-              <Menu isCurrentPath={props.pathname === '/works'}>Works</Menu>
-            </Link>
-          </Menus>
-        </MenusWrapper>
+          <MenusWrapper>
+            <Menus>
+              <Link href="/">
+                <Menu isCurrentPath={props.pathname === '/'}>Top</Menu>
+              </Link>
+              <Link href="/works">
+                <Menu isCurrentPath={props.pathname === '/works'}>Works</Menu>
+              </Link>
+            </Menus>
+          </MenusWrapper>
+        </>
       ) : null}
     </>
   );

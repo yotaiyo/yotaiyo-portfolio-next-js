@@ -65,10 +65,10 @@ const CardButton = styled.button`
 
 const CardDetailWrapper = styled.div`
   margin-top: 16px;
-  animation-name: fade-in;
+  animation-name: fade-in-detail;
   animation-duration: 1s;
   animation-timing-function: ease-out;
-  @keyframes fade-in {
+  @keyframes fade-in-detail {
     0% {
       opacity: 0;
       transform: translate3d(0, -20px, 0);
