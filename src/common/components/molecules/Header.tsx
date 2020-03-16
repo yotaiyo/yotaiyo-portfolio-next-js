@@ -7,6 +7,7 @@ import { HeaderRight } from '../atoms/HeaderRight';
 // @ts-ignore
 import useDimensions from 'react-use-dimensions';
 import clearIcon from 'public/clear.png';
+import { setOverflow } from 'src/common/utils/scroll';
 
 type WrapperType = {
   showMenu: boolean;
@@ -133,15 +134,32 @@ export const Header = (props: HeaderProps) => {
           <ClearIcon
             src={clearIcon}
             alt="clear"
-            onClick={() => setShowMenu(!showMenu)}
+            onClick={() => {
+              setOverflow('visible');
+              setShowMenu(!showMenu);
+            }}
           />
           <MenusWrapper>
             <Menus>
               <Link href="/">
-                <Menu isCurrentPath={props.pathname === '/'}>Top</Menu>
+                <Menu
+                  isCurrentPath={props.pathname === '/'}
+                  onClick={() => {
+                    setOverflow('visible');
+                  }}
+                >
+                  Top
+                </Menu>
               </Link>
               <Link href="/works">
-                <Menu isCurrentPath={props.pathname === '/works'}>Works</Menu>
+                <Menu
+                  isCurrentPath={props.pathname === '/works'}
+                  onClick={() => {
+                    setOverflow('visible');
+                  }}
+                >
+                  Works
+                </Menu>
               </Link>
             </Menus>
           </MenusWrapper>
