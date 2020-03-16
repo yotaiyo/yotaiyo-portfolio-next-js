@@ -53,7 +53,7 @@ const HeaderTitle = styled.a`
 `;
 
 const ClearIcon = styled.img`
-  position: absolute;
+  position: fixed;
   top: 12px;
   right: 10px;
   z-index: 3;
