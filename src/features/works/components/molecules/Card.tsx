@@ -47,11 +47,11 @@ const CardButton = styled.button`
   margin-left: 12px;
   font-size: ${Layout.Text.Small}px;
   color: ${Color.White};
-  background-color: ${Color.Blue3};
+  background-color: ${Color.Blue1};
   width: 28%;
   border-radius: 5px;
-  border: 0.2px solid ${Color.Black2};
-  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
+  border: 0 solid ${Color.White};
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
   outline: none;
   transition: all 0.5s ease;
   &:hover {

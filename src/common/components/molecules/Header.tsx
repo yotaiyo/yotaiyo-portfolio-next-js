@@ -56,7 +56,7 @@ const MenusWrapper = styled.div`
   width: 100%;
   position: fixed;
   z-index: 2;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: ${Color.Blue1};
 `;
 
 const Menus = styled.div`
@@ -80,9 +80,9 @@ const Menu = styled.div.attrs((props: MenuType) => ({
   margin-top: 20px;
   width: 60px;
   height: 20x;
-  color: ${props => (props.isCurrentPath ? Color.White : Color.Blue1)};
+  color: ${props => (props.isCurrentPath ? Color.Blue1 : Color.Blue1)};
   background-color: ${props =>
-    props.isCurrentPath ? Color.Blue1 : Color.White};
+    props.isCurrentPath ? Color.White : Color.Black1};
   font-size: ${Layout.Text.Small}px;
   padding: 10px;
   border-radius: 8px;
