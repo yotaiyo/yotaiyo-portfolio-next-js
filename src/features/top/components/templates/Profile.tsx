@@ -4,7 +4,8 @@ import { Layout } from 'consts/Layout';
 import { Color } from 'consts/Color';
 import { ProfileItem } from '../molecules/ProfileItem';
 import { profileItems } from 'consts/profileItems';
-import IconImage from 'public/myicon.png';
+import IconImage from 'public/my-icon.png';
+import MyHeaderImage from 'public/my-header.png';
 
 const Wrapper = styled.div``;
 
@@ -25,6 +26,13 @@ const TitleLine = styled.div`
   margin-left: 10px;
 `;
 
+const CardWrapper = styled.div``;
+
+const CardHeaderImage = styled.img`
+  width: 500px;
+  height: 250px;
+`;
+
 export const Profile = () => {
   return (
     <Wrapper>
@@ -32,6 +40,9 @@ export const Profile = () => {
         <TitleText>Profile</TitleText>
         <TitleLine />
       </TitleWrapper>
+      <CardWrapper>
+        <CardHeaderImage src={MyHeaderImage} />
+      </CardWrapper>
     </Wrapper>
   );
 };
