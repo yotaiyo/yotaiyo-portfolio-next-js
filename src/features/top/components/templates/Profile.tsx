@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Layout } from 'consts/Layout';
 import { Color } from 'consts/Color';
 import { ProfileItem } from '../molecules/ProfileItem';
-import { profileItems } from 'consts/profileItems';
+import { myInfo } from 'consts/profile';
 import MyIconImage from 'public/my-icon.png';
 import MyHeaderImage from 'public/my-header.png';
 
@@ -16,6 +16,7 @@ const TitleWrapper = styled.div`
 const TitleText = styled.span`
   font-size: ${Layout.Text.Largest}px;
   font-weight: bold;
+  color: ${Color.Black1};
 `;
 
 const TitleLine = styled.div`
@@ -33,14 +34,34 @@ const MyHeader = styled.img`
   height: 250px;
 `;
 
-const CardBottomWrapper = styled.div``;
+const CardBottomWrapper = styled.div`
+  padding: 12px;
+`;
 
-const CardBottom = styled.div``;
+const CardBottom = styled.div`
+  display: flex;
+`;
 
 const MyIcon = styled.img`
   height: 65px;
   width: 65px;
   border-radius: 65px;
+`;
+
+const CardBottomRight = styled.div`
+  margin-left: 12px;
+`;
+
+const MyName = styled.div`
+  color: ${Color.Black2};
+  font-size: ${Layout.Text.Larger}px;
+  font-weight: bold;
+  margin-bottom: 12px;
+`;
+
+const MyRole = styled.div`
+  color: ${Color.Black2};
+  font-size: ${Layout.Text.Small}px;
 `;
 
 export const Profile = () => {
@@ -55,6 +76,10 @@ export const Profile = () => {
         <CardBottomWrapper>
           <CardBottom>
             <MyIcon src={MyIconImage} alt="my icon" />
+            <CardBottomRight>
+              <MyName>{myInfo.name}</MyName>
+              <MyRole>{myInfo.role}</MyRole>
+            </CardBottomRight>
           </CardBottom>
         </CardBottomWrapper>
       </CardWrapper>
