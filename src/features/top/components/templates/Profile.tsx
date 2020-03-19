@@ -6,11 +6,14 @@ import { ProfileItem } from '../molecules/ProfileItem';
 import { myInfo } from 'consts/profile';
 import MyIconImage from 'public/my-icon.png';
 import MyHeaderImage from 'public/my-header.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 const Wrapper = styled.div``;
 
 const TitleWrapper = styled.div`
   display: flex;
+  margin-bottom: 24px;
 `;
 
 const TitleText = styled.span`
@@ -27,7 +30,10 @@ const TitleLine = styled.div`
   margin-left: 10px;
 `;
 
-const CardWrapper = styled.div``;
+const CardWrapper = styled.div`
+  width: 500px;
+  border: 1px solid ${Color.Black3};
+`;
 
 const MyHeader = styled.img`
   width: 500px;
@@ -48,7 +54,7 @@ const MyIcon = styled.img`
   border-radius: 65px;
 `;
 
-const CardBottomRight = styled.div`
+const MyNameAndRoleWrapper = styled.div`
   margin-left: 12px;
 `;
 
@@ -64,6 +70,12 @@ const MyRole = styled.div`
   font-size: ${Layout.Text.Small}px;
 `;
 
+const ArrowWrapper = styled.div`
+  flex: 1;
+  padding-top: ${65 / 2 - 4}px;
+  padding-right: 4px;
+`;
+
 export const Profile = () => {
   return (
     <Wrapper>
@@ -76,10 +88,18 @@ export const Profile = () => {
         <CardBottomWrapper>
           <CardBottom>
             <MyIcon src={MyIconImage} alt="my icon" />
-            <CardBottomRight>
+            <MyNameAndRoleWrapper>
               <MyName>{myInfo.name}</MyName>
               <MyRole>{myInfo.role}</MyRole>
-            </CardBottomRight>
+            </MyNameAndRoleWrapper>
+            <ArrowWrapper>
+              <FontAwesomeIcon
+                icon={faChevronDown}
+                color={Color.Black2}
+                size={'lg'}
+                style={{ float: 'right' }}
+              />
+            </ArrowWrapper>
           </CardBottom>
         </CardBottomWrapper>
       </CardWrapper>
