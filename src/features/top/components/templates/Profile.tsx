@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { Layout } from 'consts/Layout';
 import { Color } from 'consts/Color';
-import { ProfileItem } from '../molecules/ProfileItem';
 import { myInfo } from 'consts/profile';
 import MyIconImage from 'public/my-icon.png';
 import MyHeaderImage from 'public/my-header.png';
