@@ -100,7 +100,13 @@ const MyProfileCardRight = styled.div`
 const ArrowWrapper = styled.div`
   float: right;
   cursor: pointer;
-  padding: 12px;
+  width: 35px;
+  height: 35px;
+  border-radius: 35px;
+  text-align: center;
+  &:hover {
+    background-color: ${Color.Black3};
+  }
 `;
 
 const MyInfoDetailWrapper = styled.div`
@@ -134,6 +140,9 @@ export const Profile = ({ showMyInfo, onClickArrow }: ProfileType) => {
                   icon={faChevronDown}
                   color={Color.Black2}
                   size={'lg'}
+                  style={{
+                    marginTop: '8px'
+                  }}
                 />
               </ArrowWrapper>
             </MyProfileCardRight>
