@@ -7,7 +7,8 @@ import { myInfo } from 'consts/profile';
 import MyIconImage from 'public/my-icon.png';
 import MyHeaderImage from 'public/my-header.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { MyInfoItem } from '../molecules/MyInfoItem';
 
 const Wrapper = styled.div``;
 
@@ -80,26 +81,6 @@ const MyInfoDetailWrapper = styled.div`
   margin-top: 24px;
 `;
 
-const MyInfoItem = styled.div`
-  display: flex;
-  margin-top: 24px;
-`;
-
-const MyInfoItemRight = styled.div`
-  margin-left: 46px;
-`;
-
-const MyInfoItemTitle = styled.div`
-  color: ${Color.Black1};
-  font-size: ${Layout.Text.Normal}px;
-`;
-
-const MyInfoItemContent = styled.div`
-  color: ${Color.Black2};
-  font-size: ${Layout.Text.Small}px;
-  margin-top: 4px;
-`;
-
 export const Profile = () => {
   return (
     <Wrapper>
@@ -126,18 +107,7 @@ export const Profile = () => {
             </ArrowWrapper>
           </CardBottom>
           <MyInfoDetailWrapper>
-            <MyInfoItem>
-              <FontAwesomeIcon
-                icon={faEnvelope}
-                color={Color.Black2}
-                size={'2x'}
-                style={{ marginTop: '8px' }}
-              />
-              <MyInfoItemRight>
-                <MyInfoItemTitle>Email</MyInfoItemTitle>
-                <MyInfoItemContent>{myInfo.email}</MyInfoItemContent>
-              </MyInfoItemRight>
-            </MyInfoItem>
+            <MyInfoItem />
           </MyInfoDetailWrapper>
         </CardBottomWrapper>
       </CardWrapper>
