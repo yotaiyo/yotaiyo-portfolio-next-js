@@ -117,7 +117,7 @@ export const Profile = ({ showMyInfo, onClickArrow }: ProfileType) => {
                 icon={faChevronDown}
                 color={Color.Black2}
                 size={'lg'}
-                style={{ float: 'right' }}
+                style={{ float: 'right', cursor: 'pointer' }}
                 onClick={() => onClickArrow(showMyInfo)}
               />
             </ArrowWrapper>
