@@ -49,10 +49,20 @@ const MyHeader = styled.img`
   height: 250px;
 `;
 
-const CardBottomWrapper = styled.div`
+type CardBottomWrapperType = {
+  showMyInfo: boolean;
+};
+
+const CardBottomWrapper = styled.div.attrs((props: CardBottomWrapperType) => ({
+  showMyInfo: props.showMyInfo
+}))`
   padding: 12px;
   margin-top: 12px;
-  margin-bottom: 12px;
+  overflow: hidden;
+  height: ${props => (props.showMyInfo ? '72px' : '630px')};
+  transition-property: height;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
 `;
 
 const CardBottom = styled.div`
@@ -105,7 +115,7 @@ export const Profile = ({ showMyInfo, onClickArrow }: ProfileType) => {
       </TitleWrapper>
       <CardWrapper>
         <MyHeader src={MyHeaderImage} alt="my header" />
-        <CardBottomWrapper>
+        <CardBottomWrapper showMyInfo={showMyInfo}>
           <CardBottom>
             <MyIcon src={MyIconImage} alt="my icon" />
             <MyNameAndRoleWrapper>
@@ -122,42 +132,40 @@ export const Profile = ({ showMyInfo, onClickArrow }: ProfileType) => {
               />
             </ArrowWrapper>
           </CardBottom>
-          {showMyInfo ? (
-            <MyInfoDetailWrapper>
-              <MyInfoItem
-                title="Email"
-                content={myInfo.email}
-                fontAwesomeIcon={faEnvelope}
-              />
-              <MyInfoItem
-                title="Twitter"
-                content={myInfo.twitter.id}
-                icon={TwitterIcon}
-                link={myInfo.twitter.link}
-              />
-              <MyInfoItem
-                title="Github"
-                content={myInfo.github.id}
-                icon={GithubIcon}
-                link={myInfo.github.link}
-              />
-              <MyInfoItem
-                title="Likes"
-                content={myInfo.likes}
-                fontAwesomeIcon={faHeart}
-              />
-              <MyInfoItem
-                title="College"
-                content={myInfo.college}
-                fontAwesomeIcon={faGraduationCap}
-              />
-              <MyInfoItem
-                title="Birthday"
-                content={myInfo.birthday}
-                fontAwesomeIcon={faBirthdayCake}
-              />
-            </MyInfoDetailWrapper>
-          ) : null}
+          <MyInfoDetailWrapper>
+            <MyInfoItem
+              title="Email"
+              content={myInfo.email}
+              fontAwesomeIcon={faEnvelope}
+            />
+            <MyInfoItem
+              title="Twitter"
+              content={myInfo.twitter.id}
+              icon={TwitterIcon}
+              link={myInfo.twitter.link}
+            />
+            <MyInfoItem
+              title="Github"
+              content={myInfo.github.id}
+              icon={GithubIcon}
+              link={myInfo.github.link}
+            />
+            <MyInfoItem
+              title="Likes"
+              content={myInfo.likes}
+              fontAwesomeIcon={faHeart}
+            />
+            <MyInfoItem
+              title="College"
+              content={myInfo.college}
+              fontAwesomeIcon={faGraduationCap}
+            />
+            <MyInfoItem
+              title="Birthday"
+              content={myInfo.birthday}
+              fontAwesomeIcon={faBirthdayCake}
+            />
+          </MyInfoDetailWrapper>
         </CardBottomWrapper>
       </CardWrapper>
     </Wrapper>

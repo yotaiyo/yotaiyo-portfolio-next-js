@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 `;
 
 const TopContainer = () => {
-  const [showMyInfo, setShowMyInfo] = useState(false);
+  const [showMyInfo, setShowMyInfo] = useState(true);
 
   const toggleShowMyInfo = (showMyInfo: boolean) => {
     setShowMyInfo(!showMyInfo);
