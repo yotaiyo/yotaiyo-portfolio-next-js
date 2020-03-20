@@ -91,10 +91,16 @@ const MyRole = styled.div`
   font-size: ${Layout.Text.Small}px;
 `;
 
-const ArrowWrapper = styled.div`
+const MyProfileCardRight = styled.div`
   flex: 1;
-  padding-top: ${65 / 2 - 4}px;
+  padding-top: ${65 / 2 - 16}px;
   padding-right: 4px;
+`;
+
+const ArrowWrapper = styled.div`
+  float: right;
+  cursor: pointer;
+  padding: 12px;
 `;
 
 const MyInfoDetailWrapper = styled.div`
@@ -122,15 +128,15 @@ export const Profile = ({ showMyInfo, onClickArrow }: ProfileType) => {
               <MyName>{myInfo.name}</MyName>
               <MyRole>{myInfo.role}</MyRole>
             </MyNameAndRoleWrapper>
-            <ArrowWrapper>
-              <FontAwesomeIcon
-                icon={faChevronDown}
-                color={Color.Black2}
-                size={'lg'}
-                style={{ float: 'right', cursor: 'pointer' }}
-                onClick={() => onClickArrow(showMyInfo)}
-              />
-            </ArrowWrapper>
+            <MyProfileCardRight>
+              <ArrowWrapper onClick={() => onClickArrow(showMyInfo)}>
+                <FontAwesomeIcon
+                  icon={faChevronDown}
+                  color={Color.Black2}
+                  size={'lg'}
+                />
+              </ArrowWrapper>
+            </MyProfileCardRight>
           </MyProfileCard>
           <MyInfoDetailWrapper>
             <MyInfoItem
