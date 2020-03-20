@@ -6,6 +6,7 @@ import { ProfileItem } from '../molecules/ProfileItem';
 import { myInfo } from 'consts/profile';
 import MyIconImage from 'public/my-icon.png';
 import MyHeaderImage from 'public/my-header.png';
+import TwitterIcon from 'public/twitter.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { MyInfoItem } from '../molecules/MyInfoItem';
@@ -110,7 +111,12 @@ export const Profile = () => {
             <MyInfoItem
               title="Email"
               content={myInfo.email}
-              icon={faEnvelope}
+              fontAwesomeIcon={faEnvelope}
+            />
+            <MyInfoItem
+              title="Twitter"
+              content={myInfo.twitter.id}
+              icon={TwitterIcon}
             />
           </MyInfoDetailWrapper>
         </CardBottomWrapper>
