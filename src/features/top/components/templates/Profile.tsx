@@ -65,7 +65,7 @@ const CardBottomWrapper = styled.div.attrs((props: CardBottomWrapperType) => ({
   transition-timing-function: linear;
 `;
 
-const CardBottom = styled.div`
+const MyProfileCard = styled.div`
   display: flex;
 `;
 
@@ -116,7 +116,7 @@ export const Profile = ({ showMyInfo, onClickArrow }: ProfileType) => {
       <CardWrapper>
         <MyHeader src={MyHeaderImage} alt="my header" />
         <CardBottomWrapper showMyInfo={showMyInfo}>
-          <CardBottom>
+          <MyProfileCard>
             <MyIcon src={MyIconImage} alt="my icon" />
             <MyNameAndRoleWrapper>
               <MyName>{myInfo.name}</MyName>
@@ -131,7 +131,7 @@ export const Profile = ({ showMyInfo, onClickArrow }: ProfileType) => {
                 onClick={() => onClickArrow(showMyInfo)}
               />
             </ArrowWrapper>
-          </CardBottom>
+          </MyProfileCard>
           <MyInfoDetailWrapper>
             <MyInfoItem
               title="Email"
