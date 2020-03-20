@@ -133,11 +133,13 @@ export const Profile = ({ showMyInfo, onClickArrow }: ProfileType) => {
                 title="Twitter"
                 content={myInfo.twitter.id}
                 icon={TwitterIcon}
+                link={myInfo.twitter.link}
               />
               <MyInfoItem
                 title="Github"
                 content={myInfo.github.id}
                 icon={GithubIcon}
+                link={myInfo.github.link}
               />
               <MyInfoItem
                 title="Likes"

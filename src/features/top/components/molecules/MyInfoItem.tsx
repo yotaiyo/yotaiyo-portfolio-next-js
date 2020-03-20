@@ -4,6 +4,7 @@ import { Layout } from 'consts/Layout';
 import { Color } from 'consts/Color';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
 const MyInfoItemWrapper = styled.div`
   display: flex;
@@ -12,6 +13,10 @@ const MyInfoItemWrapper = styled.div`
 
 const MyInfoItemRight = styled.div`
   margin-left: 46px;
+`;
+
+const MyInfoItemTitleWrapper = styled.div`
+  display: flex;
 `;
 
 const MyInfoItemTitle = styled.div`
@@ -33,6 +38,10 @@ const Icon = styled.img`
   filter: alpha(opacity=60);
 `;
 
+const LinkWrapper = styled.a`
+  color: ${Color.Black1};
+`;
+
 type MyInfoItemType = {
   title: string;
   content: string;
@@ -45,7 +54,8 @@ export const MyInfoItem = ({
   title,
   content,
   icon,
-  fontAwesomeIcon
+  fontAwesomeIcon,
+  link
 }: MyInfoItemType) => {
   return (
     <MyInfoItemWrapper>
@@ -64,7 +74,23 @@ export const MyInfoItem = ({
         />
       ) : null}
       <MyInfoItemRight>
-        <MyInfoItemTitle>{title}</MyInfoItemTitle>
+        <MyInfoItemTitleWrapper>
+          <MyInfoItemTitle>{title}</MyInfoItemTitle>
+          {link ? (
+            <LinkWrapper href={link} target="_blank" rel="noopener">
+              <FontAwesomeIcon
+                icon={faExternalLinkAlt}
+                style={{
+                  marginLeft: '6px',
+                  opacity: '0.6',
+                  filter: 'alpha(opacity=60)',
+                  width: '20px',
+                  height: '20px'
+                }}
+              />
+            </LinkWrapper>
+          ) : null}
+        </MyInfoItemTitleWrapper>
         <MyInfoItemContent>{content}</MyInfoItemContent>
       </MyInfoItemRight>
     </MyInfoItemWrapper>
