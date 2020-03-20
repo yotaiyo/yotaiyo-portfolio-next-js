@@ -52,6 +52,7 @@ const MyHeader = styled.img`
 const CardBottomWrapper = styled.div`
   padding: 12px;
   margin-top: 24px;
+  margin-bottom: 12px;
 `;
 
 const CardBottom = styled.div`
@@ -90,7 +91,12 @@ const MyInfoDetailWrapper = styled.div`
   margin-top: 24px;
 `;
 
-export const Profile = () => {
+type ProfileType = {
+  showMyInfo: boolean;
+  onClickArrow(showMyInfo: boolean): void;
+};
+
+export const Profile = ({ showMyInfo, onClickArrow }: ProfileType) => {
   return (
     <Wrapper>
       <TitleWrapper>
@@ -112,41 +118,44 @@ export const Profile = () => {
                 color={Color.Black2}
                 size={'lg'}
                 style={{ float: 'right' }}
+                onClick={() => onClickArrow(showMyInfo)}
               />
             </ArrowWrapper>
           </CardBottom>
-          <MyInfoDetailWrapper>
-            <MyInfoItem
-              title="Email"
-              content={myInfo.email}
-              fontAwesomeIcon={faEnvelope}
-            />
-            <MyInfoItem
-              title="Twitter"
-              content={myInfo.twitter.id}
-              icon={TwitterIcon}
-            />
-            <MyInfoItem
-              title="Github"
-              content={myInfo.github.id}
-              icon={GithubIcon}
-            />
-            <MyInfoItem
-              title="Likes"
-              content={myInfo.likes}
-              fontAwesomeIcon={faHeart}
-            />
-            <MyInfoItem
-              title="College"
-              content={myInfo.college}
-              fontAwesomeIcon={faGraduationCap}
-            />
-            <MyInfoItem
-              title="Birthday"
-              content={myInfo.birthday}
-              fontAwesomeIcon={faBirthdayCake}
-            />
-          </MyInfoDetailWrapper>
+          {showMyInfo ? (
+            <MyInfoDetailWrapper>
+              <MyInfoItem
+                title="Email"
+                content={myInfo.email}
+                fontAwesomeIcon={faEnvelope}
+              />
+              <MyInfoItem
+                title="Twitter"
+                content={myInfo.twitter.id}
+                icon={TwitterIcon}
+              />
+              <MyInfoItem
+                title="Github"
+                content={myInfo.github.id}
+                icon={GithubIcon}
+              />
+              <MyInfoItem
+                title="Likes"
+                content={myInfo.likes}
+                fontAwesomeIcon={faHeart}
+              />
+              <MyInfoItem
+                title="College"
+                content={myInfo.college}
+                fontAwesomeIcon={faGraduationCap}
+              />
+              <MyInfoItem
+                title="Birthday"
+                content={myInfo.birthday}
+                fontAwesomeIcon={faBirthdayCake}
+              />
+            </MyInfoDetailWrapper>
+          ) : null}
         </CardBottomWrapper>
       </CardWrapper>
     </Wrapper>

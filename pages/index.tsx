@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MyLayout from 'src/common/layout';
 import styled from 'styled-components';
 import { Profile } from 'src/features/top/components/templates/Profile';
@@ -12,10 +12,16 @@ const Wrapper = styled.div`
 `;
 
 const TopContainer = () => {
+  const [showMyInfo, setShowMyInfo] = useState(false);
+
+  const toggleShowMyInfo = (showMyInfo: boolean) => {
+    setShowMyInfo(!showMyInfo);
+  };
+
   return (
     <MyLayout pathname={'/'}>
       <Wrapper>
-        <Profile />
+        <Profile showMyInfo={showMyInfo} onClickArrow={toggleShowMyInfo} />
         <History />
         <Links />
       </Wrapper>
