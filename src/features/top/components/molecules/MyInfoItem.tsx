@@ -2,9 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Layout } from 'consts/Layout';
 import { Color } from 'consts/Color';
-import { myInfo } from 'consts/profile';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 const MyInfoItemWrapper = styled.div`
   display: flex;
@@ -26,18 +25,25 @@ const MyInfoItemContent = styled.div`
   margin-top: 4px;
 `;
 
-export const MyInfoItem = () => {
+type MyInfoItemType = {
+  title: string;
+  content: string;
+  icon: IconProp;
+  link?: string;
+};
+
+export const MyInfoItem = ({ title, content, icon }: MyInfoItemType) => {
   return (
     <MyInfoItemWrapper>
       <FontAwesomeIcon
-        icon={faEnvelope}
+        icon={icon}
         color={Color.Black2}
         size={'2x'}
         style={{ marginTop: '8px' }}
       />
       <MyInfoItemRight>
-        <MyInfoItemTitle>Email</MyInfoItemTitle>
-        <MyInfoItemContent>{myInfo.email}</MyInfoItemContent>
+        <MyInfoItemTitle>{title}</MyInfoItemTitle>
+        <MyInfoItemContent>{content}</MyInfoItemContent>
       </MyInfoItemRight>
     </MyInfoItemWrapper>
   );

@@ -7,7 +7,7 @@ import { myInfo } from 'consts/profile';
 import MyIconImage from 'public/my-icon.png';
 import MyHeaderImage from 'public/my-header.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { MyInfoItem } from '../molecules/MyInfoItem';
 
 const Wrapper = styled.div``;
@@ -107,7 +107,11 @@ export const Profile = () => {
             </ArrowWrapper>
           </CardBottom>
           <MyInfoDetailWrapper>
-            <MyInfoItem />
+            <MyInfoItem
+              title="Email"
+              content={myInfo.email}
+              icon={faEnvelope}
+            />
           </MyInfoDetailWrapper>
         </CardBottomWrapper>
       </CardWrapper>
