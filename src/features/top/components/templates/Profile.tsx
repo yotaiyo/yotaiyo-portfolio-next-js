@@ -7,7 +7,7 @@ import { myInfo } from 'consts/profile';
 import MyIconImage from 'public/my-icon.png';
 import MyHeaderImage from 'public/my-header.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const Wrapper = styled.div``;
 
@@ -59,7 +59,7 @@ const MyNameAndRoleWrapper = styled.div`
 `;
 
 const MyName = styled.div`
-  color: ${Color.Black2};
+  color: ${Color.Black1};
   font-size: ${Layout.Text.Larger}px;
   font-weight: bold;
   margin-bottom: 12px;
@@ -74,6 +74,30 @@ const ArrowWrapper = styled.div`
   flex: 1;
   padding-top: ${65 / 2 - 4}px;
   padding-right: 4px;
+`;
+
+const MyInfoDetailWrapper = styled.div`
+  margin-top: 24px;
+`;
+
+const MyInfoItem = styled.div`
+  display: flex;
+  margin-top: 24px;
+`;
+
+const MyInfoItemRight = styled.div`
+  margin-left: 46px;
+`;
+
+const MyInfoItemTitle = styled.div`
+  color: ${Color.Black1};
+  font-size: ${Layout.Text.Normal}px;
+`;
+
+const MyInfoItemContent = styled.div`
+  color: ${Color.Black2};
+  font-size: ${Layout.Text.Small}px;
+  margin-top: 4px;
 `;
 
 export const Profile = () => {
@@ -101,6 +125,20 @@ export const Profile = () => {
               />
             </ArrowWrapper>
           </CardBottom>
+          <MyInfoDetailWrapper>
+            <MyInfoItem>
+              <FontAwesomeIcon
+                icon={faEnvelope}
+                color={Color.Black2}
+                size={'2x'}
+                style={{ marginTop: '8px' }}
+              />
+              <MyInfoItemRight>
+                <MyInfoItemTitle>Email</MyInfoItemTitle>
+                <MyInfoItemContent>{myInfo.email}</MyInfoItemContent>
+              </MyInfoItemRight>
+            </MyInfoItem>
+          </MyInfoDetailWrapper>
         </CardBottomWrapper>
       </CardWrapper>
     </Wrapper>
