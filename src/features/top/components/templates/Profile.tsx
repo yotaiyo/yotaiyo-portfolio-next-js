@@ -51,6 +51,7 @@ const MyHeader = styled.img`
 
 const CardBottomWrapper = styled.div`
   padding: 12px;
+  margin-top: 24px;
 `;
 
 const CardBottom = styled.div`

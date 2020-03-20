@@ -7,7 +7,7 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 const MyInfoItemWrapper = styled.div`
   display: flex;
-  margin-top: 24px;
+  margin-top: 48px;
 `;
 
 const MyInfoItemRight = styled.div`
@@ -26,9 +26,9 @@ const MyInfoItemContent = styled.div`
 `;
 
 const Icon = styled.img`
-  margin-top: 8px;
-  width: 32px;
-  height: 32px;
+  margin-top: 4px;
+  width: 40px;
+  height: 40px;
   opacity: 0.6;
   filter: alpha(opacity=60);
 `;
@@ -55,11 +55,11 @@ export const MyInfoItem = ({
           icon={fontAwesomeIcon}
           size={'2x'}
           style={{
-            marginTop: '8px',
+            marginTop: '4px',
             opacity: '0.6',
             filter: 'alpha(opacity=60)',
-            width: '32px',
-            height: '32px'
+            width: '40px',
+            height: '40px'
           }}
         />
       ) : null}
