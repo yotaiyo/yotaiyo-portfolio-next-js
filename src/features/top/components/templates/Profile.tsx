@@ -7,8 +7,15 @@ import { myInfo } from 'consts/profile';
 import MyIconImage from 'public/my-icon.png';
 import MyHeaderImage from 'public/my-header.png';
 import TwitterIcon from 'public/twitter.png';
+import GithubIcon from 'public/github.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import {
+  faChevronDown,
+  faEnvelope,
+  faHeart,
+  faGraduationCap,
+  faBirthdayCake
+} from '@fortawesome/free-solid-svg-icons';
 import { MyInfoItem } from '../molecules/MyInfoItem';
 
 const Wrapper = styled.div``;
@@ -117,6 +124,26 @@ export const Profile = () => {
               title="Twitter"
               content={myInfo.twitter.id}
               icon={TwitterIcon}
+            />
+            <MyInfoItem
+              title="Github"
+              content={myInfo.github.id}
+              icon={GithubIcon}
+            />
+            <MyInfoItem
+              title="Likes"
+              content={myInfo.likes}
+              fontAwesomeIcon={faHeart}
+            />
+            <MyInfoItem
+              title="College"
+              content={myInfo.college}
+              fontAwesomeIcon={faGraduationCap}
+            />
+            <MyInfoItem
+              title="Birthday"
+              content={myInfo.birthday}
+              fontAwesomeIcon={faBirthdayCake}
             />
           </MyInfoDetailWrapper>
         </CardBottomWrapper>

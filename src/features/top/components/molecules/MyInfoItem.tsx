@@ -27,10 +27,10 @@ const MyInfoItemContent = styled.div`
 
 const Icon = styled.img`
   margin-top: 8px;
-  width: 33px;
-  height: 33px;
-  opacity: 0.5;
-  filter: alpha(opacity=50);
+  width: 32px;
+  height: 32px;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
 `;
 
 type MyInfoItemType = {
@@ -56,8 +56,10 @@ export const MyInfoItem = ({
           size={'2x'}
           style={{
             marginTop: '8px',
-            opacity: '0.5',
-            filter: 'alpha(opacity=50)'
+            opacity: '0.6',
+            filter: 'alpha(opacity=60)',
+            width: '32px',
+            height: '32px'
           }}
         />
       ) : null}
