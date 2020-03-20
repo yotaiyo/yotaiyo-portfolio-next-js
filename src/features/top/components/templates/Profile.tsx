@@ -141,7 +141,11 @@ export const Profile = ({ showMyInfo, onClickArrow }: ProfileType) => {
                   color={Color.Black2}
                   size={'lg'}
                   style={{
-                    marginTop: '8px'
+                    marginTop: '8px',
+                    transitionProperty: 'transform',
+                    transitionDuration: '0.2s',
+                    transitionTimingFunction: 'linear',
+                    transform: `rotate(${showMyInfo ? 0 : 180}deg)`
                   }}
                 />
               </ArrowWrapper>
