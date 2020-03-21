@@ -28,7 +28,9 @@ const TitleLine = styled.div`
   margin-left: 10px;
 `;
 
-const MyHistoriesWrapper = styled.div``;
+const MyHistoriesWrapper = styled.div`
+  padding-left: 15px;
+`;
 
 const MyHistories = styled.div`
   border-left: 2px solid ${Color.Black3};
