@@ -39,14 +39,14 @@ const TitleLine = styled.div`
 `;
 
 const CardWrapper = styled.div`
-  width: 500px;
+  width: 480px;
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   border-radius: 2px;
 `;
 
 const MyHeader = styled.img`
-  width: 500px;
+  width: 480px;
   height: 250px;
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;

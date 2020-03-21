@@ -8,7 +8,9 @@ import { Links } from 'src/features/top/components/templates/Links';
 const Wrapper = styled.div`
   margin-top: 120px;
   margin-bottom: 120px;
-  width: 920px;
+  margin-left: 24px;
+  margin-right: 24px;
+  width: 860px;
 `;
 
 const TopContainer = () => {
