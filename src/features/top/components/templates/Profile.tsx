@@ -31,7 +31,7 @@ const TitleText = styled.span`
 `;
 
 const TitleLine = styled.div`
-  background-color: ${Color.Black1};
+  background-color: ${Color.Black3};
   height: 2px;
   flex: 1;
   margin-top: ${Layout.Text.Largest / 2 + 4}px;
