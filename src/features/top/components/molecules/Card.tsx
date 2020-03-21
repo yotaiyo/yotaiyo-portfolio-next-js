@@ -4,12 +4,13 @@ import { Layout } from 'consts/Layout';
 import { Color } from 'consts/Color';
 
 const CardWrapper = styled.div`
-  border-radius: 30px;
-  box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.5);
+  border-radius: 4px;
   padding-left: 30px;
   padding-right: 30px;
   min-width: 350px;
   flex: 1;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.1),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.05), 0px 1px 3px 0px rgba(0, 0, 0, 0.4);
   @media (max-width: 414px) {
     min-width: 0;
   }

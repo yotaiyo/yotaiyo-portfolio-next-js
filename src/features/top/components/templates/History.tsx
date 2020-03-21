@@ -33,7 +33,7 @@ const MyHistoriesWrapper = styled.div`
 `;
 
 const MyHistories = styled.div`
-  border-left: 2px solid ${Color.Black3};
+  border-left: 1px solid ${Color.Black3};
 `;
 
 export const History = () => {

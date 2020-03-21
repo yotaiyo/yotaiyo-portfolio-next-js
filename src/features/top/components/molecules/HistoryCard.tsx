@@ -40,7 +40,7 @@ const Triangle = styled.div.attrs((props: TriangleType) => ({
   border-style: solid;
   border-width: 10px 10px 10px 10px;
   border-color: transparent ${Color.White} transparent transparent;
-  filter: drop-shadow(0 2px 0 rgb(0, 0, 0, 0.1));
+  filter: drop-shadow(0 2px 0 rgb(0, 0, 0, 0.2));
 `;
 
 type HistoryCardType = CardType & {
