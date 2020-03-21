@@ -79,7 +79,7 @@ const MyIcon = styled.img`
 `;
 
 const MyNameAndRoleWrapper = styled.div`
-  margin-left: 12px;
+  margin-left: 20px;
 `;
 
 const MyName = styled.div`
