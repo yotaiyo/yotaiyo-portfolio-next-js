@@ -19,10 +19,15 @@ const CardWrapper = styled.div`
   }
 `;
 
+const CardTitleAndPeriodWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+`;
+
 const CardTitle = styled.div`
   font-size: ${Layout.Text.Large}px;
   color: ${Color.Black1};
-  margin-top: 20px;
   @media (max-width: 414px) {
     font-size: ${Layout.Text.Normal - 2}px;
   }
@@ -81,8 +86,10 @@ export type CardType = {
 export const Card = ({ title, period, body, tags }: CardType) => {
   return (
     <CardWrapper>
-      <CardTitle>{title}</CardTitle>
-      <CardPeriod>{period}</CardPeriod>
+      <CardTitleAndPeriodWrapper>
+        <CardTitle>{title}</CardTitle>
+        <CardPeriod>{period}</CardPeriod>
+      </CardTitleAndPeriodWrapper>
       <CardBodiesWrapper>
         <CardBodies>
           {body.split('\n').map((line, index) => {
