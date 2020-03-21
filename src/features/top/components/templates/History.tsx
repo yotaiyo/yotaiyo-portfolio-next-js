@@ -7,53 +7,39 @@ import { HistoryCard } from '../molecules/HistoryCard';
 
 const Wrapper = styled.div`
   margin-top: 100px;
-  padding-left: 20px;
-  padding-right: 20px;
-  @media (max-width: 414px) {
-    margin-top: 30px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
 `;
 
-const TitleWrapper = styled.h1`
+const TitleWrapper = styled.div`
   display: flex;
-  justify-content: center;
-  margin-bottom: 40px;
-  @media (max-width: 414px) {
-    margin-bottom: 20px;
-  }
+  margin-bottom: 24px;
 `;
 
-const Title = styled.span`
+const TitleText = styled.span`
   font-size: ${Layout.Text.Largest}px;
+  font-weight: bold;
   color: ${Color.Black1};
-  border-bottom: 2px solid ${Color.Black1};
-  @media (max-width: 414px) {
-    font-size: ${Layout.Text.Larger}px;
-  }
 `;
 
-const MyHistoriesWrapper = styled.div`
-  display: flex;
-  justify-content: center;
+const TitleLine = styled.div`
+  background-color: ${Color.Black3};
+  height: 2px;
   flex: 1;
+  margin-top: ${Layout.Text.Largest / 2 + 4}px;
+  margin-left: 10px;
 `;
+
+const MyHistoriesWrapper = styled.div``;
 
 const MyHistories = styled.div`
   border-left: 2px solid ${Color.Black3};
-  flex: 0.6;
-  max-width: 1000px;
-  @media (max-width: 414px) {
-    border-left: 1px solid ${Color.Black3};
-  }
 `;
 
 export const History = () => {
   return (
     <Wrapper>
       <TitleWrapper>
-        <Title>History</Title>
+        <TitleText>History</TitleText>
+        <TitleLine />
       </TitleWrapper>
       <MyHistoriesWrapper>
         <MyHistories>
