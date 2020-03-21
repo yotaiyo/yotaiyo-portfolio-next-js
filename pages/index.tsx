@@ -3,7 +3,6 @@ import MyLayout from 'src/common/layout';
 import styled from 'styled-components';
 import { Profile } from 'src/features/top/components/templates/Profile';
 import { History } from 'src/features/top/components/templates/History';
-import { Links } from 'src/features/top/components/templates/Links';
 
 const Wrapper = styled.div`
   margin-top: 120px;
@@ -25,7 +24,6 @@ const TopContainer = () => {
       <Wrapper>
         <Profile showMyInfo={showMyInfo} onClickArrow={toggleShowMyInfo} />
         <History />
-        <Links />
       </Wrapper>
     </MyLayout>
   );
