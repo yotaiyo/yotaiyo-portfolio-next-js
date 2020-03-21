@@ -16,27 +16,9 @@ import {
   faBirthdayCake
 } from '@fortawesome/free-solid-svg-icons';
 import { MyInfoItem } from '../molecules/MyInfoItem';
+import { SectionTitle } from 'src/common/components/molecules/SectionTitle';
 
 const Wrapper = styled.div``;
-
-const TitleWrapper = styled.div`
-  display: flex;
-  margin-bottom: 24px;
-`;
-
-const TitleText = styled.span`
-  font-size: ${Layout.Text.Largest}px;
-  font-weight: bold;
-  color: ${Color.Black1};
-`;
-
-const TitleLine = styled.div`
-  background-color: ${Color.Black3};
-  height: 2px;
-  flex: 1;
-  margin-top: ${Layout.Text.Largest / 2 + 4}px;
-  margin-left: 10px;
-`;
 
 const CardWrapper = styled.div`
   width: 480px;
@@ -124,10 +106,7 @@ type ProfileType = {
 export const Profile = ({ showMyInfo, onClickArrow }: ProfileType) => {
   return (
     <Wrapper>
-      <TitleWrapper>
-        <TitleText>Profile</TitleText>
-        <TitleLine />
-      </TitleWrapper>
+      <SectionTitle title="Profile" />
       <CardWrapper>
         <MyHeader src={MyHeaderImage} alt="my header" />
         <CardBottomWrapper showMyInfo={showMyInfo}>
