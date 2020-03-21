@@ -23,7 +23,6 @@ const CardTitle = styled.div`
   font-size: ${Layout.Text.Large}px;
   color: ${Color.Black1};
   margin-top: 20px;
-  text-align: center;
   @media (max-width: 414px) {
     font-size: ${Layout.Text.Normal - 2}px;
   }
@@ -32,7 +31,6 @@ const CardTitle = styled.div`
 const CardPeriod = styled.div`
   font-size: ${Layout.Text.Small}px;
   color: ${Color.Black2};
-  text-align: center;
   margin-top: 10px;
   @media (max-width: 414px) {
     font-size: ${Layout.Text.Smaller}px;
@@ -41,7 +39,6 @@ const CardPeriod = styled.div`
 
 const CardBodiesWrapper = styled.div`
   margin: 0 auto;
-  text-align: center;
   max-width: 1000px;
 `;
 
@@ -61,7 +58,6 @@ const CardBody = styled.div`
 `;
 
 const CardTagsWrapper = styled.div`
-  text-align: center;
   box-sizing: border-box;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -70,14 +66,8 @@ const CardTagsWrapper = styled.div`
 const CardTag = styled.span`
   font-size: ${Layout.Text.Smaller}px;
   color: ${Color.Black2};
-  margin-left: 10px;
-  padding: 5px;
-  border: 1px solid ${Color.Black2};
-  border-radius: 5px;
   @media (max-width: 414px) {
     font-size: ${Layout.Text.Smallest}px;
-    margin-left: 5px;
-    padding: 2px;
   }
 `;
 
@@ -102,7 +92,7 @@ export const Card = ({ title, period, body, tags }: CardType) => {
       </CardBodiesWrapper>
       <CardTagsWrapper>
         {tags.map((tag, index) => {
-          return <CardTag key={index}>{tag}</CardTag>;
+          return <CardTag key={index}>{`${tag}, `}</CardTag>;
         })}
       </CardTagsWrapper>
     </CardWrapper>
