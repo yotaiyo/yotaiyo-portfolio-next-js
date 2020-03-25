@@ -71,7 +71,6 @@ export const MyInfoItem = ({
             width: '40px',
             height: '40px'
           }}
-          title="test"
         />
       ) : null}
       <MyInfoItemRight>
