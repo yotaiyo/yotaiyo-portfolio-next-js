@@ -60,7 +60,7 @@ const CardBodiesWrapper = styled.div`
 
 const CardBodies = styled.div`
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 12px;
   text-align: left;
 `;
 
@@ -75,7 +75,7 @@ const CardBody = styled.div`
 
 const CardTagsWrapper = styled.div`
   box-sizing: border-box;
-  margin-top: 20px;
+  margin-top: 12px;
   margin-bottom: 20px;
 `;
 
