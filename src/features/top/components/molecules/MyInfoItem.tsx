@@ -71,13 +71,19 @@ export const MyInfoItem = ({
             width: '40px',
             height: '40px'
           }}
+          title="test"
         />
       ) : null}
       <MyInfoItemRight>
         <MyInfoItemTitleWrapper>
           <MyInfoItemTitle>{title}</MyInfoItemTitle>
           {link ? (
-            <LinkWrapper href={link} target="_blank" rel="noopener">
+            <LinkWrapper
+              href={link}
+              target="_blank"
+              rel="noopener"
+              title={`link of ${title}`}
+            >
               <FontAwesomeIcon
                 icon={faExternalLinkAlt}
                 style={{
