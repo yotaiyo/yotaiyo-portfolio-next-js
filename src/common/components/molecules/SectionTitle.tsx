@@ -16,7 +16,7 @@ const SectionTitleText = styled.span`
 
 const SectionTitleLine = styled.div`
   background-color: ${Color.Black3};
-  height: 2px;
+  height: 1px;
   flex: 1;
   margin-top: ${Layout.Text.Largest / 2 + 4}px;
   margin-left: 10px;

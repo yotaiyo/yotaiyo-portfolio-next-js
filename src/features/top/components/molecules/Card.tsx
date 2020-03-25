@@ -28,16 +28,26 @@ const CardTitleAndPeriodWrapper = styled.div`
 
 const CardTitle = styled.div`
   font-size: ${Layout.Text.Large}px;
+  font-weight: bold;
   color: ${Color.Black1};
   @media (max-width: 414px) {
     font-size: ${Layout.Text.Normal - 2}px;
   }
 `;
 
+const CardLine = styled.div`
+  background-color: ${Color.Black3};
+  height: 1px;
+  flex: 1;
+  margin-top: ${Layout.Text.Large / 2 + 6}px;
+  margin-left: 10px;
+`;
+
 const CardPeriod = styled.div`
   font-size: ${Layout.Text.Small}px;
   color: ${Color.Black2};
   margin-top: 10px;
+  margin-left: 10px;
   @media (max-width: 414px) {
     font-size: ${Layout.Text.Smaller}px;
   }
@@ -70,7 +80,7 @@ const CardTagsWrapper = styled.div`
 `;
 
 const CardTag = styled.span`
-  font-size: ${Layout.Text.Smaller}px;
+  font-size: ${Layout.Text.Small}px;
   color: ${Color.Black2};
   @media (max-width: 414px) {
     font-size: ${Layout.Text.Smallest}px;
@@ -89,6 +99,7 @@ export const Card = ({ title, period, body, tags }: CardType) => {
     <CardWrapper>
       <CardTitleAndPeriodWrapper>
         <CardTitle>{title}</CardTitle>
+        <CardLine />
         <CardPeriod>{period}</CardPeriod>
       </CardTitleAndPeriodWrapper>
       <CardBodiesWrapper>
