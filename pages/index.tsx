@@ -1,21 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MyLayout from 'src/common/layout';
 import styled from 'styled-components';
 import { Profile } from 'src/features/top/components/templates/Profile';
 import { History } from 'src/features/top/components/templates/History';
-import { Links } from 'src/features/top/components/templates/Links';
 
 const Wrapper = styled.div`
-  margin-bottom: 100px;
+  margin-top: 120px;
+  margin-bottom: 120px;
+  margin-left: 24px;
+  margin-right: 24px;
+  width: 860px;
 `;
 
 const TopContainer = () => {
+  const [showMyInfo, setShowMyInfo] = useState(true);
+
+  const toggleShowMyInfo = (showMyInfo: boolean) => {
+    setShowMyInfo(!showMyInfo);
+  };
+
   return (
     <MyLayout pathname={'/'}>
       <Wrapper>
-        <Profile />
+        <Profile showMyInfo={showMyInfo} onClickArrow={toggleShowMyInfo} />
         <History />
-        <Links />
       </Wrapper>
     </MyLayout>
   );

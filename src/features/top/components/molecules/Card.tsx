@@ -4,12 +4,13 @@ import { Layout } from 'consts/Layout';
 import { Color } from 'consts/Color';
 
 const CardWrapper = styled.div`
-  border-radius: 30px;
-  box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.5);
+  border-radius: 4px;
   padding-left: 30px;
   padding-right: 30px;
   min-width: 350px;
   flex: 1;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.1),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.05), 0px 1px 3px 0px rgba(0, 0, 0, 0.4);
   @media (max-width: 414px) {
     min-width: 0;
   }
@@ -19,21 +20,34 @@ const CardWrapper = styled.div`
   }
 `;
 
+const CardTitleAndPeriodWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+`;
+
 const CardTitle = styled.div`
   font-size: ${Layout.Text.Large}px;
+  font-weight: bold;
   color: ${Color.Black1};
-  margin-top: 20px;
-  text-align: center;
   @media (max-width: 414px) {
     font-size: ${Layout.Text.Normal - 2}px;
   }
 `;
 
+const CardLine = styled.div`
+  background-color: ${Color.Black3};
+  height: 1px;
+  flex: 1;
+  margin-top: ${Layout.Text.Large / 2 + 6}px;
+  margin-left: 10px;
+`;
+
 const CardPeriod = styled.div`
   font-size: ${Layout.Text.Small}px;
   color: ${Color.Black2};
-  text-align: center;
   margin-top: 10px;
+  margin-left: 10px;
   @media (max-width: 414px) {
     font-size: ${Layout.Text.Smaller}px;
   }
@@ -41,13 +55,12 @@ const CardPeriod = styled.div`
 
 const CardBodiesWrapper = styled.div`
   margin: 0 auto;
-  text-align: center;
   max-width: 1000px;
 `;
 
 const CardBodies = styled.div`
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 12px;
   text-align: left;
 `;
 
@@ -61,23 +74,16 @@ const CardBody = styled.div`
 `;
 
 const CardTagsWrapper = styled.div`
-  text-align: center;
   box-sizing: border-box;
-  margin-top: 20px;
+  margin-top: 12px;
   margin-bottom: 20px;
 `;
 
 const CardTag = styled.span`
-  font-size: ${Layout.Text.Smaller}px;
+  font-size: ${Layout.Text.Small}px;
   color: ${Color.Black2};
-  margin-left: 10px;
-  padding: 5px;
-  border: 1px solid ${Color.Black2};
-  border-radius: 5px;
   @media (max-width: 414px) {
     font-size: ${Layout.Text.Smallest}px;
-    margin-left: 5px;
-    padding: 2px;
   }
 `;
 
@@ -91,8 +97,11 @@ export type CardType = {
 export const Card = ({ title, period, body, tags }: CardType) => {
   return (
     <CardWrapper>
-      <CardTitle>{title}</CardTitle>
-      <CardPeriod>{period}</CardPeriod>
+      <CardTitleAndPeriodWrapper>
+        <CardTitle>{title}</CardTitle>
+        <CardLine />
+        <CardPeriod>{period}</CardPeriod>
+      </CardTitleAndPeriodWrapper>
       <CardBodiesWrapper>
         <CardBodies>
           {body.split('\n').map((line, index) => {
@@ -102,7 +111,7 @@ export const Card = ({ title, period, body, tags }: CardType) => {
       </CardBodiesWrapper>
       <CardTagsWrapper>
         {tags.map((tag, index) => {
-          return <CardTag key={index}>{tag}</CardTag>;
+          return <CardTag key={index}>{`${tag}, `}</CardTag>;
         })}
       </CardTagsWrapper>
     </CardWrapper>

@@ -1,102 +1,174 @@
 import React from 'react';
 import styled from 'styled-components';
-import IconImage from 'public/myicon.png';
 import { Layout } from 'consts/Layout';
 import { Color } from 'consts/Color';
-import { ProfileItem } from '../molecules/ProfileItem';
-import { profileItems } from 'consts/profileItems';
+import { myInfo } from 'consts/profile';
+import MyIconImage from 'public/my-icon.png';
+import MyHeaderImage from 'public/my-header.png';
+import TwitterIcon from 'public/twitter.png';
+import GithubIcon from 'public/github.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faChevronDown,
+  faEnvelope,
+  faHeart,
+  faGraduationCap,
+  faBirthdayCake
+} from '@fortawesome/free-solid-svg-icons';
+import { MyInfoItem } from '../molecules/MyInfoItem';
+import { SectionTitle } from 'src/common/components/molecules/SectionTitle';
 
-const Wrapper = styled.div`
-  padding-top: 120px;
-  padding-left: 20px;
-  padding-right: 20px;
-  @media (max-width: 414px) {
-    padding-top: 60px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
+const Wrapper = styled.div``;
+
+const CardWrapper = styled.div`
+  width: 480px;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 2px;
 `;
 
-const TitleWrapper = styled.h1`
+const MyHeader = styled.img`
+  width: 480px;
+  height: 250px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+`;
+
+type CardBottomWrapperType = {
+  showMyInfo: boolean;
+};
+
+const CardBottomWrapper = styled.div.attrs((props: CardBottomWrapperType) => ({
+  showMyInfo: props.showMyInfo
+}))`
+  padding: 12px;
+  margin-top: 12px;
+  overflow: hidden;
+  height: ${props => (props.showMyInfo ? '72px' : '630px')};
+  transition-property: height;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+`;
+
+const MyProfileCard = styled.div`
   display: flex;
-  justify-content: center;
 `;
 
-const Title = styled.span`
-  font-size: ${Layout.Text.Largest}px;
+const MyIcon = styled.img`
+  height: 65px;
+  width: 65px;
+  border-radius: 65px;
+`;
+
+const MyNameAndRoleWrapper = styled.div`
+  margin-left: 20px;
+`;
+
+const MyName = styled.div`
   color: ${Color.Black1};
-  border-bottom: 2px solid ${Color.Black1};
-  @media (max-width: 414px) {
-    font-size: ${Layout.Text.Larger}px;
-  }
+  font-size: ${Layout.Text.Larger}px;
+  font-weight: bold;
+  margin-bottom: 12px;
 `;
 
-const IconAndItemsWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-  @media (max-width: 1100px) {
-    flex-direction: column;
-  }
-  @media (max-width: 414px) {
-    margin-top: 15px;
-  }
+const MyRole = styled.div`
+  color: ${Color.Black2};
+  font-size: ${Layout.Text.Small}px;
 `;
 
-const IconWrapper = styled.div`
+const MyProfileCardRight = styled.div`
+  flex: 1;
+  padding-top: ${65 / 2 - 16}px;
+  padding-right: 4px;
+`;
+
+const ArrowWrapper = styled.div`
+  float: right;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  border-radius: 35px;
   text-align: center;
-`;
-
-const Icon = styled.img`
-  height: 300px;
-  border-radius: 30px;
-  margin-right: 20px;
-  box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.5);
-  @media (max-width: 1100px) {
-    margin-right: 0;
-  }
-  @media (max-width: 414px) {
-    height: 150px;
-    width: 150px;
+  &:hover {
+    background-color: ${Color.Black3};
   }
 `;
 
-const ItemsTitleAndBodyWrapper = styled.div`
-  display: flex;
-  justify-content: center;
+const MyInfoDetailWrapper = styled.div`
+  margin-top: 24px;
 `;
 
-const ItemsWrapper = styled.div`
-  margin-left: 60px;
-  margin-top: 8px;
-  flex-direction: row;
-  font-size: ${Layout.Text.Normal}px;
-  @media (max-width: 414px) {
-    font-size: ${Layout.Text.Small}px;
-    margin-left: 30px;
-  }
-`;
+type ProfileType = {
+  showMyInfo: boolean;
+  onClickArrow(showMyInfo: boolean): void;
+};
 
-export const Profile = () => {
+export const Profile = ({ showMyInfo, onClickArrow }: ProfileType) => {
   return (
     <Wrapper>
-      <TitleWrapper>
-        <Title>Profile</Title>
-      </TitleWrapper>
-      <IconAndItemsWrapper>
-        <IconWrapper>
-          <Icon src={IconImage} alt="yotaiyo-icon" />
-        </IconWrapper>
-        <ItemsTitleAndBodyWrapper>
-          <ItemsWrapper>
-            {profileItems.map((item, index) => {
-              return (
-                <ProfileItem key={index} body={item.body} title={item.title} />
-              );
-            })}
-          </ItemsWrapper>
-        </ItemsTitleAndBodyWrapper>
-      </IconAndItemsWrapper>
+      <SectionTitle title="Profile" />
+      <CardWrapper>
+        <MyHeader src={MyHeaderImage} alt="my header" />
+        <CardBottomWrapper showMyInfo={showMyInfo}>
+          <MyProfileCard>
+            <MyIcon src={MyIconImage} alt="my icon" />
+            <MyNameAndRoleWrapper>
+              <MyName>{myInfo.name}</MyName>
+              <MyRole>{myInfo.role}</MyRole>
+            </MyNameAndRoleWrapper>
+            <MyProfileCardRight>
+              <ArrowWrapper onClick={() => onClickArrow(showMyInfo)}>
+                <FontAwesomeIcon
+                  icon={faChevronDown}
+                  color={Color.Black2}
+                  size={'lg'}
+                  style={{
+                    marginTop: '8px',
+                    transitionProperty: 'transform',
+                    transitionDuration: '0.2s',
+                    transitionTimingFunction: 'linear',
+                    transform: `rotate(${showMyInfo ? 0 : 180}deg)`
+                  }}
+                />
+              </ArrowWrapper>
+            </MyProfileCardRight>
+          </MyProfileCard>
+          <MyInfoDetailWrapper>
+            <MyInfoItem
+              title="Email"
+              content={myInfo.email}
+              fontAwesomeIcon={faEnvelope}
+            />
+            <MyInfoItem
+              title="Twitter"
+              content={myInfo.twitter.id}
+              icon={TwitterIcon}
+              link={myInfo.twitter.link}
+            />
+            <MyInfoItem
+              title="Github"
+              content={myInfo.github.id}
+              icon={GithubIcon}
+              link={myInfo.github.link}
+            />
+            <MyInfoItem
+              title="Likes"
+              content={myInfo.likes}
+              fontAwesomeIcon={faHeart}
+            />
+            <MyInfoItem
+              title="College"
+              content={myInfo.college}
+              fontAwesomeIcon={faGraduationCap}
+            />
+            <MyInfoItem
+              title="Birthday"
+              content={myInfo.birthday}
+              fontAwesomeIcon={faBirthdayCake}
+            />
+          </MyInfoDetailWrapper>
+        </CardBottomWrapper>
+      </CardWrapper>
     </Wrapper>
   );
 };
