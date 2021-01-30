@@ -64,7 +64,7 @@ export const Links = () => {
           <LinkIcon src={githubIcon} alt="github" />
         </Link>
         <Link
-          href="https://twitter.com/yotaiyo_1218"
+          href="https://twitter.com/_yotaiyo_"
           target="_blank"
           rel="noopener"
         >
